@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>lusipad的博客</title>
+  
+  <subtitle>Talk is cheap, show me the code.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://nas.lus.red/"/>
+  <updated>2019-11-15T23:44:12.555Z</updated>
+  <id>http://nas.lus.red/</id>
+  
+  <author>
+    <name>lusipad</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>lua加密</title>
+    <link href="http://nas.lus.red/lua%E5%8A%A0%E5%AF%86.html"/>
+    <id>http://nas.lus.red/lua加密.html</id>
+    <published>2019-11-15T23:34:59.000Z</published>
+    <updated>2019-11-15T23:44:12.555Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="lua加密"><a href="#lua加密" class="headerlink" title="lua加密"></a>lua加密</h1><p>编译, opcode, loadbuffer加密, 文本加密…</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;lua加密&quot;&gt;&lt;a href=&quot;#lua加密&quot; class=&quot;headerlink&quot; title=&quot;lua加密&quot;&gt;&lt;/a&gt;lua加密&lt;/h1&gt;&lt;p&gt;编译, opcode, loadbuffer加密, 文本加密…&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>lua序列化</title>
+    <link href="http://nas.lus.red/lua%E5%BA%8F%E5%88%97%E5%8C%96.html"/>
+    <id>http://nas.lus.red/lua序列化.html</id>
+    <published>2018-12-07T14:16:57.000Z</published>
+    <updated>2018-12-07T14:58:44.420Z</updated>
+    
+    <content type="html"><![CDATA[<p>将一个表序列化成一个字符串, 逻辑很简单, 就是递归调用 + 类型判断.</p><figure class="highlight lua hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">-- 字符串序列化 + 缩进</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">serialize</span><span class="hljs-params">(param, level)</span></span></span><br><span class="line">    <span class="hljs-keyword">local</span> result = <span class="hljs-string">""</span></span><br><span class="line">    <span class="hljs-keyword">local</span> space = <span class="hljs-string">""</span></span><br><span class="line">    <span class="hljs-keyword">local</span> t = <span class="hljs-built_in">type</span>(param)</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-literal">nil</span> == level) <span class="hljs-keyword">then</span></span><br><span class="line">        level = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">end</span></span><br><span class="line">    <span class="hljs-keyword">for</span> i = <span class="hljs-number">1</span>, level <span class="hljs-keyword">do</span></span><br><span class="line">        space = space .. <span class="hljs-string">"\t"</span></span><br><span class="line">    <span class="hljs-keyword">end</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">if</span> t == <span class="hljs-string">"number"</span> <span class="hljs-keyword">then</span></span><br><span class="line">        result = result .. param</span><br><span class="line">    <span class="hljs-keyword">elseif</span> t == <span class="hljs-string">"boolean"</span> <span class="hljs-keyword">then</span></span><br><span class="line">        result = result .. <span class="hljs-built_in">tostring</span>(param)</span><br><span class="line">    <span class="hljs-keyword">elseif</span> t == <span class="hljs-string">"string"</span> <span class="hljs-keyword">then</span></span><br><span class="line">        result = result .. <span class="hljs-built_in">string</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">"%q"</span>, param)</span><br><span class="line">    <span class="hljs-keyword">elseif</span> t == <span class="hljs-string">"table"</span> <span class="hljs-keyword">then</span></span><br><span class="line">        result = result .. <span class="hljs-string">"&#123;\n"</span></span><br><span class="line">        <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> <span class="hljs-built_in">pairs</span>(param) <span class="hljs-keyword">do</span></span><br><span class="line">            result = result .. space .. <span class="hljs-string">"\t"</span> .. <span class="hljs-string">"["</span> .. serialize(k) .. <span class="hljs-string">"] = "</span></span><br><span class="line">            .. serialize(v, level + <span class="hljs-number">1</span>) .. <span class="hljs-string">",\n"</span></span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">        </span><br><span class="line">        <span class="hljs-keyword">local</span> metatable = <span class="hljs-built_in">getmetatable</span>(param)</span><br><span class="line">        <span class="hljs-keyword">if</span> metatable ~= <span class="hljs-literal">nil</span> <span class="hljs-keyword">and</span> <span class="hljs-built_in">type</span>(metatable.<span class="hljs-built_in">__index</span>) == <span class="hljs-string">"table"</span> <span class="hljs-keyword">then</span></span><br><span class="line">            <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> <span class="hljs-built_in">pairs</span>(metatable.<span class="hljs-built_in">__index</span>) <span class="hljs-keyword">do</span></span><br><span class="line">                result = result .. <span class="hljs-string">"["</span> .. serialize(k) .. <span class="hljs-string">"] = "</span></span><br><span class="line">                .. serialize(metatable.<span class="hljs-built_in">__index</span>[v], level + <span class="hljs-number">1</span>) .. <span class="hljs-string">",\n"</span></span><br><span class="line">            <span class="hljs-keyword">end</span></span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">        result = result .. space .. <span class="hljs-string">"&#125;"</span></span><br><span class="line">    <span class="hljs-keyword">elseif</span> t == <span class="hljs-string">"nil"</span> <span class="hljs-keyword">then</span></span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span></span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">        <span class="hljs-comment">-- @warning 不支持表中的function的序列化</span></span><br><span class="line">    <span class="hljs-keyword">end</span></span><br><span class="line">    <span class="hljs-keyword">return</span> result</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></table></figure><a id="more"></a><p>测试<br><figure class="highlight lua hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">tb = </span><br><span class="line">&#123;</span><br><span class="line">    a = <span class="hljs-string">'a'</span>,</span><br><span class="line">    b = <span class="hljs-string">"banana"</span>,</span><br><span class="line">    c = &#123;</span><br><span class="line">        <span class="hljs-number">1</span>,</span><br><span class="line">        <span class="hljs-number">2</span>,</span><br><span class="line">        <span class="hljs-number">3</span>,</span><br><span class="line">        hello = <span class="hljs-string">"world"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    d = <span class="hljs-number">10</span>,</span><br><span class="line">    <span class="hljs-string">"e"</span>,</span><br><span class="line">    <span class="hljs-string">"f"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">print</span>(serialize(tb))</span><br></pre></td></tr></table></figure></p><p>输出结果<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">[1] = &quot;e&quot;,</span><br><span class="line">[2] = &quot;f&quot;,</span><br><span class="line">[&quot;b&quot;] = &quot;banana&quot;,</span><br><span class="line">[&quot;c&quot;] = &#123;</span><br><span class="line">[1] = 1,</span><br><span class="line">[2] = 2,</span><br><span class="line">[3] = 3,</span><br><span class="line">[&quot;hello&quot;] = &quot;world&quot;,</span><br><span class="line">&#125;,</span><br><span class="line">[&quot;a&quot;] = &quot;a&quot;,</span><br><span class="line">[&quot;d&quot;] = 10,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;将一个表序列化成一个字符串, 逻辑很简单, 就是递归调用 + 类型判断.&lt;/p&gt;
+&lt;figure class=&quot;highlight lua hljs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt;-- 字符串序列化 + 缩进&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;serialize&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(param, level)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;local&lt;/span&gt; result = &lt;span class=&quot;hljs-string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;local&lt;/span&gt; space = &lt;span class=&quot;hljs-string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;local&lt;/span&gt; t = &lt;span class=&quot;hljs-built_in&quot;&gt;type&lt;/span&gt;(param)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;hljs-literal&quot;&gt;nil&lt;/span&gt; == level) &lt;span class=&quot;hljs-keyword&quot;&gt;then&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        level = &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; i = &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;, level &lt;span class=&quot;hljs-keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        space = space .. &lt;span class=&quot;hljs-string&quot;&gt;&quot;\t&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; t == &lt;span class=&quot;hljs-string&quot;&gt;&quot;number&quot;&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;then&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        result = result .. param&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;elseif&lt;/span&gt; t == &lt;span class=&quot;hljs-string&quot;&gt;&quot;boolean&quot;&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;then&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        result = result .. &lt;span class=&quot;hljs-built_in&quot;&gt;tostring&lt;/span&gt;(param)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;elseif&lt;/span&gt; t == &lt;span class=&quot;hljs-string&quot;&gt;&quot;string&quot;&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;then&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        result = result .. &lt;span class=&quot;hljs-built_in&quot;&gt;string&lt;/span&gt;.&lt;span class=&quot;hljs-built_in&quot;&gt;format&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;%q&quot;&lt;/span&gt;, param)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;elseif&lt;/span&gt; t == &lt;span class=&quot;hljs-string&quot;&gt;&quot;table&quot;&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;then&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        result = result .. &lt;span class=&quot;hljs-string&quot;&gt;&quot;&amp;#123;\n&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; k, v &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;pairs&lt;/span&gt;(param) &lt;span class=&quot;hljs-keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            result = result .. space .. &lt;span class=&quot;hljs-string&quot;&gt;&quot;\t&quot;&lt;/span&gt; .. &lt;span class=&quot;hljs-string&quot;&gt;&quot;[&quot;&lt;/span&gt; .. serialize(k) .. &lt;span class=&quot;hljs-string&quot;&gt;&quot;] = &quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            .. serialize(v, level + &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;) .. &lt;span class=&quot;hljs-string&quot;&gt;&quot;,\n&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;hljs-keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;hljs-keyword&quot;&gt;local&lt;/span&gt; metatable = &lt;span class=&quot;hljs-built_in&quot;&gt;getmetatable&lt;/span&gt;(param)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; metatable ~= &lt;span class=&quot;hljs-literal&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;type&lt;/span&gt;(metatable.&lt;span class=&quot;hljs-built_in&quot;&gt;__index&lt;/span&gt;) == &lt;span class=&quot;hljs-string&quot;&gt;&quot;table&quot;&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;then&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; k, v &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;pairs&lt;/span&gt;(metatable.&lt;span class=&quot;hljs-built_in&quot;&gt;__index&lt;/span&gt;) &lt;span class=&quot;hljs-keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                result = result .. &lt;span class=&quot;hljs-string&quot;&gt;&quot;[&quot;&lt;/span&gt; .. serialize(k) .. &lt;span class=&quot;hljs-string&quot;&gt;&quot;] = &quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                .. serialize(metatable.&lt;span class=&quot;hljs-built_in&quot;&gt;__index&lt;/span&gt;[v], level + &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;) .. &lt;span class=&quot;hljs-string&quot;&gt;&quot;,\n&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;hljs-keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;hljs-keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        result = result .. space .. &lt;span class=&quot;hljs-string&quot;&gt;&quot;&amp;#125;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;elseif&lt;/span&gt; t == &lt;span class=&quot;hljs-string&quot;&gt;&quot;nil&quot;&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;then&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-literal&quot;&gt;nil&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;hljs-comment&quot;&gt;-- @warning 不支持表中的function的序列化&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; result&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="lua" scheme="http://nas.lus.red/categories/lua/"/>
+    
+    
+      <category term="lua" scheme="http://nas.lus.red/tags/lua/"/>
+    
+      <category term="序列化" scheme="http://nas.lus.red/tags/%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;C++性能优化&gt;读后感</title>
+    <link href="http://nas.lus.red/C-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E8%AF%BB%E5%90%8E%E6%84%9F.html"/>
+    <id>http://nas.lus.red/C-性能优化-读后感.html</id>
+    <published>2018-12-02T17:28:02.000Z</published>
+    <updated>2018-12-07T21:50:31.198Z</updated>
+    
+    <content type="html"><![CDATA[<p>拜读了<code>Kurt Guntherot</code>h的<code>Optimized C++: Proven Techniques for Heightened Performance(&lt;C++性能优化指南&gt;)</code>, 除了要吐槽下作者各种强行引用各种名人名言外, 还是受益良多的. 之前对于性能优化, 比较茫然, 最多也就能说得出一些常用的优化手段, 比如不用值传递啊, vector需要reverse啊, 各种排序算法性能啊.. 总之就是杂七杂八根据没个头绪.</p><p>最大的感受就是一点: 法有尽, 而术无穷.</p><p>现在的计算机性能不断增长, 所以即使是性能优化, 也在不断的演进. 一些比如PIMPL之类, 针对于以前编译慢的优化, 在如今, 完全可以忽略不计了.对于现在的C++性能优化, 我们应该抓住其主要矛盾: 1. 算法/逻辑 2. 硬件瓶颈.</p><p>从算法逻辑的角度, 选用更好的编译器, 更好的处理逻辑, 更好的内存结构.</p><p>从硬件的角度, 处理现在最大的瓶颈—内存, 减少内存分配复制.</p><p>现在只是简单过了一遍, 对于其中的并发优化, 内存管理器优化等还是需要进一步学习. 打算后面再看下Windows/Visual Studio相关的性能分析和优化等, 重新好好做个总结.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;拜读了&lt;code&gt;Kurt Guntherot&lt;/code&gt;h的&lt;code&gt;Optimized C++: Proven Techniques for Heightened Performance(&amp;lt;C++性能优化指南&amp;gt;)&lt;/code&gt;, 除了要吐槽下作者各种强行
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="http://nas.lus.red/categories/C/"/>
+    
+    
+      <category term="C++" scheme="http://nas.lus.red/tags/C/"/>
+    
+      <category term="性能优化" scheme="http://nas.lus.red/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="阅读" scheme="http://nas.lus.red/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lua的capi</title>
+    <link href="http://nas.lus.red/lua%E7%9A%84capi.html"/>
+    <id>http://nas.lus.red/lua的capi.html</id>
+    <published>2018-11-26T01:09:13.000Z</published>
+    <updated>2018-11-26T12:00:40.629Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>由于工作中需要使用lua + C++, 所以需要学习两者之间是如何交互的(CAPI),<br>看了一些网上的资料, 对于这方面的资料不是很详尽, 而且文章水平良莠不齐,<br>导致阅读后常陷入知其然不知其所以然的茫然.</p><p>所以自己整理了下相关的内容, 按照自己的理解, 从头到尾梳理了一下.</p><a id="more"></a><h2 id="CAPI概述"><a href="#CAPI概述" class="headerlink" title="CAPI概述"></a>CAPI概述</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;由于工作中需要使用lua + C++, 所以需要学习两者之间是如何交互的(CAPI),&lt;br&gt;看了一些网上的资料, 对于这方面的资料不是很详尽, 而且文章水平良莠不齐,&lt;br&gt;导致阅读后常陷入知其然不知其所以然的茫然.&lt;/p&gt;
+&lt;p&gt;所以自己整理了下相关的内容, 按照自己的理解, 从头到尾梳理了一下.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="lua" scheme="http://nas.lus.red/categories/lua/"/>
+    
+    
+      <category term="lua" scheme="http://nas.lus.red/tags/lua/"/>
+    
+      <category term="capi" scheme="http://nas.lus.red/tags/capi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lua解析xml</title>
+    <link href="http://nas.lus.red/lua%E8%A7%A3%E6%9E%90xml.html"/>
+    <id>http://nas.lus.red/lua解析xml.html</id>
+    <published>2018-11-26T01:02:57.000Z</published>
+    <updated>2018-11-26T12:00:46.352Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>由于在工作中需要使用lua解析器xml, 所以学习了下相关的内容.<br>为了尽可能降低依赖, 所以使用纯lua写的xml解析, 避免引入其他依赖库, 徒添烦恼.<br>然后就找到了这个开源库:</p><p>由于这个库是基于lua5.1的, 所以他提供的require相关语法,<br>放在新版本上市不可用的, 所以稍微修改了一点, 以保证在5.1的后续版本还是可以使用.<br>以下为修改后的:</p><a id="more"></a><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h2 id="更多思考"><a href="#更多思考" class="headerlink" title="更多思考"></a>更多思考</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;由于在工作中需要使用lua解析器xml, 所以学习了下相关的内容.&lt;br&gt;为了尽可能降低依赖, 所以使用纯lua写的xml解析, 避免引入其他依赖库, 徒添烦恼.&lt;br&gt;然后就找到了这个开源库:&lt;/p&gt;
+&lt;p&gt;由于这个库是基于lua5.1的, 所以他提供的require相关语法,&lt;br&gt;放在新版本上市不可用的, 所以稍微修改了一点, 以保证在5.1的后续版本还是可以使用.&lt;br&gt;以下为修改后的:&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="lua" scheme="http://nas.lus.red/categories/lua/"/>
+    
+    
+      <category term="lua" scheme="http://nas.lus.red/tags/lua/"/>
+    
+      <category term="xml" scheme="http://nas.lus.red/tags/xml/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dll版本比较工具</title>
+    <link href="http://nas.lus.red/dll%E7%89%88%E6%9C%AC%E6%AF%94%E8%BE%83%E5%B7%A5%E5%85%B7.html"/>
+    <id>http://nas.lus.red/dll版本比较工具.html</id>
+    <published>2018-11-19T14:42:51.000Z</published>
+    <updated>2018-11-26T12:02:21.299Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CSharp" scheme="http://nas.lus.red/categories/CSharp/"/>
+    
+    
+      <category term="CSharp" scheme="http://nas.lus.red/tags/CSharp/"/>
+    
+      <category term="练习" scheme="http://nas.lus.red/tags/%E7%BB%83%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C#经典实例</title>
+    <link href="http://nas.lus.red/C-%E7%BB%8F%E5%85%B8%E5%AE%9E%E4%BE%8B.html"/>
+    <id>http://nas.lus.red/C-经典实例.html</id>
+    <published>2018-11-19T14:34:27.000Z</published>
+    <updated>2018-11-20T13:58:25.633Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CSharp" scheme="http://nas.lus.red/categories/CSharp/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C#6.0本质论</title>
+    <link href="http://nas.lus.red/C-6-0%E6%9C%AC%E8%B4%A8%E8%AE%BA.html"/>
+    <id>http://nas.lus.red/C-6-0本质论.html</id>
+    <published>2018-11-19T14:34:16.000Z</published>
+    <updated>2018-11-20T14:21:18.973Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.lus.red/本质论封面.png/jpg" alt="本质论封面"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://img.lus.red/本质论封面.png/jpg&quot; alt=&quot;本质论封面&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="CSharp" scheme="http://nas.lus.red/categories/CSharp/"/>
+    
+    
+      <category term="CSharp" scheme="http://nas.lus.red/tags/CSharp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CLR via C#</title>
+    <link href="http://nas.lus.red/CLR-via-C.html"/>
+    <id>http://nas.lus.red/CLR-via-C.html</id>
+    <published>2018-11-19T14:34:06.000Z</published>
+    <updated>2018-11-20T13:58:36.309Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CSharp" scheme="http://nas.lus.red/categories/CSharp/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>精通C#(第6版)</title>
+    <link href="http://nas.lus.red/%E7%B2%BE%E9%80%9AC-%E7%AC%AC6%E7%89%88.html"/>
+    <id>http://nas.lus.red/精通C-第6版.html</id>
+    <published>2018-11-19T14:33:54.000Z</published>
+    <updated>2018-11-20T13:58:55.542Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CSharp" scheme="http://nas.lus.red/categories/CSharp/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo建站实录</title>
+    <link href="http://nas.lus.red/hexo%E5%BB%BA%E7%AB%99%E5%AE%9E%E5%BD%95.html"/>
+    <id>http://nas.lus.red/hexo建站实录.html</id>
+    <published>2018-11-19T00:45:30.000Z</published>
+    <updated>2018-11-26T00:58:43.413Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前的小站用的wordpress, 主要也是为了写写东西记录下,<br>但是使用wordpress之后,就开始沉迷于各种插件, 比如七牛云图床插件啊,<br>Wordpress支持插件啊, 代码高亮插件啊…</p><p>还有从我的印象笔记摘抄笔记也特别麻烦, 因为显示的效果总不是很满意,<br>有鉴于此, 所以决定回归markdown,只关心写作内容.<br>目前主流的markdown建站, 也就hexo和jekyll.<br>因为之前用hexo搭过一个githubio,  所以还是选hexo了.<br>絮絮叨叨了这么多, 以下为建站实录:<br><a id="more"></a></p><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="为文章指定标签"><a href="#为文章指定标签" class="headerlink" title="为文章指定标签"></a>为文章指定标签</h3><h3 id="为文章指定目录"><a href="#为文章指定目录" class="headerlink" title="为文章指定目录"></a>为文章指定目录</h3><h3 id="设定文章置顶"><a href="#设定文章置顶" class="headerlink" title="设定文章置顶"></a>设定文章置顶</h3><h3 id="文章显示”阅读更多”"><a href="#文章显示”阅读更多”" class="headerlink" title="文章显示”阅读更多”"></a>文章显示”阅读更多”</h3><h3 id="文章中的空格-换行"><a href="#文章中的空格-换行" class="headerlink" title="文章中的空格/换行"></a>文章中的空格/换行</h3><h2 id="安装icuras主题"><a href="#安装icuras主题" class="headerlink" title="安装icuras主题"></a>安装icuras主题</h2><h3 id="安装icuras"><a href="#安装icuras" class="headerlink" title="安装icuras"></a>安装icuras</h3><h3 id="修改icuras的个人信息"><a href="#修改icuras的个人信息" class="headerlink" title="修改icuras的个人信息"></a>修改icuras的个人信息</h3><h3 id="修改icuras主题为双栏"><a href="#修改icuras主题为双栏" class="headerlink" title="修改icuras主题为双栏"></a>修改icuras主题为双栏</h3><h3 id="修改icuras目录的名字"><a href="#修改icuras目录的名字" class="headerlink" title="修改icuras目录的名字"></a>修改icuras目录的名字</h3><h3 id="修改icuras的显示宽度"><a href="#修改icuras的显示宽度" class="headerlink" title="修改icuras的显示宽度"></a>修改icuras的显示宽度</h3><h3 id="启用搜索插件"><a href="#启用搜索插件" class="headerlink" title="启用搜索插件"></a>启用搜索插件</h3><h2 id="在github上建立站点"><a href="#在github上建立站点" class="headerlink" title="在github上建立站点"></a>在github上建立站点</h2><h2 id="在VPS上建立站点"><a href="#在VPS上建立站点" class="headerlink" title="在VPS上建立站点"></a>在VPS上建立站点</h2><h2 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h2><h3 id="通用SEO优化"><a href="#通用SEO优化" class="headerlink" title="通用SEO优化"></a>通用SEO优化</h3><h3 id="google"><a href="#google" class="headerlink" title="google"></a>google</h3><h3 id="baidu"><a href="#baidu" class="headerlink" title="baidu"></a>baidu</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前的小站用的wordpress, 主要也是为了写写东西记录下,&lt;br&gt;但是使用wordpress之后,就开始沉迷于各种插件, 比如七牛云图床插件啊,&lt;br&gt;Wordpress支持插件啊, 代码高亮插件啊…&lt;/p&gt;
+&lt;p&gt;还有从我的印象笔记摘抄笔记也特别麻烦, 因为显示的效果总不是很满意,&lt;br&gt;有鉴于此, 所以决定回归markdown,只关心写作内容.&lt;br&gt;目前主流的markdown建站, 也就hexo和jekyll.&lt;br&gt;因为之前用hexo搭过一个githubio,  所以还是选hexo了.&lt;br&gt;絮絮叨叨了这么多, 以下为建站实录:&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网站" scheme="http://nas.lus.red/categories/%E7%BD%91%E7%AB%99/"/>
+    
+    
+      <category term="hexo" scheme="http://nas.lus.red/tags/hexo/"/>
+    
+      <category term="建站" scheme="http://nas.lus.red/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+      <category term="icuras" scheme="http://nas.lus.red/tags/icuras/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C#学习笔记-事件</title>
+    <link href="http://nas.lus.red/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8B%E4%BB%B6.html"/>
+    <id>http://nas.lus.red/C-学习笔记-事件.html</id>
+    <published>2018-11-19T00:27:38.000Z</published>
+    <updated>2018-11-26T12:01:22.961Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CSharp" scheme="http://nas.lus.red/categories/CSharp/"/>
+    
+    
+      <category term="CSharp" scheme="http://nas.lus.red/tags/CSharp/"/>
+    
+      <category term="事件" scheme="http://nas.lus.red/tags/%E4%BA%8B%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C#学习笔记-委托</title>
+    <link href="http://nas.lus.red/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A7%94%E6%89%98.html"/>
+    <id>http://nas.lus.red/C-学习笔记-委托.html</id>
+    <published>2018-11-19T00:27:32.000Z</published>
+    <updated>2018-11-26T12:01:38.429Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是委托"><a href="#什么是委托" class="headerlink" title="什么是委托"></a>什么是委托</h2><p>委托是C#中的一个重要的概念.<br>委托是一个对象, 它本身含有一个或者多个方法, 可以认为是一个类型安全的, 面向对象的C++函数指针.<br>是对于C++中函数指针的一种”升级”, 因为指针除了地址本身外, 并没有办法携带其他描述的信息.<br>而委托可以</p><a id="more"></a><h2 id="一个简单的C-函数指针例子"><a href="#一个简单的C-函数指针例子" class="headerlink" title="一个简单的C++函数指针例子"></a>一个简单的C++函数指针例子</h2><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span>(*Calc)(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y);</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Sub</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line"><span class="hljs-keyword">return</span> x - y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">Calc = Add;</span><br><span class="line"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; Calc(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">Calc = Sub;</span><br><span class="line"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; Calc(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出结果<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">-1</span><br></pre></td></tr></table></figure></p><p>这里就是把函数的指针作为一个参数传递, 这样就可以通过一种方法去处理多个具有相同返回值和参数类型.</p><h2 id="C-的函数指针例子"><a href="#C-的函数指针例子" class="headerlink" title="C#的函数指针例子"></a>C#的函数指针例子</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">namespace SampleDelegate</span><br><span class="line">&#123;</span><br><span class="line">    delegate int Calc(int x, int y);</span><br><span class="line"></span><br><span class="line">    class MainClass</span><br><span class="line">    &#123; </span><br><span class="line">        static int Add(int x, int y)</span><br><span class="line">        &#123;</span><br><span class="line">            return x + y;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        static int Sub(int x, int y)</span><br><span class="line">        &#123;</span><br><span class="line">            return x - y;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Calc calc;</span><br><span class="line">            calc = Add;</span><br><span class="line">            Console.WriteLine(calc(1, 2));</span><br><span class="line"></span><br><span class="line">            calc = Sub;</span><br><span class="line">            Console.WriteLine(calc(1, 2));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出结果<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">-1</span><br></pre></td></tr></table></figure></p><p>这个结果是C++函数指针的效果是相同的.</p><h2 id="委托的声明和创建"><a href="#委托的声明和创建" class="headerlink" title="委托的声明和创建"></a>委托的声明和创建</h2><p>委托也是一种类, 所以也是一个引用.</p><p>[delegate] [返回值] [对象名] [签名]<br>delegate void Calc(int x);</p><ol><li><p>使用new来创建<br>calc = new calc(Add);</p></li><li><p>快捷语法创建<br>calc = Add; </p></li></ol><h3 id="委托的组合"><a href="#委托的组合" class="headerlink" title="委托的组合"></a>委托的组合</h3><p>委托实际是一个引用, 所以委托的组合其实是指向了一个新的委托.<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">calc1 = Add;</span><br><span class="line">calc2 = Sub;</span><br><span class="line">calc1 = calc1 + calc2;</span><br></pre></td></tr></table></figure></p><p>也可以使用+=和-=<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">calc += Add;</span><br><span class="line">calc += Sub;</span><br><span class="line">calc -= Add;</span><br></pre></td></tr></table></figure></p><h2 id="委托的使用"><a href="#委托的使用" class="headerlink" title="委托的使用"></a>委托的使用</h2><h3 id="带参数-返回值的委托"><a href="#带参数-返回值的委托" class="headerlink" title="带参数/返回值的委托"></a>带参数/返回值的委托</h3><p>如果委托有返回值, 并且方法列表不止一个方法, 那么返回值就用最后一个.</p><p>如果委托有引用参数, 在调用过程中, 会将参数的新值传给下一个方法.</p><h3 id="泛型委托"><a href="#泛型委托" class="headerlink" title="泛型委托"></a>泛型委托</h3><p>除了使用固定的参数, 委托也支持使用泛型<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">namespace SampleDelegate</span><br><span class="line">&#123;</span><br><span class="line">    delegate T Calc&lt;T&gt;(T x, T y);</span><br><span class="line"></span><br><span class="line">    class MainClass</span><br><span class="line">    &#123; </span><br><span class="line">        static int Add(int x, int y)</span><br><span class="line">        &#123;</span><br><span class="line">            return x + y;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        static double Sub(double x, double y)</span><br><span class="line">        &#123;</span><br><span class="line">            return x - y;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Calc&lt;int&gt; calc;</span><br><span class="line">            calc = Add;</span><br><span class="line">            Console.WriteLine(calc(1, 2));</span><br><span class="line"></span><br><span class="line">            Calc&lt;double&gt; calc2;</span><br><span class="line">            calc2 = Sub;</span><br><span class="line">            Console.WriteLine(cal2(1, 2));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h4 id="Action-lt-gt-委托"><a href="#Action-lt-gt-委托" class="headerlink" title="Action&lt;&gt;委托"></a>Action&lt;&gt;委托</h4><p>Action就是系统定义的, 返回值为void的委托.</p><h4 id="Func-lt-gt-委托"><a href="#Func-lt-gt-委托" class="headerlink" title="Func&lt;&gt;委托"></a>Func&lt;&gt;委托</h4><p>Func就是系统定义的, 带有返回值的委托, 其中最后一个是返回值.</p><p>实际上, .Net的许多重要API都大量的使用Action和Func</p><h2 id="委托的常见使用场景"><a href="#委托的常见使用场景" class="headerlink" title="委托的常见使用场景"></a>委托的常见使用场景</h2><h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><h3 id="使用注意事项"><a href="#使用注意事项" class="headerlink" title="使用注意事项"></a>使用注意事项</h3><h2 id="委托的代码实现"><a href="#委托的代码实现" class="headerlink" title="委托的代码实现"></a>委托的代码实现</h2><h2 id="本文参考"><a href="#本文参考" class="headerlink" title="本文参考"></a>本文参考</h2><p>&lt;C#入门视频&gt;<br>&lt;图解C#教程&gt;<br>&lt;精通C#(第6版)&gt;</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是委托&quot;&gt;&lt;a href=&quot;#什么是委托&quot; class=&quot;headerlink&quot; title=&quot;什么是委托&quot;&gt;&lt;/a&gt;什么是委托&lt;/h2&gt;&lt;p&gt;委托是C#中的一个重要的概念.&lt;br&gt;委托是一个对象, 它本身含有一个或者多个方法, 可以认为是一个类型安全的, 面向对象的C++函数指针.&lt;br&gt;是对于C++中函数指针的一种”升级”, 因为指针除了地址本身外, 并没有办法携带其他描述的信息.&lt;br&gt;而委托可以&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="CSharp" scheme="http://nas.lus.red/categories/CSharp/"/>
+    
+    
+      <category term="CSharp" scheme="http://nas.lus.red/tags/CSharp/"/>
+    
+      <category term="委托" scheme="http://nas.lus.red/tags/%E5%A7%94%E6%89%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C#学习笔记-反射</title>
+    <link href="http://nas.lus.red/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%8D%E5%B0%84.html"/>
+    <id>http://nas.lus.red/C-学习笔记-反射.html</id>
+    <published>2018-11-19T00:26:10.000Z</published>
+    <updated>2018-11-26T12:01:28.746Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CSharp" scheme="http://nas.lus.red/categories/CSharp/"/>
+    
+    
+      <category term="CSharp" scheme="http://nas.lus.red/tags/CSharp/"/>
+    
+      <category term="反射" scheme="http://nas.lus.red/tags/%E5%8F%8D%E5%B0%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C#学习笔记-Lamda表达式</title>
+    <link href="http://nas.lus.red/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F.html"/>
+    <id>http://nas.lus.red/C-学习笔记-Lambda表达式.html</id>
+    <published>2018-11-19T00:25:55.000Z</published>
+    <updated>2018-11-26T12:01:15.178Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CSharp" scheme="http://nas.lus.red/categories/CSharp/"/>
+    
+    
+      <category term="CSharp" scheme="http://nas.lus.red/tags/CSharp/"/>
+    
+      <category term="Lamda" scheme="http://nas.lus.red/tags/Lamda/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C#图解教程</title>
+    <link href="http://nas.lus.red/C-%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B.html"/>
+    <id>http://nas.lus.red/C-图解教程.html</id>
+    <published>2018-11-18T14:32:15.000Z</published>
+    <updated>2018-11-20T13:58:00.152Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="书籍介绍"><a href="#书籍介绍" class="headerlink" title="书籍介绍"></a>书籍介绍</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;书籍介绍&quot;&gt;&lt;a href=&quot;#书籍介绍&quot; class=&quot;headerlink&quot; title=&quot;书籍介绍&quot;&gt;&lt;/a&gt;书籍介绍&lt;/h2&gt;
+      
+    
+    </summary>
+    
+      <category term="CSharp" scheme="http://nas.lus.red/categories/CSharp/"/>
+    
+    
+      <category term="CSharp" scheme="http://nas.lus.red/tags/CSharp/"/>
+    
+      <category term="C#图解教程" scheme="http://nas.lus.red/tags/C-%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="笔记" scheme="http://nas.lus.red/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C#学习笔记</title>
+    <link href="http://nas.lus.red/CSharp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"/>
+    <id>http://nas.lus.red/CSharp学习笔记.html</id>
+    <published>2018-11-18T14:08:14.000Z</published>
+    <updated>2018-11-20T13:58:44.374Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景描述"><a href="#背景描述" class="headerlink" title="背景描述"></a>背景描述</h2><p>记录自己学习C#的学习记录</p><h2 id="阅读和学习"><a href="#阅读和学习" class="headerlink" title="阅读和学习"></a>阅读和学习</h2><h3 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h3><ul><li>刘铁锰 <a href="https://www.bilibili.com/video/av1422127?from=search&amp;seid=17309818711796899189" target="_blank" rel="noopener">&lt;C#语言入门详解&gt;</a></li></ul><h3 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h3><ul><li><a href="/C-图解教程.html">C#图解教程(第4版)</a></li><li><a href="/精通C-第6版.html">精通C#(第6版)</a></li><li><a href="/CLR-via-C.html">CLR via C#</a></li><li><a href="/C-6-0本质论.html">C#6.0本质论</a></li><li><a href="/C-经典实例.html">C#经典实例</a></li></ul><h2 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h2><ul><li><a href="C-学习笔记-委托.html">委托</a></li><li><a href="C-学习笔记-事件.html">事件</a></li><li><a href="C-学习笔记-Lambda表达式.html">Lambda表达式</a></li><li><a href="C-学习笔记-反射.html">反射</a></li></ul><h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><ul><li><a href="/dll版本比较工具.html">dll版本比较工具</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;背景描述&quot;&gt;&lt;a href=&quot;#背景描述&quot; class=&quot;headerlink&quot; title=&quot;背景描述&quot;&gt;&lt;/a&gt;背景描述&lt;/h2&gt;&lt;p&gt;记录自己学习C#的学习记录&lt;/p&gt;
+&lt;h2 id=&quot;阅读和学习&quot;&gt;&lt;a href=&quot;#阅读和学习&quot; class=&quot;heade
+      
+    
+    </summary>
+    
+      <category term="CSharp" scheme="http://nas.lus.red/categories/CSharp/"/>
+    
+    
+      <category term="CSharp" scheme="http://nas.lus.red/tags/CSharp/"/>
+    
+      <category term="笔记" scheme="http://nas.lus.red/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+</feed>
