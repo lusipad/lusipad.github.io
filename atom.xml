@@ -85,16 +85,16 @@
     <link href="http://nas.lus.red/C-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E8%AF%BB%E5%90%8E%E6%84%9F.html"/>
     <id>http://nas.lus.red/C-性能优化-读后感.html</id>
     <published>2018-12-02T17:28:02.000Z</published>
-    <updated>2020-01-10T19:58:38.985Z</updated>
+    <updated>2020-01-10T20:01:19.994Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://img.lus.red/blog/OrmPGU.png" alt="封面"></p><p>拜读了<code>Kurt Guntherot</code>h的<code>Optimized C++: Proven Techniques for Heightened Performance(&lt;C++性能优化指南&gt;)</code>, 除了要吐槽下作者各种强行引用各种名人名言外, 还是受益良多的. 之前对于性能优化, 比较茫然, 最多也就能说得出一些常用的优化手段, 比如不用值传递啊, vector需要reverse啊, 各种排序算法性能啊.. 总之就是杂七杂八根据没个头绪.</p><p>最大的感受就是一点: 法有尽, 而术无穷.</p><p>现在的计算机性能不断增长, 所以即使是性能优化, 也在不断的演进. 一些比如PIMPL之类, 针对于以前编译慢的优化, 在如今, 完全可以忽略不计了.对于现在的C++性能优化, 我们应该抓住其主要矛盾: 1. 算法/逻辑 2. 硬件瓶颈.</p><p>从算法逻辑的角度, 选用更好的编译器, 更好的处理逻辑, 更好的内存结构.</p><p>从硬件的角度, 处理现在最大的瓶颈—内存, 减少内存分配复制.</p><p>现在只是简单过了一遍, 对于其中的并发优化, 内存管理器优化等还是需要进一步学习. 打算后面再看下Windows/Visual Studio相关的性能分析和优化等, 重新好好做个总结.</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://img.lus.red/blog/OrmPGU.png" alt="封面" style="zoom:50%;"></p><p>拜读了<code>Kurt Guntherot</code>h的<code>Optimized C++: Proven Techniques for Heightened Performance(&lt;C++性能优化指南&gt;)</code>, 除了要吐槽下作者各种强行引用各种名人名言外, 还是受益良多的. 之前对于性能优化, 比较茫然, 最多也就能说得出一些常用的优化手段, 比如不用值传递啊, vector需要reverse啊, 各种排序算法性能啊.. 总之就是杂七杂八根据没个头绪.</p><p>最大的感受就是一点: 法有尽, 而术无穷.</p><p>现在的计算机性能不断增长, 所以即使是性能优化, 也在不断的演进. 一些比如PIMPL之类, 针对于以前编译慢的优化, 在如今, 完全可以忽略不计了.对于现在的C++性能优化, 我们应该抓住其主要矛盾: 1. 算法/逻辑 2. 硬件瓶颈.</p><p>从算法逻辑的角度, 选用更好的编译器, 更好的处理逻辑, 更好的内存结构.</p><p>从硬件的角度, 处理现在最大的瓶颈—内存, 减少内存分配复制.</p><p>现在只是简单过了一遍, 对于其中的并发优化, 内存管理器优化等还是需要进一步学习. 打算后面再看下Windows/Visual Studio相关的性能分析和优化等, 重新好好做个总结.</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;http://img.lus.red/blog/OrmPGU.png&quot; alt=&quot;封面&quot;&gt;&lt;/p&gt;
-&lt;p&gt;拜读了&lt;code&gt;Kurt Guntherot&lt;/code&gt;h的&lt;code&gt;Optimized C++: Proven Techniques for
+        &lt;p&gt;&lt;img src=&quot;http://img.lus.red/blog/OrmPGU.png&quot; alt=&quot;封面&quot; style=&quot;zoom:50%;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;拜读了&lt;code&gt;Kurt Guntherot&lt;/code&gt;h的&lt;code&gt;Optimized C++: Pro
       
     
     </summary>
