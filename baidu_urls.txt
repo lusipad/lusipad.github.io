@@ -1,3 +1,3 @@
 http://nas.lus.red/程序员的三门课-读书笔记.html
-http://nas.lus.red/lua加密.html
 http://nas.lus.red/lua序列化.html
+http://nas.lus.red/C-性能优化-读后感.html
