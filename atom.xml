@@ -241,7 +241,7 @@
     <link href="http://nas.lus.red/CSharp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"/>
     <id>http://nas.lus.red/CSharp学习笔记.html</id>
     <published>2018-11-18T14:08:14.000Z</published>
-    <updated>2020-01-10T18:22:11.064Z</updated>
+    <updated>2020-01-11T15:04:10.560Z</updated>
     
     <content type="html"><![CDATA[<h2><span id="背景描述">背景描述</span></h2><p>记录自己学习C#的学习记录</p><h2><span id="阅读和学习">阅读和学习</span></h2><h3><span id="视频">视频</span></h3><ul><li>刘铁锰 <a href="https://www.bilibili.com/video/av1422127?from=search&amp;seid=17309818711796899189" target="_blank" rel="noopener">&lt;C#语言入门详解&gt;</a></li></ul><h3><span id="读书笔记">读书笔记</span></h3><h2><span id="学习笔记">学习笔记</span></h2><ul><li><a href="C-学习笔记-委托.html">委托</a></li></ul>]]></content>
     
@@ -256,10 +256,10 @@
     
     </summary>
     
-      <category term="CSharp" scheme="http://nas.lus.red/categories/CSharp/"/>
+      <category term="C#" scheme="http://nas.lus.red/categories/C/"/>
     
     
-      <category term="CSharp" scheme="http://nas.lus.red/tags/CSharp/"/>
+      <category term="C#" scheme="http://nas.lus.red/tags/C/"/>
     
       <category term="笔记" scheme="http://nas.lus.red/tags/%E7%AC%94%E8%AE%B0/"/>
     
