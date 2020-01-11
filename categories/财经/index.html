@@ -2,23 +2,22 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>C#学习笔记-委托 - lusipad的博客</title>
+<title>分类: 财经 - lusipad的博客</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="什么是委托委托是C#中的一个重要的概念.委托是一个对象, 它本身含有一个或者多个方法, 可以认为是一个类型安全的, 面向对象的C++函数指针.是对于C++中函数指针的一种”升级”, 因为指针除了地址本身外, 并没有办法携带其他描述的信息.而委托可以">
-<meta name="keywords" content="CSharp,委托">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C#学习笔记-委托">
-<meta property="og:url" content="http://nas.lus.red/C-学习笔记-委托.html">
+    <meta name="description" content="lusipad的博客,记录生活和学习">
+<meta name="keywords" content="lusipad blog lusred 陆续疯了 luxufengle">
+<meta property="og:type" content="website">
+<meta property="og:title" content="lusipad的博客">
+<meta property="og:url" content="http://nas.lus.red/categories/财经/index.html">
 <meta property="og:site_name" content="lusipad的博客">
-<meta property="og:description" content="什么是委托委托是C#中的一个重要的概念.委托是一个对象, 它本身含有一个或者多个方法, 可以认为是一个类型安全的, 面向对象的C++函数指针.是对于C++中函数指针的一种”升级”, 因为指针除了地址本身外, 并没有办法携带其他描述的信息.而委托可以">
+<meta property="og:description" content="lusipad的博客,记录生活和学习">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-26T12:01:38.429Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C#学习笔记-委托">
-<meta name="twitter:description" content="什么是委托委托是C#中的一个重要的概念.委托是一个对象, 它本身含有一个或者多个方法, 可以认为是一个类型安全的, 面向对象的C++函数指针.是对于C++中函数指针的一种”升级”, 因为指针除了地址本身外, 并没有办法携带其他描述的信息.而委托可以">
+<meta name="twitter:title" content="lusipad的博客">
+<meta name="twitter:description" content="lusipad的博客,记录生活和学习">
 
 
 
@@ -84,7 +83,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="C#学习笔记-委托" height="28">
+                <img src="/images/logo.svg" alt="lusipad的博客" height="28">
             
             </a>
         </div>
@@ -130,22 +129,34 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/categories">分类</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">财经</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-19T00:27:32.000Z">2018-11-19</time>
+                <time class="level-item has-text-grey" datetime="2020-01-11T14:29:16.000Z">2020-01-11</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/CSharp/">CSharp</a>
+                <a class="has-link-grey -link" href="/categories/财经/">财经</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 649 个字)
+                    2 分钟 读完 (大约 315 个字)
                 </span>
                 
             </div>
@@ -153,73 +164,30 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                C#学习笔记-委托
+                <a class="has-link-black-ter" href="/没有硝烟的战场-索罗斯-VS-香港.html">没有硝烟的战场--索罗斯 VS 香港</a>
             
         </h1>
         <div class="content">
-            <h2><span id="什么是委托">什么是委托</span></h2><p>委托是C#中的一个重要的概念.<br>委托是一个对象, 它本身含有一个或者多个方法, 可以认为是一个类型安全的, 面向对象的C++函数指针.<br>是对于C++中函数指针的一种”升级”, 因为指针除了地址本身外, 并没有办法携带其他描述的信息.<br>而委托可以</p>
-<a id="more"></a>
-<h2><span id="一个简单的c函数指针例子">一个简单的C++函数指针例子</span></h2><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span>(*Calc)(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y);</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Sub</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">return</span> x - y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	Calc = Add;</span><br><span class="line">	<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; Calc(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">	Calc = Sub;</span><br><span class="line">	<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; Calc(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">-1</span><br></pre></td></tr></table></figure></p>
-<p>这里就是把函数的指针作为一个参数传递, 这样就可以通过一种方法去处理多个具有相同返回值和参数类型.</p>
-<h2><span id="c的函数指针例子">C#的函数指针例子</span></h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">namespace SampleDelegate</span><br><span class="line">&#123;</span><br><span class="line">    delegate int Calc(int x, int y);</span><br><span class="line"></span><br><span class="line">    class MainClass</span><br><span class="line">    &#123; </span><br><span class="line">        static int Add(int x, int y)</span><br><span class="line">        &#123;</span><br><span class="line">            return x + y;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        static int Sub(int x, int y)</span><br><span class="line">        &#123;</span><br><span class="line">            return x - y;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Calc calc;</span><br><span class="line">            calc = Add;</span><br><span class="line">            Console.WriteLine(calc(1, 2));</span><br><span class="line"></span><br><span class="line">            calc = Sub;</span><br><span class="line">            Console.WriteLine(calc(1, 2));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">-1</span><br></pre></td></tr></table></figure></p>
-<p>这个结果是C++函数指针的效果是相同的.</p>
-<h2><span id="委托的声明和创建">委托的声明和创建</span></h2><p>委托也是一种类, 所以也是一个引用.</p>
-<p>[delegate] [返回值] [对象名] [签名]<br>delegate void Calc(int x);</p>
-<ol>
-<li><p>使用new来创建<br>calc = new calc(Add);</p>
-</li>
-<li><p>快捷语法创建<br>calc = Add; </p>
-</li>
-</ol>
-<h3><span id="委托的组合">委托的组合</span></h3><p>委托实际是一个引用, 所以委托的组合其实是指向了一个新的委托.<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">calc1 = Add;</span><br><span class="line">calc2 = Sub;</span><br><span class="line">calc1 = calc1 + calc2;</span><br></pre></td></tr></table></figure></p>
-<p>也可以使用+=和-=<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">calc += Add;</span><br><span class="line">calc += Sub;</span><br><span class="line">calc -= Add;</span><br></pre></td></tr></table></figure></p>
-<h2><span id="委托的使用">委托的使用</span></h2><h3><span id="带参数返回值的委托">带参数/返回值的委托</span></h3><p>如果委托有返回值, 并且方法列表不止一个方法, 那么返回值就用最后一个.</p>
-<p>如果委托有引用参数, 在调用过程中, 会将参数的新值传给下一个方法.</p>
-<h3><span id="泛型委托">泛型委托</span></h3><p>除了使用固定的参数, 委托也支持使用泛型<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">namespace SampleDelegate</span><br><span class="line">&#123;</span><br><span class="line">    delegate T Calc&lt;T&gt;(T x, T y);</span><br><span class="line"></span><br><span class="line">    class MainClass</span><br><span class="line">    &#123; </span><br><span class="line">        static int Add(int x, int y)</span><br><span class="line">        &#123;</span><br><span class="line">            return x + y;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        static double Sub(double x, double y)</span><br><span class="line">        &#123;</span><br><span class="line">            return x - y;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Calc&lt;int&gt; calc;</span><br><span class="line">            calc = Add;</span><br><span class="line">            Console.WriteLine(calc(1, 2));</span><br><span class="line"></span><br><span class="line">            Calc&lt;double&gt; calc2;</span><br><span class="line">            calc2 = Sub;</span><br><span class="line">            Console.WriteLine(cal2(1, 2));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4><span id="actionltgt委托">Action&lt;&gt;委托</span></h4><p>Action就是系统定义的, 返回值为void的委托.</p>
-<h4><span id="funcltgt委托">Func&lt;&gt;委托</span></h4><p>Func就是系统定义的, 带有返回值的委托, 其中最后一个是返回值.</p>
-<p>实际上, .Net的许多重要API都大量的使用Action和Func</p>
-<h2><span id="委托的常见使用场景">委托的常见使用场景</span></h2><h3><span id="回调">回调</span></h3><h3><span id="使用注意事项">使用注意事项</span></h3><h2><span id="委托的代码实现">委托的代码实现</span></h2><h2><span id="本文参考">本文参考</span></h2><p>&lt;C#入门视频&gt;<br>&lt;图解C#教程&gt;<br>&lt;精通C#(第6版)&gt;</p>
-
+            <p>最近刷B站有点多, 主要是为了学习, 然后关注了一波涨姿势的UP主.</p>
+<p>其中<strong>巫师财经</strong>是我收藏夹里已经躺了老久了, <strong>lKs</strong>之前有一期视频, 讲述视频拍摄成本中, 就拿<strong>党妹</strong>, <strong>巫师财经</strong>等人举了例子, 其中对于<strong>巫师财经</strong>不乏溢美之词, 在他们去拍摄<strong>百万奢侈品进当铺</strong>那一集中, 富婆<strong>十音</strong>也直接一句不介绍了, 有兴趣的请去看巫师财经节目云云.</p>
+<p>然后今天看了后, 真香!</p>
         </div>
         
-        <div class="level is-size-7 is-uppercase">
+        
+        <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/CSharp/">CSharp</a>, <a class="has-link-grey -link" href="/tags/委托/">委托</a>
+                <a class="button is-size-7 is-light" href="/没有硝烟的战场-索罗斯-VS-香港.html#more">阅读更多</a>
                 </div>
             </div>
         </div>
         
         
-        
     </div>
 </div>
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/hexo建站实录.html">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">hexo建站实录</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/CSharp学习笔记.html">
-                <span class="level-item">C#学习笔记</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
+
 
 
 </div>
@@ -781,7 +749,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="C#学习笔记-委托" height="28">
+                    <img src="/images/logo.svg" alt="lusipad的博客" height="28">
                 
                 </a>
                 <p class="is-size-7">
