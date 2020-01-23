@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nas.lus.red/"/>
-  <updated>2020-01-22T14:20:16.750Z</updated>
+  <updated>2020-01-23T06:34:00.414Z</updated>
   <id>http://nas.lus.red/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>加油武汉</title>
+    <link href="http://nas.lus.red/%E5%8A%A0%E6%B2%B9%E6%AD%A6%E6%B1%89.html"/>
+    <id>http://nas.lus.red/加油武汉.html</id>
+    <published>2020-01-23T06:33:08.000Z</published>
+    <updated>2020-01-23T06:34:00.414Z</updated>
+    
+    <content type="html"><![CDATA[<h1><span id="加油武汉">加油武汉!</span></h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1&gt;&lt;span id=&quot;加油武汉&quot;&gt;加油武汉!&lt;/span&gt;&lt;/h1&gt;
+      
+    
+    </summary>
+    
+      <category term="杂记" scheme="http://nas.lus.red/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>&lt;不测的秘密-精准测试之路&gt;读后感</title>
