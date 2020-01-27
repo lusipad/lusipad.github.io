@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nas.lus.red/"/>
-  <updated>2020-01-23T06:34:00.414Z</updated>
+  <updated>2020-01-26T14:17:23.336Z</updated>
   <id>http://nas.lus.red/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&lt;Effective C++ 第三版&gt;读书笔记</title>
+    <link href="http://nas.lus.red/Effective-C-%E7%AC%AC%E4%B8%89%E7%89%88-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
+    <id>http://nas.lus.red/Effective-C-第三版-读书笔记.html</id>
+    <published>2020-01-26T13:48:11.000Z</published>
+    <updated>2020-01-26T14:17:23.336Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">主观评分: 9.5</span><br><span class="line">阅读时间: 24h(粗读)</span><br><span class="line">一句话点评: C++的第二本书.</span><br></pre></td></tr></table></figure><p>书中的忠告分为两类: <strong>一般性的设计策略</strong>, 以及带有具体细节的<strong>特定语言特性</strong>. 设计上的讨论集中于”如何在两个不同做法中择一完成某项任务.”</p><h2><span id="01-视c为一个语言联邦">01 视C++为一个语言联邦</span></h2><p>C++是个多重范型编程语言, procedural<strong>, </strong>object-oriented, generic, metaprogramming. </p><p><strong>C</strong>: block, statements, preprocessor, build-in data types, arrays, pointers</p><p><strong>Object-Oriented C++</strong>: classes, encapsulation(封装), inheritance(继承), polymorphism(多态)</p><p><strong>Template C++</strong></p><p><strong>STL</strong>: containers, iterators, alogrithms, function object.</p><p>C++高效编程守则视状况而变化, 取决于你使用C++的那一部分.</p><h2><span id="02-尽量以const-enum-inline替换define">02 尽量以const, enum, inline替换#define</span></h2><p>宁可以编译器替换预处理器.</p><p>对于单纯常量, 最好以const对象或enums替换#defines, 对于形似函数的宏, 最好改用inline函数替换#defines.</p><p><strong>对于C11, 你可以用constexpr来代替宏表达式</strong></p><h2><span id="03-尽可能使用const">03 尽可能使用const</span></h2><p>关键字const出现在星号左边, 表示被指物是常量; 如果出现在星号右边, 表示指针本身是常量; 如果出现在星号两边, 表示被指物和指针两者都是常量.</p><p>如果你希望迭代器所指的东西不可改动, 你需要的是const_iterator.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain hljs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span 
+      
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://nas.lus.red/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="C++" scheme="http://nas.lus.red/tags/C/"/>
+    
+      <category term="读书笔记" scheme="http://nas.lus.red/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>加油武汉</title>
@@ -58,11 +85,11 @@
       <category term="读书笔记" scheme="http://nas.lus.red/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="读书笔记" scheme="http://nas.lus.red/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="测试" scheme="http://nas.lus.red/tags/%E6%B5%8B%E8%AF%95/"/>
     
       <category term="精准测试" scheme="http://nas.lus.red/tags/%E7%B2%BE%E5%87%86%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="读书笔记" scheme="http://nas.lus.red/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
