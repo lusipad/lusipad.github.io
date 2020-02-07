@@ -145,7 +145,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 323 个字)
+                    34 分钟 读完 (大约 5144 个字)
                 </span>
                 
             </div>
@@ -153,7 +153,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/Effective-C-第三版-读书笔记.html">&lt;Effective C++ 第三版&gt;读书笔记</a>
+                <a class="has-link-black-ter" href="/Effective-C-第三版-读书笔记.html"></a>
             
         </h1>
         <div class="content">
@@ -170,6 +170,122 @@
 <p><strong>对于C11, 你可以用constexpr来代替宏表达式</strong></p>
 <h2><span id="03-尽可能使用const">03 尽可能使用const</span></h2><p>关键字const出现在星号左边, 表示被指物是常量; 如果出现在星号右边, 表示指针本身是常量; 如果出现在星号两边, 表示被指物和指针两者都是常量.</p>
 <p>如果你希望迭代器所指的东西不可改动, 你需要的是const_iterator.</p>
+<p>许多人漠视一件事实: 两个成员函数如果只是常量性不同, 可以被重载. 这样就会引入一个问题: <strong>成员函数如果是const意味着什么? 这里有两个概念: bitwise constness 和 logical constness.</strong></p>
+<p>bitwise const: 成员函数只有在不更改对象之任何成员变量(static除外)时才是const. 不幸的是许多成员函数虽然不具备const性质却能通过bitwise测试, 如:更改了”指针所指物”.</p>
+<p>logial constness: 一个const成员函数可以修改它所处理的对象内的某些bits, 但只有在客户端侦测不出的情况下才得如此.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">将某些东西声明为const可帮助编译器监测出错误用法.</span><br><span class="line"></span><br><span class="line">编译器强制实施bitwise constness, 但是你编写程序时应该使用&quot;概念上的常量性&quot;.</span><br><span class="line"></span><br><span class="line">当const和non-cost成员函数有着等价实现时, 令non-const版本调用const版本可避免代码重复.</span><br></pre></td></tr></table></figure>
+<h2><span id="04-确定对象被使用前已先被初始化">04 确定对象被使用前已先被初始化</span></h2><p>对象的成员变量的初始化动作发生在进入构造函数本体之前, 在构造函数内, 都不是初始化, 而是<strong>被赋值</strong>.所以构造函数一个较佳的写法是, 使用所谓的成员初始化列表来替换赋值函数.</p>
+<p>C++有着十分固定的成员初始化顺序, base classes更早于其derived classses被初始化, 而class的成员变量总是以其声明次序被初始化.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">为内置型对象进行手工初始化, 因为C++不保证初始化他们.</span><br><span class="line"></span><br><span class="line">构造函数最好使用成员初始列表, 而不是在构造函数本体内使用赋值操作. 初始值列出的成员变量, 其排列次序应该与他们在class中的声明次序相同.</span><br><span class="line"></span><br><span class="line">为免除跨编译单元之间初始化次序问题, 请以local static对象替换non-local static对象.</span><br></pre></td></tr></table></figure>
+<h2><span id="05-了解c默默调用了哪些函数">05 了解C++默默调用了哪些函数</span></h2><p>如果你自己没声明, 编译器就会为他声明一个copy构造函数, 一个copy assignment操作符和一个构造函数. 如果你没有声明任何构造函数, 编译器也会为你声明一个default构造函数, 所有这些函数都是public且inline的.</p>
+<h2><span id="06-若不想使用编译器自动生成的函数-就应该明确拒绝">06 若不想使用编译器自动生成的函数, 就应该明确拒绝</span></h2><p>声明一个成员函数, 阻止编译器创建, 并且令这些函数为private.</p>
+<h2><span id="07-为多态基类声明virtual析构函数">07 为多态基类声明virtual析构函数</span></h2><p>当class不被当做base class, 令其析构函数为virtual往往是个坏主意.</p>
+<p>想要实现virtual函数, 对象必须携带某些信息, 主要用来在运行期决定哪一个virtual函数该被调用, 这些信息通常由一个所谓的vptr(virtual table pointer)指针指出, 其指向一个由函数指针构成的table, 名为vtbl(virtual talbe), 每一个带有virtual函数的class都有一个对应的vtbl, 当对象调用某一个virtual函数, 实际被调用的函数取决于该对象的vptr所指的那个vtbl, 由编译器在其中寻找适当的函数指针.</p>
+<p>class内含virtual函数, 其对象的体积会增加(一个vptr也就是一个字节), 也不再和其他语言内的相同声明有着一样的结构, 不再可能把他传递至其他语言缩写的函数, 除非你明确补偿vptr.</p>
+<p>不要尝试着继承一个标准容器或者其他任何带有non-virtual析构函数的class.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">polymorphic(带有多态性质的)base classes应该声明一个virtual析构函数, 如果class带有任何virtual函数, 他就应该拥有一个virtual析构函数.</span><br><span class="line"></span><br><span class="line">classes的设计目的如果不是作为base classes使用, 或不是为了具备多态性, 就不应该声明virtual析构函数.</span><br></pre></td></tr></table></figure>
+<h2><span id="08-别让异常逃离析构函数">08 别让异常逃离析构函数</span></h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">析构函数绝对不要抛出异常</span><br><span class="line"></span><br><span class="line">如果客户需要对某个操作函数运行期间抛出的异常做出反应, 那么classes应该提供一个普通函数(而非在析构函数中)执行该操作</span><br></pre></td></tr></table></figure>
+<h2><span id="09-绝不在构造和析构过程中调用virtual函数">09 绝不在构造和析构过程中调用virtual函数</span></h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在构造和析构函数中不要调用virtual函数, 因为这类调用从不下降到derived class</span><br></pre></td></tr></table></figure>
+<h2><span id="10-令operator-返回一个reference-to-this">10 令operator= 返回一个reference to *this</span></h2><h2><span id="11-在operator中处理自我赋值">11 在operator=中处理”自我赋值”</span></h2><p>传统做法是由operator=最前面一个”证同测试”达到自我赋值的校验目的.</p>
+<p>如果你很关心效率, 可以把”证同测试”再次放回函数起始处, 然而这样做之前先问问自己, 你估计”自我赋值”的发生频率有多高? 因为这项测试也需要成本, 他会使代码变大一点, 并导入一个新的控制流分支, 而两者都会降低执行速度.</p>
+<p>自我赋值的一个替代方案是, 使用所谓的copy and swap技术.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">请确保对象自我赋值时operator=有良好行为, 其中技术包括比较&quot;来源对象&quot;和&quot;目标对象&quot;的地址, 精心周到的语句顺序, 以及copy-and-swap.</span><br><span class="line"></span><br><span class="line">确定任何函数如果操作一个以上的对象, 而其中多个对象是同一个对象时, 其行为仍然正确.</span><br></pre></td></tr></table></figure>
+<h2><span id="12-复制对象时勿忘其每一个成分">12 复制对象时勿忘其每一个成分</span></h2><p>当你便携一个copying函数, 请确保:</p>
+<p>(1) 复制所有local成员变量</p>
+<p>(2) 调用所有base classes内适当的copying函数</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Copying函数应该确保复制&quot;对象内的所有成员变量&quot;及&quot;所有base class成分&quot;.</span><br><span class="line"></span><br><span class="line">不要尝试以某个copying函数实现另一个copying函数, 应将共同机能放进第三个函数, 而是用两个coping函数共同调用.</span><br></pre></td></tr></table></figure>
+<h2><span id="13-以对象管理资源">13 以对象管理资源</span></h2><p>把资源放进对象内, 我们便可以依赖C++的”析构函数自动调用机制”来确保资源被释放.</p>
+<p>(1) 获得资源后立刻放进管理对象</p>
+<p>(2) 管理对象运用构造函数确保资源被释放</p>
+<p>未来预防如果多个auto_ptr指向同一个对象的问题, auto_ptr有一个不寻常的性质: 如果通过copy构造函数或copy操作符复制他们, 会变成null, 而复制所得的指针将取得资源的唯一拥有权.</p>
+<p>auto_ptr的替代方案是”引用技术型智慧指针”, 无法打破环状引用.</p>
+<p>并没有特别针对”C++动态分配数组”而设计的类似auto_ptr或trl::share_ptr那样的东西, 那是因为vector和string集合总是可以取代动态分配而得的数组.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">为防止资源泄露, 请使用RAII对象, 他们在构造函数中获得资源并在析构函数中释放资源.</span><br><span class="line"></span><br><span class="line">两个常被使用的RAII classes分别是trl::shared_ptr和auto_ptr.</span><br></pre></td></tr></table></figure>
+<h2><span id="14-在资源管理类中小心copying行为">14 在资源管理类中小心copying行为</span></h2><p>当一个RAII对象被复制, 会发生什么</p>
+<p>(1) 禁止复制</p>
+<p>(2) 对底层资源祭出”引用计数法”</p>
+<p>(3) 复制底部资源</p>
+<p>(4) 转移底部资源的拥有权</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">复制RAII对象必须一并复制它所管理的资源, 所以资源的copying行为决定RAII对象的copying行为.</span><br><span class="line"></span><br><span class="line">普遍而常见的RAII classes copying行为是: 抑制copying, 施行引用计数法, 不过其他行为也都可能被实现.</span><br></pre></td></tr></table></figure>
+<h2><span id="15-在资源管理类中提供对原始资源的访问">15 在资源管理类中提供对原始资源的访问</span></h2><p>是否提供一个显式转换函数(比如get成员函数), 将RAII classes转换为其底层资源, 或是应该提供隐式转换, 答案主要取决于RAII classes被设计执行的特定工作, 以及它被使用的情况. 最佳设计很可能是18: 让接口容易被正确使用, 不易被误用.</p>
+<p>你的内心也可能认为, RAII classes内的那个返回原始资源的函数, 与封装发生矛盾, RAII classes并不是为了封装某物而存在; 他们存在是为了确保一个特殊行为: 资源释放会发生.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">APIs往往要求访问原始资源, 所以每一个RAII class应该提供一个取得其所管理之资源的办法</span><br><span class="line"></span><br><span class="line">对原始资源的访问可能经由显示转换或隐式转换, 一般而言显式转换比较安全, 但隐式转换对客户比较方便</span><br></pre></td></tr></table></figure>
+<h2><span id="16-成对使用new和delete时要采用相同形式">16 成对使用new和delete时要采用相同形式</span></h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果你在new表达式中使用[], 必须在相应的delete表达式中也使用[]</span><br></pre></td></tr></table></figure>
+<h2><span id="17-以独立语句将newed对象置入智能指针">17 以独立语句将newed对象置入智能指针</span></h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一旦抛出异常, 有可能导致难以察觉的资源泄露.</span><br></pre></td></tr></table></figure>
+<h2><span id="18-让接口容易被正确使用-不易被误用">18 让接口容易被正确使用, 不易被误用</span></h2><p>提供行为一致的接口.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">好的接口很容易被正确使用, 不容易被误用.</span><br><span class="line"></span><br><span class="line">促进正确使用的办法包括接口的一致性,以及内置类型的行为兼容</span><br><span class="line"></span><br><span class="line">组织无用的办法包括尽力新类型, 限制类型上的操作, 束缚对象值, 以及消除客户的资源管理责任.</span><br><span class="line"></span><br><span class="line">shared_ptr支持定制型删除器, 可以预防DLL问题.</span><br></pre></td></tr></table></figure>
+<h2><span id="19-设计class犹如设计type">19 设计class犹如设计type</span></h2><p>新type的对象应该如何被创建和销毁?</p>
+<p>对象的初始化和对象的赋值该有什么样的差别?</p>
+<p>新type的对象如果被pass by value, 意味着什么?</p>
+<p>什么是type的合法性?</p>
+<p>你的心type需要配合某个继承图系吗?</p>
+<p>你的新type需要什么样的转换?</p>
+<p>什么样的操作符和函数对此新type而言是合理的?</p>
+<p>什么样的标准函数应该驳回?</p>
+<p>谁该取用新type的成员?</p>
+<p>什么是新type的未声明接口?</p>
+<p>你的新type有多么一般化?</p>
+<p>你真的需要一个新type吗?</p>
+<h2><span id="20-宁以pass-by-reference-to-const替换pass-by-value">20 宁以pass by reference to const替换pass by value</span></h2><p>以by reference方式传递参数也可以避免对象切割问题, 当一个derived class对象以by value方式传递并被视为一个base class对象, base class的copy构造函数会被调用, 而造成此对象的行为像个derived class对象的那些特化性质全被切割掉了, 仅留下一个base class对象.</p>
+<p>pass by reference通常意味着真正传递的是指针, 如果你有个对象属于内置类型, pass by value往往比pass by reference的效率高些. 这个忠告也适用于STL的迭代器和函数对象.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">尽量以pass by reference to const替代pass by value, 前者通常比较高效, 并可避免切割问题.</span><br><span class="line"></span><br><span class="line">以上规则并不适用于内置类型, 以及STL的迭代器和函数对象.</span><br></pre></td></tr></table></figure>
+<h2><span id="21-必须返回对象时-别妄想返回其reference">21 必须返回对象时, 别妄想返回其reference</span></h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不要返回pointer或reference指向一个local stack对象, 或返回reference指向一个heap-allocated对象, 或返回pointer或reference指向一个local static对象而又可能同时需要多个这样的对象.</span><br></pre></td></tr></table></figure>
+<h2><span id="22-将成员变量声明为private">22 将成员变量声明为private</span></h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将成员变量声明为private, 这可以赋予客户访问数据的一致性, 可细微划分访问控制, 允诺约束条件或者保证, 并提供class作者以充分的实现弹性.</span><br><span class="line"></span><br><span class="line">protected并不比public更具封装性.</span><br></pre></td></tr></table></figure>
+<h2><span id="23-宁以non-member-non-friend替换member函数">23 宁以non-member, non-friend替换member函数</span></h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这样做可以增加封装性, 包裹弹性和技能扩充性.</span><br></pre></td></tr></table></figure>
+<h2><span id="24-若所有参会皆需要类型转换-请为此提供non-member函数">24 若所有参会皆需要类型转换, 请为此提供non-member函数</span></h2><h2><span id="25-考虑写出一个一个不抛异常的swap函数">25 考虑写出一个一个不抛异常的swap函数</span></h2><p>这个是异常安全性编程的基础</p>
+<h2><span id="26-尽可能延后变量定义式的出现时间">26 尽可能延后变量定义式的出现时间</span></h2><p>虽然延后在大多数场景下都是适用的, 但是会破坏整个编码风格, 另外循环这个问题还是没有解决, 只能根据构造+析构和赋值哪个成本更高来选择.</p>
+<h2><span id="27-尽量少做转型动作">27 尽量少做转型动作</span></h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果可以, 尽量避免转型</span><br><span class="line"></span><br><span class="line">如果转型是必要的, 是这将它隐藏在某个函数背后, 客户端可以随意调用该函数, 而不需要将转型放进他们自己的代码里.</span><br><span class="line"></span><br><span class="line">宁可以使用C++-Stypple, 而不是旧式转型.</span><br></pre></td></tr></table></figure>
+<h2><span id="28-尽量避免返回handles指向对象内部成分">28 尽量避免返回handles指向对象内部成分</span></h2><h2><span id="29-为异常安全而努力是值得的">29 为异常安全而努力是值得的</span></h2><p>异常抛出时, 带有异常安全处理的函数会:</p>
+<ul>
+<li><p>不泄露任何资源</p>
+</li>
+<li><p>不允许数据破坏</p>
+</li>
+<li><p>基本承诺 (程序是在有效状态下)</p>
+</li>
+<li><p>强烈保证 (程序状态不改变)</p>
+</li>
+<li><p>nothrow保证</p>
+<p><strong>这里后续还要延伸下</strong></p>
+</li>
+</ul>
+<h2><span id="30-透彻了解inlining的里里外外">30 透彻了解inlining的里里外外</span></h2><p>inlining通常是编译期行为.</p>
+<p>inline是个申请, 编译器可以忽略.</p>
+<p>程序库设计者必须评估 将函数声明为inline的冲击: inline函数无法随着程序库的升级而升级. 一旦设计者修改了inline函数, 所有用到的客户端都必须重新编译.</p>
+<h2><span id="31-将文件夹的编译依存关系降至最低">31 将文件夹的编译依存关系降至最低</span></h2><p>当你对某个class的private修改, 你会发现build时要重新编译和链接, </p>
+<p>问题出现在C++并没有把 从接口从实现分离做得很好, class的定义中不仅描述了接口, 还有实现细节. 导致定义和其包含文件存在了编译依存关系.</p>
+<p>C++为什么不这么做? 因为<strong>正确的前置声明很复杂</strong>, 因为涉及额外的templates. 另外一点困难是, 编译器必须在编译期间知道对象的大小.</p>
+<p>在我们的代码中, 这个也是Pipeline会被分成Pipeline和PipelineImp的原因.</p>
+<p>如果使用object reference或pointer可以完成任务, 就不用使用object.</p>
+<p>如果能够, 尽量以class声明替换class定义式.</p>
+<p>为声明式和定义式提供不同的头文件.</p>
+<h2><span id="32-确定你的pubic继承模出is-a关系">32 确定你的pubic继承模出is-a关系</span></h2><p><strong>正方形和长方形的类如何设计? 好好思考下这个问题</strong></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public继承意味着is-a, 适用于base classes身上的每一件事情一定也适用于derived classes身上, 因为每一个derived class对象也都是一个base class对象.</span><br></pre></td></tr></table></figure>
+<h2><span id="33-避免遮掩继承而来的名称">33 避免遮掩继承而来的名称</span></h2><h2><span id="34-区分接口继承和实现继承">34 区分接口继承和实现继承</span></h2><p>这一章后面还要回头再总结下.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">接口继承和实现继承不同, 在public继承之下, derived classes总是继承base class的接口.</span><br><span class="line"></span><br><span class="line">pure virtual函数只具体指定接口继承.</span><br><span class="line"></span><br><span class="line">impure virtual函数具体指定接口继承及缺省实现继承.</span><br><span class="line"></span><br><span class="line">non-virtual 函数具体指定接口继承函数以及强制性实现继承.</span><br></pre></td></tr></table></figure>
+<h2><span id="35-考虑virtual函数以外的其他选择">35 考虑virtual函数以外的其他选择</span></h2><p>这里引入了思想流派, 主张virtual函数应该几乎总是private, 较好的设计师保留public函数, 但让它成为non-virtual, 并且调用一个private virtual函数.</p>
+<p>这个有点类似于将DoBefore, DoAfter变成了一个过程函数.</p>
+<p>作者在书中提出了集中方式, 比如Strategy模式+tr1:function, 古典的strategy模式的, 但是看上去都不是很modern, 所以这里记录下, 可能要拓展, 但是总体思想就是不要迷信”virtual”.</p>
+<h2><span id="36-绝不重新定义继承而来的non-virtual函数">36 绝不重新定义继承而来的non-virtual函数</span></h2><h2><span id="37-绝不重新定义继承而来的缺省参数值">37 绝不重新定义继承而来的缺省参数值</span></h2><h2><span id="38-通过符合塑模出has-a或根据某事物实现出">38 通过符合塑模出has-a或”根据某事物实现出”</span></h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">复合的意义和public继承完全不同</span><br><span class="line"></span><br><span class="line">在应用域, 复合意味着has-a, 在实现域, 复合意味着根据某事物实现出.</span><br></pre></td></tr></table></figure>
+<h2><span id="39-明智而谨慎地使用private继承">39 明智而谨慎地使用private继承</span></h2><p>private继承意味着根据某物实现出, 这个和我们的期望并不同, 而且可以用复合来代替. 不过private继承可能是empty base的一个最优解.</p>
+<h2><span id="40-明智而谨慎地使用多重继承">40 明智而谨慎地使用多重继承</span></h2><h2><span id="41-了解隐式接口和编译器多态">41 了解隐式接口和编译器多态</span></h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class和tempate都支持interfaces和polymorphism</span><br><span class="line"></span><br><span class="line">对classes而言, interface是explict, 以function signature为中心, polymorphism则是以virtual函数实现, 发生在运行时.</span><br><span class="line"></span><br><span class="line">对template参数而言, 接口是implict, 基于有效表达式, polymmorphism则是通过template具现化和function overloading resolution发生于编译器.</span><br></pre></td></tr></table></figure>
+<h2><span id="42-了解typename的双重意义">42 了解typename的双重意义</span></h2><p>因为C++其实并不知道你所定义的名称, 比如说classname C中C的含义, 而通过关键字typename, 则是可以显示指定.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">声明template参数时, 前缀关键字class和typename可互换.</span><br><span class="line"></span><br><span class="line">请使用关键字typename标志嵌套从属类型名称, 但不得在base class lists或member initialization list内以它作为base class的修饰符</span><br></pre></td></tr></table></figure>
+<h2><span id="43-学习处理模板化基类内的名称">43 学习处理模板化基类内的名称</span></h2><h2><span id="44-将与参数无关的代码抽离template">44 将与参数无关的代码抽离template</span></h2><h2><span id="45-运用成员函数模板接受所有兼容类型">45 运用成员函数模板接受所有兼容类型</span></h2><h2><span id="46-需要类型转换时请为模板定义非成员函数">46 需要类型转换时请为模板定义非成员函数</span></h2><h2><span id="47-清使用triaits-classes表现类型信息">47 清使用triaits classes表现类型信息</span></h2><h2><span id="48-认识template元编程">48 认识template元编程</span></h2><p>目前template用的少, 这个需要结合实践, 光看书效果不佳, 暂时记录下, 后续再补充, 并且感觉作者本书中对于元编程的例子都比较粗浅, 还要结合后续的看下.</p>
+<h2><span id="49-了解new-handler的行为">49 了解new-handler的行为</span></h2><p>这里的内容书上写得有点简单, 需要深入下, 不过解释了郑博之前说的”new出来的指针不可能为空”这个问题.</p>
+<h2><span id="50-了解new和delete的合理替换时机">50 了解new和delete的合理替换时机</span></h2><p>作者列举了一些替换new和delete的场景:</p>
+<ul>
+<li>为了检测错误</li>
+<li>为了手机动态分配内存之使用统计信息</li>
+<li>为了增加分配和归还的速度</li>
+<li>为了降低缺省内存管理器带来的空间额外开销</li>
+<li>为了弥补缺省分配器中的非最佳对齐位</li>
+<li>为了将相关对象成簇集中</li>
+<li>为了获得非传统的行为</li>
+</ul>
+<h2><span id="51-编写new和delete时需固守常规">51 编写new和delete时需固守常规</span></h2><p>这里提到了两个细节: 内存分配失败和空指针的删除, 但是我认为实际场景下不是这么简单的, 比如说我们的内存池, 其实还有很多其他的约定, 比如异常, 比如继承等等, 这些也是目前欠考虑的, 后续需要在设计内存池上继续下更多的功夫.</p>
+<h2><span id="52-写了placement-new也要写placement-delete">52 写了placement new也要写placement delete</span></h2><h2><span id="53-不雅轻易忽略编译器的警告">53 不雅轻易忽略编译器的警告</span></h2><h2><span id="54-让自己熟悉包括tr1在内的标准程序库">54 让自己熟悉包括TR1在内的标准程序库</span></h2><p>显然这条已经过时了, 在一项调查中, C11已经成为了C++的主要使用标准, 除此以外还有C19, 出乎人的意料.</p>
+<h2><span id="55-让自己熟悉boost">55 让自己熟悉Boost</span></h2><h2><span id="总结">总结</span></h2><p>纸上得来终觉浅, 绝知此事要躬行, 看完了<effective c++="">给人的感觉是一种破碎的感觉, 每一个点都比较独立, 所以后续的计划是(1) 阅读<more effective="" c++="">和<effective modern="" c++="">, (2) 重新梳理下思维导图结构, 并且考虑在三本书阅读完后, 是否可以由自己重新阐述所有的观点.</effective></more></effective></p>
 
         </div>
         
@@ -853,14 +969,14 @@
             
             <a href="/Effective-C-第三版-读书笔记.html" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="&lt;Effective C++ 第三版&gt;读书笔记">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-26T13:48:11.000Z">2020-01-26</time></div>
-                    <a href="/Effective-C-第三版-读书笔记.html" class="has-link-black-ter is-size-6">&lt;Effective C++ 第三版&gt;读书笔记</a>
+                    <a href="/Effective-C-第三版-读书笔记.html" class="has-link-black-ter is-size-6"></a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/读书笔记/">读书笔记</a>
                     </p>
