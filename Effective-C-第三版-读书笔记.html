@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="lusipad的博客">
 <meta property="og:description" content="123主观评分: 9.5阅读时间: 24h(粗读)一句话点评: C++的第二本书. 书中的忠告分为两类: 一般性的设计策略, 以及带有具体细节的特定语言特性. 设计上的讨论集中于”如何在两个不同做法中择一完成某项任务.” 01 视C++为一个语言联邦C++是个多重范型编程语言, procedural, object-oriented, generic, metaprogramming.  C: b">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-07T10:20:27.163Z">
+<meta property="og:updated_time" content="2020-02-07T10:31:11.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lusipad的博客">
 <meta name="twitter:description" content="123主观评分: 9.5阅读时间: 24h(粗读)一句话点评: C++的第二本书. 书中的忠告分为两类: 一般性的设计策略, 以及带有具体细节的特定语言特性. 设计上的讨论集中于”如何在两个不同做法中择一完成某项任务.” 01 视C++为一个语言联邦C++是个多重范型编程语言, procedural, object-oriented, generic, metaprogramming.  C: b">
@@ -145,7 +145,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    34 分钟 读完 (大约 5144 个字)
+                    34 分钟 读完 (大约 5145 个字)
                 </span>
                 
             </div>
@@ -168,6 +168,7 @@
 <h2><span id="02-尽量以const-enum-inline替换define">02 尽量以const, enum, inline替换#define</span></h2><p>宁可以编译器替换预处理器.</p>
 <p>对于单纯常量, 最好以const对象或enums替换#defines, 对于形似函数的宏, 最好改用inline函数替换#defines.</p>
 <p><strong>对于C11, 你可以用constexpr来代替宏表达式</strong></p>
+<a id="more"></a>
 <h2><span id="03-尽可能使用const">03 尽可能使用const</span></h2><p>关键字const出现在星号左边, 表示被指物是常量; 如果出现在星号右边, 表示指针本身是常量; 如果出现在星号两边, 表示被指物和指针两者都是常量.</p>
 <p>如果你希望迭代器所指的东西不可改动, 你需要的是const_iterator.</p>
 <p>许多人漠视一件事实: 两个成员函数如果只是常量性不同, 可以被重载. 这样就会引入一个问题: <strong>成员函数如果是const意味着什么? 这里有两个概念: bitwise constness 和 logical constness.</strong></p>
