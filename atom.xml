@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nas.lus.red/"/>
-  <updated>2020-02-07T10:31:11.772Z</updated>
+  <updated>2020-02-23T13:28:18.244Z</updated>
   <id>http://nas.lus.red/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《代码整洁之道》读书笔记</title>
+    <link href="http://nas.lus.red/%E3%80%8A%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
+    <id>http://nas.lus.red/《代码整洁之道》读书笔记.html</id>
+    <published>2020-02-23T13:15:59.000Z</published>
+    <updated>2020-02-23T13:28:18.244Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">主观评分: 9.5</span><br><span class="line">阅读时间: 8h(粗读)</span><br><span class="line">一句话点评: 从初级程序员升级的必备书籍.</span><br></pre></td></tr></table></figure><p><img src="http://img.lus.red/blog/wth6gB.png" alt="封面"></p><a id="more"></a><p>发现还是使用思维导图更加适合作为书的笔记, 所以打算以后所有的学习笔记, 都改成思维导图的形式.</p><p>当你从初级程序员往上升级的时候, 这本书绝对会让你醍醐灌顶. 因为不使用 Java, 所以书的后几章没怎么看, 但是前几章真的是看了好几遍, 特别喜欢. “糟糕的代码”引入混乱, 而你则对此毫无办法, 只有再挖一个新的坑, 周而复始.</p><p>而作者抽丝剥茧, 一点点的深入, 把SOLID, 编码规范, TDD等思想都揉碎了, 然后在一个个章节中, 一个个案例中再重新组合起来.</p><p><img src="http://img.lus.red/blog/代码整洁之道.png" alt="思维导图"></p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain hljs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;主观评分: 9.5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;阅读时间: 8h(粗读)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;一句话点评: 从初级程序员升级的必备书籍.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;http://img.lus.red/blog/wth6gB.png&quot; alt=&quot;封面&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://nas.lus.red/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="代码整洁之道" scheme="http://nas.lus.red/tags/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/"/>
+    
+      <category term="读书笔记" scheme="http://nas.lus.red/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="软件工程" scheme="http://nas.lus.red/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -92,11 +119,11 @@
       <category term="读书笔记" scheme="http://nas.lus.red/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="读书笔记" scheme="http://nas.lus.red/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
       <category term="测试" scheme="http://nas.lus.red/tags/%E6%B5%8B%E8%AF%95/"/>
     
       <category term="精准测试" scheme="http://nas.lus.red/tags/%E7%B2%BE%E5%87%86%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="读书笔记" scheme="http://nas.lus.red/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
