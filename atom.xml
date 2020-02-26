@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nas.lus.red/"/>
-  <updated>2020-02-23T13:28:18.244Z</updated>
+  <updated>2020-02-26T13:22:46.252Z</updated>
   <id>http://nas.lus.red/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&lt;平衡记分卡&gt;学习笔记</title>
+    <link href="http://nas.lus.red/%E5%B9%B3%E8%A1%A1%E8%AE%B0%E5%88%86%E5%8D%A1-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"/>
+    <id>http://nas.lus.red/平衡记分卡-学习笔记.html</id>
+    <published>2020-02-26T13:04:40.000Z</published>
+    <updated>2020-02-26T13:22:46.252Z</updated>
+    
+    <content type="html"><![CDATA[<p>因为排年度计划需要, 所以学习了下平衡记分卡, 以及其如何应用.</p><p>从我粗浅的认知来看, 平衡平衡记分卡 就是一种 战略管理 + KPI的组合工具, 通过因果关系将逐层分解并联系起来, 和目前热门的OKR相比, 平衡记分卡时间周期更长, 容易变味成KPI天坑的可能. 其实我个人还是挺喜欢OKR的, 但是自觉才疏学浅, 还是无法能够带领团队去做好, 或许可以尝试一番?</p><a id="more"></a><p><img src="http://img.lus.red/blog/平衡计分卡.png" alt="平衡记分卡思维导图"></p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因为排年度计划需要, 所以学习了下平衡记分卡, 以及其如何应用.&lt;/p&gt;
+&lt;p&gt;从我粗浅的认知来看, 平衡平衡记分卡 就是一种 战略管理 + KPI的组合工具, 通过因果关系将逐层分解并联系起来, 和目前热门的OKR相比, 平衡记分卡时间周期更长, 容易变味成KPI天坑的可能. 其实我个人还是挺喜欢OKR的, 但是自觉才疏学浅, 还是无法能够带领团队去做好, 或许可以尝试一番?&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://nas.lus.red/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="平衡记分卡" scheme="http://nas.lus.red/tags/%E5%B9%B3%E8%A1%A1%E8%AE%B0%E5%88%86%E5%8D%A1/"/>
+    
+      <category term="管理" scheme="http://nas.lus.red/tags/%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>《代码整洁之道》读书笔记</title>
@@ -174,9 +199,9 @@
     </summary>
     
     
-      <category term="C#" scheme="http://nas.lus.red/tags/C/"/>
-    
       <category term="C++" scheme="http://nas.lus.red/tags/C/"/>
+    
+      <category term="C#" scheme="http://nas.lus.red/tags/C/"/>
     
       <category term="学习路线" scheme="http://nas.lus.red/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
     
