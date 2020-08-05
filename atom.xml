@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nas.lus.red/"/>
-  <updated>2020-02-26T13:22:46.252Z</updated>
+  <updated>2020-08-05T22:17:54.792Z</updated>
   <id>http://nas.lus.red/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>街舞和编程</title>
+    <link href="http://nas.lus.red/%E8%A1%97%E8%88%9E%E5%92%8C%E7%BC%96%E7%A8%8B.html"/>
+    <id>http://nas.lus.red/街舞和编程.html</id>
+    <published>2020-08-05T21:39:36.000Z</published>
+    <updated>2020-08-05T22:17:54.792Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在看&lt;这就是街舞3&gt;, 从第一季看到现在, 总觉得街舞跟编程其实有很多共通之处.</p><h2><span id="街舞中的-old-school-和-new-shcool">街舞中的 old school 和 new shcool</span></h2><p>街舞分为 old school 和 new school, 主要有两种区分方式: 舞种和风格.</p><p>按照舞种区分的话, 前者主要是 Poping, Locking, Breaking, Waccking, 后者则有Hip-hop, House, Krump.. 本身是按照创造的年代来区分的, 这个是没有争议的.</p><p>按照风格来区分的话, old school 则可以理解为传统风格, 以 party 形式呈现, 比如大家围成一圈圈跳舞, 不管是 battle, 还是 freestyle, 都是这种场景下的必然产物, 而 new shcool 则可以理解为现代风格, 以舞台的方式呈现, 注重编排, 队形和整体效果, 所以 urban, swag都会归类于此, 而因为界定的边界模糊, 所以这里的争议也是比较多的.</p><h2><span id="编程语言和街舞">编程语言和街舞</span></h2><p>以下是按照我个人浅薄理解的, 编程语言和街舞类型的对号入座, 博君一笑哈哈哈.</p><p>C: Breaking, 老 OG 了, 基本就是单打独斗之王, 一个人就能炸场, 一堆人反而捉虾. 最爱炫技, 最爱 power move, 偶尔出个会 urban 的, 简直可以当国宝.</p><p>C++: Old Hip-hop, 啥都能干, 舞种融合的鼻祖了, 但是跟 new school 相比, 又太 naive 了. 能单人也能团队, 但是更多以团队的形式进行存在. </p><p>Java: New Hip-hop, 脱胎于 Hip-hop, 但是更偏向于呈现形式, 更简单, 快速入手, 也很强大.</p><p>C#: House, 也是脱胎于 Hip-hop, 更随意, 更实用, 看似相似实则不同, 还有一堆大佬在维护.</p><p>Python: Locking, 简单实用, 一天学会一周齐舞不是梦, 而且非常的欢乐.</p><p>Go: Swag, 将某一方面做到了极致, 大家自然就会记住你了.</p><p>JS: Urban, 谁好用谁, 天下框架茫茫多, 扒舞扒到眼花花.</p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近在看&amp;lt;这就是街舞3&amp;gt;, 从第一季看到现在, 总觉得街舞跟编程其实有很多共通之处.&lt;/p&gt;
+&lt;h2&gt;&lt;span id=&quot;街舞中的-old-school-和-new-shcool&quot;&gt;街舞中的 old school 和 new shcool&lt;/span&gt;&lt;/h2&gt;
+      
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://nas.lus.red/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="感想" scheme="http://nas.lus.red/tags/%E6%84%9F%E6%83%B3/"/>
+    
+      <category term="编程" scheme="http://nas.lus.red/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>&lt;平衡记分卡&gt;学习笔记</title>
