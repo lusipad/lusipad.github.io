@@ -4,6 +4,40 @@
   
   
   <entry>
+    <title>CppInterview</title>
+    <link href="/2023/11/28/CppInterview/"/>
+    <url>/2023/11/28/CppInterview/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CppRoadmap</title>
+    <link href="/2023/11/28/CppRoadmap/"/>
+    <url>/2023/11/28/CppRoadmap/</url>
+    
+    <content type="html"><![CDATA[<h1 id="C-Roadmap"><a href="#C-Roadmap" class="headerlink" title="C++ Roadmap"></a>C++ Roadmap</h1><p>在今年 3 月份的时候, 为了 给组内做一个 C++ 的教学, 所以我翻了许多的资料, 后来觉得 <a href="https://github.com/salmer/CppDeveloperRoadmap">salmer&#x2F;CppDeveloperRoadmap: The roadmap for learning the C++ programming language for beginners and experienced devs. (github.com)</a> 这个开源项目深得我心, 所以将其翻译成了中文, 并且相关的 commit 都已经 merge 到该项目了.</p><p>现在回过头来, 我觉得自己这些年也比较懈怠了, 所以想要在后续的时间内, 将这一些 Point 都真正的展开起来, 并且将其和自己的工作能够结合起来, 而避免只是停留在喊喊口号上, 真正能够做到知行合一.</p><p>加油!</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+      <tag>学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2023 工博会</title>
     <link href="/2023/10/06/2023-ciff-expo/"/>
     <url>/2023/10/06/2023-ciff-expo/</url>
