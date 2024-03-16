@@ -16,27 +16,27 @@
   <meta name="author" content="lusipad">
   <meta name="keywords" content="">
   
-    <meta name="description" content="WSL 编译 linuxcnc (Debian &#x2F; Ubuntu)验证下来 Debian 和 Ubuntu 都可以使用 (未开启实时补丁的情况下, 会在非实时环境运行), 但是 GUI 部分, Ubuntu 和 WSL 的集成度更高. 如果只是简单的使用和调试, 个人推荐使用 Ubuntu 操作步骤 开启 WSL  控制面板 - 程序和功能 - 启用或关闭 Windows 功能 - 适用">
+    <meta name="description" content="WSL 编译 linuxcnc (Debian &#x2F; Ubuntu)验证下来 Debian 和 Ubuntu 都可以使用 (未开启实时补丁的情况下，会在非实时环境运行), 但是 GUI 部分，Ubuntu 和 WSL 的集成度更高。 如果只是简单的使用和调试，个人推荐使用 Ubuntu 操作步骤 开启 WSL  控制面板 - 程序和功能 - 启用或关闭 Windows 功能 - 适用于 L">
 <meta property="og:type" content="article">
-<meta property="og:title" content="install_linuxcnc_in_wsl">
+<meta property="og:title" content="WSL 编译 linuxcnc (Debian &#x2F; Ubuntu)">
 <meta property="og:url" content="http://lusipad.com/2024/03/14/install-linuxcnc-in-wsl/index.html">
 <meta property="og:site_name" content="lusipad 的个人小站">
-<meta property="og:description" content="WSL 编译 linuxcnc (Debian &#x2F; Ubuntu)验证下来 Debian 和 Ubuntu 都可以使用 (未开启实时补丁的情况下, 会在非实时环境运行), 但是 GUI 部分, Ubuntu 和 WSL 的集成度更高. 如果只是简单的使用和调试, 个人推荐使用 Ubuntu 操作步骤 开启 WSL  控制面板 - 程序和功能 - 启用或关闭 Windows 功能 - 适用">
+<meta property="og:description" content="WSL 编译 linuxcnc (Debian &#x2F; Ubuntu)验证下来 Debian 和 Ubuntu 都可以使用 (未开启实时补丁的情况下，会在非实时环境运行), 但是 GUI 部分，Ubuntu 和 WSL 的集成度更高。 如果只是简单的使用和调试，个人推荐使用 Ubuntu 操作步骤 开启 WSL  控制面板 - 程序和功能 - 启用或关闭 Windows 功能 - 适用于 L">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/ae29cc2c-7d17-4037-983d-b64ef3cbecf9/Untitled.png">
-<meta property="og:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/b212ce1b-f5dc-4c92-80fc-b84fe072e6ef/Untitled.png">
-<meta property="og:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/1b113fb2-2200-492c-ada3-c91e8fe050be/Untitled.png">
+<meta property="og:image" content="http://lusipad.com/image.png">
 <meta property="og:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/dce25a00-a85f-4667-9593-7be8c7481722/Untitled.png">
 <meta property="article:published_time" content="2024-03-14T13:36:23.000Z">
-<meta property="article:modified_time" content="2024-03-14T13:39:28.196Z">
+<meta property="article:modified_time" content="2024-03-16T04:52:44.338Z">
 <meta property="article:author" content="lusipad">
-<meta property="article:tag" content="linuxcnc, wsl">
+<meta property="article:tag" content="数控">
+<meta property="article:tag" content="linuxcnc">
+<meta property="article:tag" content="wsl">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/ae29cc2c-7d17-4037-983d-b64ef3cbecf9/Untitled.png">
+<meta name="twitter:image" content="http://lusipad.com/image.png">
   
   
   
-  <title>install_linuxcnc_in_wsl - lusipad 的个人小站</title>
+  <title>WSL 编译 linuxcnc (Debian / Ubuntu) - lusipad 的个人小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="install_linuxcnc_in_wsl"></span>
+            <span id="subtitle" data-typed-text="WSL 编译 linuxcnc (Debian / Ubuntu)"></span>
           
         </div>
 
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          2k 字
         
       </span>
     
@@ -248,7 +248,7 @@
         
         
         
-          14 分钟
+          18 分钟
         
       </span>
     
@@ -285,17 +285,17 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">install_linuxcnc_in_wsl</h1>
+            <h1 id="seo-header">WSL 编译 linuxcnc (Debian / Ubuntu)</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="WSL-编译-linuxcnc-Debian-Ubuntu"><a href="#WSL-编译-linuxcnc-Debian-Ubuntu" class="headerlink" title="WSL 编译 linuxcnc (Debian &#x2F; Ubuntu)"></a>WSL 编译 linuxcnc (Debian &#x2F; Ubuntu)</h1><p>验证下来 Debian 和 Ubuntu 都可以使用 (未开启实时补丁的情况下, 会在非实时环境运行), 但是 GUI 部分, Ubuntu 和 WSL 的集成度更高.</p>
-<p><strong>如果只是简单的使用和调试, 个人推荐使用 Ubuntu</strong></p>
+                <h1 id="WSL-编译-linuxcnc-Debian-Ubuntu"><a href="#WSL-编译-linuxcnc-Debian-Ubuntu" class="headerlink" title="WSL 编译 linuxcnc (Debian &#x2F; Ubuntu)"></a>WSL 编译 linuxcnc (Debian &#x2F; Ubuntu)</h1><p>验证下来 Debian 和 Ubuntu 都可以使用 (未开启实时补丁的情况下，会在非实时环境运行), 但是 GUI 部分，Ubuntu 和 WSL 的集成度更高。</p>
+<p><strong>如果只是简单的使用和调试，个人推荐使用 Ubuntu</strong></p>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a><strong>操作步骤</strong></h2><ol>
 <li><p>开启 WSL</p>
 <p> 控制面板 - 程序和功能 - 启用或关闭 Windows 功能 - 适用于 Linux 的 Windows 子系统</p>
-<p> 在 Windows 11 中, 默认就是 WSL2, 所以下文都是基于 WSL2 的</p>
+<p> 在 Windows 11 中，默认就是 WSL2, 所以下文都是基于 WSL2 的</p>
 <p> 记得在 Powershell 中先更新下 wsl</p>
  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">wsl <span class="hljs-literal">--update</span><br>wsl <span class="hljs-literal">--shutdown</span><br></code></pre></td></tr></table></figure>
 </li>
@@ -303,26 +303,26 @@
 <p> 在 microsoft store 里下载和安装 debian 或者 Ubuntu</p>
 </li>
 <li><p>换源</p>
-<p> <strong>Ubuntu 可以不用换, 默认源速度也还可以</strong></p>
-<p> debian 默认使用的是欧洲的一个 CDN, 所以速度特别慢, 直接换下镜像源</p>
-<p> 修改方法:</p>
+<p> <strong>Ubuntu 可以不用换，默认源速度也还可以</strong></p>
+<p> debian 默认使用的是欧洲的一个 CDN, 所以速度特别慢，直接换下镜像源</p>
+<p> 修改方法：</p>
 <p> <code>sudo vi /etc/apt/sources.list</code></p>
 <p> 将内容修改为</p>
  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk">deb http:<span class="hljs-regexp">//mi</span>rror.nju.edu.cn/debian bookworm main<br>deb http:<span class="hljs-regexp">//mi</span>rror.nju.edu.cn/debian bookworm-updates main<br>deb http:<span class="hljs-regexp">//mi</span>rror.nju.edu.cn/debian-security bookworm-security main<br>deb http:<span class="hljs-regexp">//mi</span>rror.nju.edu.cn/debian bookworm-backports main<br></code></pre></td></tr></table></figure>
 <blockquote>
 <p>[Tips]</p>
-<p>debian 里的 vi 是个不完整的, 所以输入上下之类的会有 ^B 这种转义符,</p>
-<p>所以可以考虑直接 dd 全删了, 然后 i 再复制上去, :wq 保存</p>
+<p>debian 里的 vi 是个不完整的，所以输入上下之类的会有 ^B 这种转义符，</p>
+<p>所以可以考虑直接 dd 全删了，然后 i 再复制上去，:wq 保存</p>
 </blockquote>
-<p> source 下, 或者直接重启下 debian 生效</p>
+<p> source 下，或者直接重启下 debian 生效</p>
 </li>
 <li><p>获取 linuxcnc 的源码和编译</p>
  <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs vim">sudo apt-<span class="hljs-built_in">get</span> <span class="hljs-keyword">update</span><br>sudo apt-<span class="hljs-built_in">get</span> install git<br>sudo apt-<span class="hljs-built_in">get</span> install <span class="hljs-keyword">python3</span><br>sudo apt-<span class="hljs-built_in">get</span> install <span class="hljs-keyword">python3</span>-gi<br>sudo apt-<span class="hljs-built_in">get</span> install <span class="hljs-keyword">python3</span>-gi-cairo<br>sudo apt-<span class="hljs-built_in">get</span> install <span class="hljs-keyword">python3</span>-pip<br><br>git clone https://github.<span class="hljs-keyword">com</span>/LinuxCNC/linuxcnc.git linuxcnc-dev<br><span class="hljs-keyword">cd</span> linuxcnc-dev<br>./debian/configure<br>sudo apt-<span class="hljs-built_in">get</span> build-dep .<br><br><span class="hljs-keyword">cd</span> src<br>./autogen.<span class="hljs-keyword">sh</span><br>./configure --with-realtime=uspace<br><span class="hljs-keyword">make</span><br>sudo <span class="hljs-keyword">make</span> setuid<br></code></pre></td></tr></table></figure>
-<p> 如果网络顺畅, 整个过程大概在 20~30 分钟</p>
+<p> 如果网络顺畅，整个过程大概在 20~30 分钟</p>
 <blockquote>
 <p>[Tips]</p>
-<p>如果网络不顺畅, 比如从 github 拉源码一直失败, 可以考虑挂代理</p>
-<p>以 Clash for windows 为例,</p>
+<p>如果网络不顺畅，比如从 github 拉源码一直失败，可以考虑挂代理</p>
+<p>以 Clash for windows 为例，</p>
 <ol>
 <li>在 windows 本机开启 Allow Lan</li>
 <li>在 debian 使用 <code>cat /etc/resolv.conf</code> 查看 dns</li>
@@ -337,19 +337,22 @@
 <p> 启动 linux cnc</p>
  <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">source</span> ..<span class="hljs-regexp">/scripts/</span>rip-environment<br>linuxcnc<br></code></pre></td></tr></table></figure>
 <p> 这个时候就会启动带界面的 linuxcnc</p>
-<p> <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/ae29cc2c-7d17-4037-983d-b64ef3cbecf9/Untitled.png" srcset="/img/loading.gif" lazyload alt="Untitled"></p>
-<p> <strong>对于 Ubuntu, 已经可以正常使用了.</strong></p>
-<p> <strong>但是 Debian, 会出现界面花屏的情况.</strong></p>
-<h3 id="使用-XLanuch-仅针对-Debian"><a href="#使用-XLanuch-仅针对-Debian" class="headerlink" title="使用 XLanuch (仅针对 Debian)"></a><strong>使用 XLanuch (仅针对 Debian)</strong></h3><ol>
-<li><p>在 windows 下载和安装 <a target="_blank" rel="noopener" href="https://github.com/marchaesen/vcxsrv/releases/tag/21.1.10">Release 21.1.10 · marchaesen&#x2F;vcxsrv (github.com)</a></p>
-</li>
-<li><p>开启 XLaunch</p>
-<p> <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/b212ce1b-f5dc-4c92-80fc-b84fe072e6ef/Untitled.png" srcset="/img/loading.gif" lazyload alt="Untitled"></p>
-<p> <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/1b113fb2-2200-492c-ada3-c91e8fe050be/Untitled.png" srcset="/img/loading.gif" lazyload alt="Untitled"></p>
 </li>
 </ol>
-</li>
-</ol>
+<p><img src="/image.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<pre><code class="hljs">**对于 Ubuntu, 已经可以正常使用了.**
+
+**但是 Debian, 会出现界面花屏的情况.**
+
+### **使用 XLanuch (仅针对 Debian)**
+
+1. 在 windows 下载和安装 [Release 21.1.10 · marchaesen/vcxsrv (github.com)](https://github.com/marchaesen/vcxsrv/releases/tag/21.1.10)
+2. 开启 XLaunch
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/b212ce1b-f5dc-4c92-80fc-b84fe072e6ef/Untitled.png)
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/1b113fb2-2200-492c-ada3-c91e8fe050be/Untitled.png)
+</code></pre>
 <p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/dce25a00-a85f-4667-9593-7be8c7481722/Untitled.png" srcset="/img/loading.gif" lazyload alt="Untitled"></p>
 <ol>
 <li><p>在 debian 启动 linuxcnc</p>
@@ -372,7 +375,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/linuxcnc-wsl/" class="print-no-link">#linuxcnc, wsl</a>
+        <a href="/tags/%E6%95%B0%E6%8E%A7/" class="print-no-link">#数控</a>
+      
+        <a href="/tags/linuxcnc/" class="print-no-link">#linuxcnc</a>
+      
+        <a href="/tags/wsl/" class="print-no-link">#wsl</a>
       
     </div>
   
@@ -384,7 +391,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>install_linuxcnc_in_wsl</div>
+      <div>WSL 编译 linuxcnc (Debian / Ubuntu)</div>
       <div>http://lusipad.com/2024/03/14/install-linuxcnc-in-wsl/</div>
     </div>
     <div class="license-meta">
