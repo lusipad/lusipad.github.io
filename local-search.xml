@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title>离线使用Cursor+本地大模型</title>
-    <link href="/2024/12/31/%E7%A6%BB%E7%BA%BF%E4%BD%BF%E7%94%A8Cursor-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
-    <url>/2024/12/31/%E7%A6%BB%E7%BA%BF%E4%BD%BF%E7%94%A8Cursor-%E6%9C%AC%E5%9C%B0%E5%A4%A7%E6%A8%A1%E5%9E%8B/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>WSL 编译 linuxcnc (Debian / Ubuntu)</title>
     <link href="/2024/03/14/install-linuxcnc-in-wsl/"/>
     <url>/2024/03/14/install-linuxcnc-in-wsl/</url>
