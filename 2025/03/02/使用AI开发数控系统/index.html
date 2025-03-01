@@ -1,0 +1,1462 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="lusipad">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="使用 AI 开发数控系统完整记录在过去的一周中，使用闲暇时间，使用 AI 从零开始开发一个数控系统。主要是为了验证下现有的 AI 对于复杂系统的开发，同时也记录了整个过程中所遇到的坑。 本次开发主要使用的 AI 工具为 Trae （字节出品，可免费使用 GPT4 和 Claude-3.5-Sonnet），Windsurf（15 刀的 Pro 版，包括 500 次 Chat 和 1500 次 Flo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用AI开发数控系统完整记录">
+<meta property="og:url" content="http://lusipad.com/2025/03/02/%E4%BD%BF%E7%94%A8AI%E5%BC%80%E5%8F%91%E6%95%B0%E6%8E%A7%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="lusipad 的个人小站">
+<meta property="og:description" content="使用 AI 开发数控系统完整记录在过去的一周中，使用闲暇时间，使用 AI 从零开始开发一个数控系统。主要是为了验证下现有的 AI 对于复杂系统的开发，同时也记录了整个过程中所遇到的坑。 本次开发主要使用的 AI 工具为 Trae （字节出品，可免费使用 GPT4 和 Claude-3.5-Sonnet），Windsurf（15 刀的 Pro 版，包括 500 次 Chat 和 1500 次 Flo">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://raw.githubusercontent.com/lusipad/imgur/main/img/image-20250302014405797.png">
+<meta property="og:image" content="http://lusipad.com/%E4%BD%BF%E7%94%A8AI%E5%BC%80%E5%8F%91%E6%95%B0%E6%8E%A7%E7%B3%BB%E7%BB%9F.assets/image-20250302015222450.png">
+<meta property="article:published_time" content="2025-03-01T17:00:04.000Z">
+<meta property="article:modified_time" content="2025-03-01T18:09:22.467Z">
+<meta property="article:author" content="lusipad">
+<meta property="article:tag" content="AI, C++, 前端, web">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://raw.githubusercontent.com/lusipad/imgur/main/img/image-20250302014405797.png">
+  
+  
+  
+  <title>使用AI开发数控系统完整记录 - lusipad 的个人小站</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"lusipad.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>lusipad</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>文档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>目录</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://gpt.lusipad.com" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>GPT</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="使用AI开发数控系统完整记录"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-02 01:00" pubdate>
+          2025年3月2日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          72 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">使用AI开发数控系统完整记录</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="使用-AI-开发数控系统完整记录"><a href="#使用-AI-开发数控系统完整记录" class="headerlink" title="使用 AI 开发数控系统完整记录"></a>使用 AI 开发数控系统完整记录</h1><p>在过去的一周中，使用闲暇时间，使用 AI 从零开始开发一个数控系统。主要是为了验证下现有的 AI 对于复杂系统的开发，同时也记录了整个过程中所遇到的坑。</p>
+<p>本次开发主要使用的 AI 工具为 Trae （字节出品，可免费使用 GPT4 和 Claude-3.5-Sonnet），Windsurf（15 刀的 Pro 版，包括 500 次 Chat 和 1500 次 Flow，不管是查看文件、执行命令还是改写代码都算一次 Flow，模型方面主要使用的是 Claude-3.7-sonnet）</p>
+<p>前期用的 Trae，后期随着项目规模扩大，Trae 无法胜任后，换成了 WindSurf</p>
+<p>在具体的开发中，也尽量按照：先计划、后开发；使用 TDD 的方式，测试和开发交替进行。</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/lusipad/XXCNC">lusipad&#x2F;XXCNC: 一个用来验证一些想法的简单原型项目，主要由AI进行编写</a></p>
+<h2 id="1-需求沟通"><a href="#1-需求沟通" class="headerlink" title="1. 需求沟通"></a>1. 需求沟通</h2><h3 id="1-1-确定高层需求"><a href="#1-1-确定高层需求" class="headerlink" title="1.1 确定高层需求"></a>1.1 确定高层需求</h3><p>第一步先和 AI 进行了详细的沟通，我提出了自己的诉求</p>
+<blockquote>
+<p>Me: 我想开发一个数控系统，我们来聊下应该怎么设计吧</p>
+<p>AI：让我们来讨论数控系统的设计。数控系统是一个复杂的实时控制系统，需要考虑多个关键方面：</p>
+<ol>
+<li><p><strong>系统架构</strong></p>
+<ul>
+<li>实时控制层：负责底层运动控制、插补运算</li>
+<li>逻辑控制层：处理 PLC 逻辑、IO 控制</li>
+<li>应用层：用户界面、加工程序管理等</li>
+</ul>
+</li>
+<li><p><strong>核心功能模块</strong></p>
+<ul>
+<li>运动控制模块<ul>
+<li>轴控制</li>
+<li>插补算法（直线、圆弧等）</li>
+<li>加减速控制</li>
+</ul>
+</li>
+<li>G代码解析器</li>
+<li>刀具管理</li>
+<li>工件坐标系统</li>
+<li>人机界面（HMI）</li>
+</ul>
+</li>
+<li><p><strong>技术选型建议</strong></p>
+<ul>
+<li>实时控制层：C&#x2F;C++（保证实时性）</li>
+<li>逻辑控制：可以考虑 C++ 或工业控制专用语言</li>
+<li>界面层：Qt&#x2F;WPF 等现代 GUI 框架</li>
+</ul>
+</li>
+<li><p><strong>关键技术点</strong></p>
+<ul>
+<li>实时性保证</li>
+<li>运动控制算法</li>
+<li>安全机制</li>
+<li>误差补偿</li>
+</ul>
+</li>
+</ol>
+<p>您想先从哪个方面开始深入讨论？或者您对某个具体模块有特别的需求或疑问吗？</p>
+</blockquote>
+<h3 id="1-2-确定技术栈、具体的功模块划分"><a href="#1-2-确定技术栈、具体的功模块划分" class="headerlink" title="1.2 确定技术栈、具体的功模块划分"></a>1.2 确定技术栈、具体的功模块划分</h3><blockquote>
+<p>Me：技术方面我决定使用C++，所以模块我们如何划分</p>
+<p>AI：基于C++开发数控系统，我建议按以下方式进行模块划分：</p>
+<ol>
+<li>核心控制模块（Core）</li>
+<li>运动控制模块（Motion）</li>
+<li>插补引擎模块（Interpolation）</li>
+<li>G代码解析模块（GCode）</li>
+<li>HMI界面模块（UI）</li>
+<li>配置管理模块（Config）</li>
+<li>诊断和日志模块（Diagnostic）<br>建议的项目结构：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">d:\Repos\XXCNC\<br>├── src/<br>│   ├── Core/           // 核心控制模块<br>│   ├── Motion/         // 运动控制模块<br>│   ├── Interpolation/  // 插补引擎模块<br>│   ├── GCode/         // G代码解析模块<br>│   ├── UI/            // 用户界面模块<br>│   ├── Config/        // 配置管理模块<br>│   └── Diagnostic/    // 诊断和日志模块<br>├── include/           // 公共头文件<br>├── lib/              // 第三方库<br>└── tests/            // 单元测试<br></code></pre></td></tr></table></figure>
+
+<p>这种模块划分的优点：</p>
+<ol>
+<li>高内聚低耦合，每个模块职责明确</li>
+<li>便于多人协作开发</li>
+<li>便于单元测试</li>
+<li>便于后期维护和扩展</li>
+</ol>
+<p>Me：可以的，但是界面我不想使用QT等方式，我想提供webserver给外部使用，只提供简</p>
+<p>明白了，我们可以将UI模块改为WebServer模块，使用RESTful API提供服务。这样的设计更加轻量级且灵活。让我修改一下相关模块：</p>
+<p>移除原来的UI模块，替换为WebServer模块：</p>
+<p>修改后的项目结构：</p>
+<p>主要API功能：</p>
+<ol>
+<li><p>系统控制</p>
+<ul>
+<li>GET &#x2F;api&#x2F;v1&#x2F;status - 获取系统状态</li>
+<li>POST &#x2F;api&#x2F;v1&#x2F;emergency-stop - 紧急停止</li>
+</ul>
+</li>
+<li><p>轴控制</p>
+<ul>
+<li>GET &#x2F;api&#x2F;v1&#x2F;axis&#x2F;{id}&#x2F;status - 获取指定轴状态</li>
+<li>POST &#x2F;api&#x2F;v1&#x2F;axis&#x2F;{id}&#x2F;move - 控制指定轴移动</li>
+<li>POST &#x2F;api&#x2F;v1&#x2F;axis&#x2F;{id}&#x2F;home - 指定轴回零</li>
+</ul>
+</li>
+<li><p>程序控制</p>
+<ul>
+<li>POST &#x2F;api&#x2F;v1&#x2F;program&#x2F;upload - 上传G代码程序</li>
+<li>POST &#x2F;api&#x2F;v1&#x2F;program&#x2F;start - 开始执行程序</li>
+<li>POST &#x2F;api&#x2F;v1&#x2F;program&#x2F;pause - 暂停程序</li>
+<li>POST &#x2F;api&#x2F;v1&#x2F;program&#x2F;stop - 停止程序</li>
+</ul>
+</li>
+<li><p>配置管理</p>
+<ul>
+<li>GET &#x2F;api&#x2F;v1&#x2F;config - 获取系统配置</li>
+<li>PUT &#x2F;api&#x2F;v1&#x2F;config - 更新系统配置<br>对于Web服务器的实现，我建议使用以下几个C++库之一：</li>
+</ul>
+</li>
+<li><p>cpp-httplib - 轻量级HTTP服务器库</p>
+</li>
+<li><p>Crow - 现代C++ Web框架</p>
+</li>
+<li><p>Drogon - 高性能C++ Web应用框架<br>您觉得这个设计如何？我们可以进一步讨论具体的API设计或选择哪个Web框</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="2-项目规划"><a href="#2-项目规划" class="headerlink" title="2. 项目规划"></a>2. 项目规划</h2><h3 id="2-1-项目计划"><a href="#2-1-项目计划" class="headerlink" title="2.1 项目计划"></a>2.1 项目计划</h3><p><strong>这一步非常重要，让 AI 将数据拆分成详细的内容，后续可以让他直接根据计划和代码实现情况，就可以继续工作了</strong></p>
+<blockquote>
+<p>Me：可以的，你可以把这些工作都拆分成具体的工作，整理一个多人开发的工作清单吗</p>
+<p>AI：</p>
+<p>好的，我来帮您整理一个多人开发的工作清单，按照功能模块和优先级划分：</p>
+<h3 id="第一阶段：核心功能开发"><a href="#第一阶段：核心功能开发" class="headerlink" title="第一阶段：核心功能开发"></a>第一阶段：核心功能开发</h3><ol>
+<li><p><strong>核心控制模块（Core Team）</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 实现核心控制器框架</li>
+<li><input disabled="" type="checkbox"> 开发实时任务调度系统</li>
+<li><input disabled="" type="checkbox"> 实现系统状态管理</li>
+<li><input disabled="" type="checkbox"> 开发紧急停止处理机制</li>
+<li><input disabled="" type="checkbox"> 单元测试编写</li>
+</ul>
+</li>
+<li><p><strong>运动控制模块（Motion Team）</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 轴控制基础类实现</li>
+<li><input disabled="" type="checkbox"> 加减速算法开发</li>
+<li><input disabled="" type="checkbox"> 多轴协同控制</li>
+<li><input disabled="" type="checkbox"> 回零功能实现</li>
+<li><input disabled="" type="checkbox"> 单元测试编写</li>
+</ul>
+</li>
+<li><p><strong>插补引擎模块（Algorithm Team）</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 直线插补算法实现</li>
+<li><input disabled="" type="checkbox"> 圆弧插补算法实现</li>
+<li><input disabled="" type="checkbox"> 样条曲线插补实现</li>
+<li><input disabled="" type="checkbox"> 前瞻算法开发</li>
+<li><input disabled="" type="checkbox"> 算法性能优化</li>
+<li><input disabled="" type="checkbox"> 单元测试编写</li>
+</ul>
+</li>
+</ol>
+<h3 id="第二阶段：功能扩展"><a href="#第二阶段：功能扩展" class="headerlink" title="第二阶段：功能扩展"></a>第二阶段：功能扩展</h3><ol start="4">
+<li><p><strong>G代码解析模块（Parser Team）</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> G代码词法分析器开发</li>
+<li><input disabled="" type="checkbox"> G代码语法解析器开发</li>
+<li><input disabled="" type="checkbox"> 指令转换系统实现</li>
+<li><input disabled="" type="checkbox"> 支持自定义宏</li>
+<li><input disabled="" type="checkbox"> 单元测试编写</li>
+</ul>
+</li>
+<li><p><strong>Web服务器模块（Web Team）</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> HTTP服务器框架搭建</li>
+<li><input disabled="" type="checkbox"> RESTful API设计和实现</li>
+<li><input disabled="" type="checkbox"> WebSocket实时数据推送</li>
+<li><input disabled="" type="checkbox"> API文档编写</li>
+<li><input disabled="" type="checkbox"> 接口测试用例编写</li>
+</ul>
+</li>
+<li><p><strong>配置管理模块（Config Team）</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 配置文件格式设计</li>
+<li><input disabled="" type="checkbox"> 配置读写实现</li>
+<li><input disabled="" type="checkbox"> 配置验证机制</li>
+<li><input disabled="" type="checkbox"> 配置热更新功能</li>
+<li><input disabled="" type="checkbox"> 单元测试编写</li>
+</ul>
+</li>
+</ol>
+<h3 id="第三阶段：系统集成与优化"><a href="#第三阶段：系统集成与优化" class="headerlink" title="第三阶段：系统集成与优化"></a>第三阶段：系统集成与优化</h3><ol start="7">
+<li><p><strong>诊断和日志模块（Diagnostic Team）</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 日志系统实现</li>
+<li><input disabled="" type="checkbox"> 错误诊断功能</li>
+<li><input disabled="" type="checkbox"> 性能监控系统</li>
+<li><input disabled="" type="checkbox"> 数据统计功能</li>
+<li><input disabled="" type="checkbox"> 单元测试编写</li>
+</ul>
+</li>
+<li><p><strong>系统集成（Integration Team）</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 模块间通信机制实现</li>
+<li><input disabled="" type="checkbox"> 系统集成测试</li>
+<li><input disabled="" type="checkbox"> 性能测试和优化</li>
+<li><input disabled="" type="checkbox"> 内存泄漏检测</li>
+<li><input disabled="" type="checkbox"> 系统稳定性测试</li>
+</ul>
+</li>
+</ol>
+<h3 id="第四阶段：文档和工具"><a href="#第四阶段：文档和工具" class="headerlink" title="第四阶段：文档和工具"></a>第四阶段：文档和工具</h3><ol start="9">
+<li><p><strong>文档团队（Documentation Team）</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> API文档编写</li>
+<li><input disabled="" type="checkbox"> 系统架构文档</li>
+<li><input disabled="" type="checkbox"> 开发指南编写</li>
+<li><input disabled="" type="checkbox"> 用户手册编写</li>
+<li><input disabled="" type="checkbox"> 示例代码编写</li>
+</ul>
+</li>
+<li><p><strong>工具开发（Tools Team）</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 调试工具开发</li>
+<li><input disabled="" type="checkbox"> 性能分析工具</li>
+<li><input disabled="" type="checkbox"> 日志分析工具</li>
+<li><input disabled="" type="checkbox"> 配置工具开发</li>
+<li><input disabled="" type="checkbox"> 测试工具开发</li>
+</ul>
+</li>
+</ol>
+<h3 id="建议的团队配置："><a href="#建议的团队配置：" class="headerlink" title="建议的团队配置："></a>建议的团队配置：</h3><ul>
+<li>Core Team: 2-3人（高级开发工程师）</li>
+<li>Motion Team: 2人（运动控制专家）</li>
+<li>Algorithm Team: 2人（算法工程师）</li>
+<li>Parser Team: 1-2人（编译原理专家）</li>
+<li>Web Team: 2人（全栈开发工程师）</li>
+<li>Config Team: 1人（开发工程师）</li>
+<li>Diagnostic Team: 1-2人（开发工程师）</li>
+<li>Integration Team: 2人（系统工程师）</li>
+<li>Documentation Team: 1人（技术文档工程师）</li>
+<li>Tools Team: 1-2人（开发工程师）</li>
+</ul>
+<p>总人力需求：15-19人</p>
+<p>您觉得这个任务分配合理吗？我们可以根据实际情况调整团队规模和任务优先级。</p>
+<p>Me：不过我打算都使用AI来完成，你觉得提供什么样的计划和Prompt给AI编写会给好用</p>
+<p>AI：我来帮您设计一个基于AI辅助开发的计划，包括每个模块的Prompt设计思路：</p>
+<h3 id="1-核心控制模块开发"><a href="#1-核心控制模块开发" class="headerlink" title="1. 核心控制模块开发"></a>1. 核心控制模块开发</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plaintext:d:\Repos\XXCNC\docs\ai_tasks\core_module.md">开发步骤：<br>1. 框架设计<br>Prompt示例：<br>&quot;请设计一个实时数控系统的核心控制器类，需要包含以下功能：<br>- 实时任务调度<br>- 系统状态管理<br>- 紧急停止处理<br>- 与其他模块的通信接口<br>请提供详细的类设计和关键方法实现。&quot;<br><br>2. 实现细节<br>Prompt示例：<br>&quot;基于上述CoreController类设计，请实现实时任务调度系统，要求：<br>- 支持不同优先级的任务<br>- 确保关键任务的实时性<br>- 提供任务取消机制<br>- 包含完整的错误处理&quot;<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-运动控制模块开发"><a href="#2-运动控制模块开发" class="headerlink" title="2. 运动控制模块开发"></a>2. 运动控制模块开发</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plaintext:d:\Repos\XXCNC\docs\ai_tasks\motion_module.md">开发步骤：<br>1. 基础类设计<br>Prompt示例：<br>&quot;设计一个数控系统的运动控制模块，需要：<br>- 支持多轴控制<br>- 实现加减速算法<br>- 位置和速度控制<br>- 提供轴状态监控<br>请提供类图和核心接口设计。&quot;<br><br>2. 算法实现<br>Prompt示例：<br>&quot;实现S形加减速算法，要求：<br>- 支持加加速度限制<br>- 平滑的速度曲线<br>- 考虑机械特性<br>- 提供参数调整接口&quot;<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-插补引擎模块开发"><a href="#3-插补引擎模块开发" class="headerlink" title="3. 插补引擎模块开发"></a>3. 插补引擎模块开发</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs plaintext:d:\Repos\XXCNC\docs\ai_tasks\interpolation_module.md">开发步骤：<br>1. 算法框架<br>Prompt示例：<br>&quot;设计一个支持多种插补方式的插补引擎，包括：<br>- 直线插补<br>- 圆弧插补<br>- 样条曲线插补<br>请提供算法框架和关键数据结构。&quot;<br><br>2. 具体算法<br>Prompt示例：<br>&quot;实现三次样条曲线插补算法，要求：<br>- 保证路径连续性<br>- 优化计算效率<br>- 考虑速度规划<br>- 提供误差控制&quot;<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-Web服务器模块开发"><a href="#4-Web服务器模块开发" class="headerlink" title="4. Web服务器模块开发"></a>4. Web服务器模块开发</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plaintext:d:\Repos\XXCNC\docs\ai_tasks\webserver_module.md">开发步骤：<br>1. API设计<br>Prompt示例：<br>&quot;设计一个数控系统的RESTful API，需要包含：<br>- 系统状态查询<br>- 运动控制指令<br>- 程序文件管理<br>- 配置管理<br>请提供详细的API文档。&quot;<br><br>2. 实现细节<br>Prompt示例：<br>&quot;使用C++实现上述API中的运动控制接口，要求：<br>- 处理并发请求<br>- 实现实时数据推送<br>- 提供错误处理<br>- 支持认证授权&quot;<br></code></pre></td></tr></table></figure>
+
+<h3 id="开发流程建议"><a href="#开发流程建议" class="headerlink" title="开发流程建议"></a>开发流程建议</h3><ol>
+<li><p><strong>循序渐进</strong></p>
+<ul>
+<li>先让AI生成框架设计</li>
+<li>审查并确认设计合理性</li>
+<li>再让AI实现具体细节</li>
+<li>最后进行集成测试</li>
+</ul>
+</li>
+<li><p><strong>提示词技巧</strong></p>
+<ul>
+<li>明确指定输入输出格式</li>
+<li>提供具体的性能要求</li>
+<li>要求包含错误处理</li>
+<li>要求提供测试用例</li>
+</ul>
+</li>
+<li><p><strong>代码审查要点</strong></p>
+<ul>
+<li>检查实时性要求</li>
+<li>验证错误处理</li>
+<li>确认接口一致性</li>
+<li>检查内存管理</li>
+</ul>
+</li>
+<li><p><strong>迭代优化</strong></p>
+<ul>
+<li>收集实际运行数据</li>
+<li>针对性能瓶颈优化</li>
+<li>完善错误处理</li>
+<li>改进代码结构</li>
+</ul>
+</li>
+</ol>
+<p>您觉得这个AI辅助开发计划如何？我们可以先从某个具体模块开始尝试。</p>
+<p>Me：请帮我完整的整理下</p>
+<p>AI：我来帮您整理一个完整的AI辅助开发计划：</p>
+<h3 id="一、项目初始化"><a href="#一、项目初始化" class="headerlink" title="一、项目初始化"></a>一、项目初始化</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext:d:\Repos\XXCNC\docs\ai_development_plan.md">1. 项目结构创建<br>- 生成基础目录结构<br>- 创建CMake配置文件<br>- 设置基础编译环境<br>- 配置单元测试框架<br><br>2. 基础类型定义<br>- 坐标系统<br>- 运动参数<br>- 错误代码<br>- 系统状态定义<br></code></pre></td></tr></table></figure>
+
+<h3 id="二、核心模块开发序列"><a href="#二、核心模块开发序列" class="headerlink" title="二、核心模块开发序列"></a>二、核心模块开发序列</h3><h4 id="1-核心控制模块"><a href="#1-核心控制模块" class="headerlink" title="1. 核心控制模块"></a>1. 核心控制模块</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext:d:\Repos\XXCNC\docs\ai_tasks\01_core_development.md">阶段1：基础框架<br>- CoreController 类设计<br>- 实时调度系统<br>- 状态管理系统<br>- 错误处理机制<br><br>阶段2：功能实现<br>- 任务队列管理<br>- 系统初始化流程<br>- 安全监控系统<br>- 模块间通信<br></code></pre></td></tr></table></figure>
+
+<h4 id="2-运动控制模块"><a href="#2-运动控制模块" class="headerlink" title="2. 运动控制模块"></a>2. 运动控制模块</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext:d:\Repos\XXCNC\docs\ai_tasks\02_motion_development.md">阶段1：基础功能<br>- Axis 类实现<br>- 运动参数管理<br>- 位置控制系统<br>- 速度控制系统<br><br>阶段2：高级功能<br>- 加减速算法<br>- 多轴协同<br>- 限位处理<br>- 回零功能<br></code></pre></td></tr></table></figure>
+
+<h4 id="3-插补引擎模块"><a href="#3-插补引擎模块" class="headerlink" title="3. 插补引擎模块"></a>3. 插补引擎模块</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext:d:\Repos\XXCNC\docs\ai_tasks\03_interpolation_development.md">阶段1：基础算法<br>- 直线插补<br>- 圆弧插补<br>- 基础速度规划<br>- 路径优化<br><br>阶段2：高级算法<br>- 样条曲线插补<br>- 前瞻算法<br>- 轨迹平滑<br>- 误差补偿<br></code></pre></td></tr></table></figure>
+
+<h4 id="4-G代码解析模块"><a href="#4-G代码解析模块" class="headerlink" title="4. G代码解析模块"></a>4. G代码解析模块</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext:d:\Repos\XXCNC\docs\ai_tasks\04_gcode_development.md">阶段1：解析器<br>- 词法分析器<br>- 语法分析器<br>- 指令解释器<br>- 参数处理<br><br>阶段2：执行系统<br>- 指令队列管理<br>- 宏指令处理<br>- 坐标系转换<br>- 刀具补偿<br></code></pre></td></tr></table></figure>
+
+<h4 id="5-Web服务器模块"><a href="#5-Web服务器模块" class="headerlink" title="5. Web服务器模块"></a>5. Web服务器模块</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext:d:\Repos\XXCNC\docs\ai_tasks\05_webserver_development.md">阶段1：基础服务<br>- HTTP服务器<br>- REST API实现<br>- WebSocket服务<br>- 认证授权<br><br>阶段2：功能接口<br>- 状态监控API<br>- 控制指令API<br>- 文件管理API<br>- 配置管理API<br></code></pre></td></tr></table></figure>
+
+<h3 id="三、开发流程指南"><a href="#三、开发流程指南" class="headerlink" title="三、开发流程指南"></a>三、开发流程指南</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs plaintext:d:\Repos\XXCNC\docs\ai_development_guide.md">1. 每个模块的开发流程：<br>   a. 设计阶段<br>   - 接口设计<br>   - 类结构设计<br>   - 算法设计<br>   - 错误处理设计<br><br>   b. 实现阶段<br>   - 核心功能实现<br>   - 单元测试编写<br>   - 性能优化<br>   - 文档生成<br><br>   c. 测试阶段<br>   - 单元测试<br>   - 集成测试<br>   - 性能测试<br>   - 稳定性测试<br><br>2. AI提示词模板：<br>   a. 设计提示：<br>   &quot;请设计[模块名称]，需要满足以下要求：<br>   - 功能需求：[具体功能]<br>   - 性能要求：[具体指标]<br>   - 接口要求：[接口规范]<br>   - 错误处理：[处理方式]<br>   请提供详细的类设计和关键方法定义。&quot;<br><br>   b. 实现提示：<br>   &quot;基于[类名]设计，请实现以下功能：<br>   - 具体功能：[功能描述]<br>   - 输入参数：[参数说明]<br>   - 输出要求：[输出规范]<br>   - 性能要求：[性能指标]<br>   请提供完整的代码实现和单元测试。&quot;<br><br>3. 代码审查重点：<br>   - 实时性保证<br>   - 内存管理<br>   - 错误处理<br>   - 代码规范<br>   - 性能优化<br>   - 接口一致性<br></code></pre></td></tr></table></figure>
+
+<h3 id="四、测试计划"><a href="#四、测试计划" class="headerlink" title="四、测试计划"></a>四、测试计划</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plaintext:d:\Repos\XXCNC\docs\ai_testing_plan.md">1. 单元测试<br>- 功能测试<br>- 边界测试<br>- 异常测试<br>- 性能测试<br><br>2. 集成测试<br>- 模块间通信<br>- 功能集成<br>- 性能验证<br>- 稳定性测试<br><br>3. 系统测试<br>- 完整功能测试<br>- 负载测试<br>- 长期稳定性测试<br>- 异常恢复测试<br></code></pre></td></tr></table></figure>
+
+<p>您觉得这个计划如何？我们可以从任何一个模块开始实施。每个模块都可以进一步细化，根据实际需求调整开发顺序和优先级。</p>
+</blockquote>
+<h3 id="2-2-归档"><a href="#2-2-归档" class="headerlink" title="2.2 归档"></a>2.2 归档</h3><p>接下来就是让 AI 把内容归档到 plan.md，进行我们的开发工作</p>
+<h2 id="3-开发工作"><a href="#3-开发工作" class="headerlink" title="3. 开发工作"></a>3. 开发工作</h2><h3 id="3-1-项目初始化"><a href="#3-1-项目初始化" class="headerlink" title="3.1 项目初始化"></a>3.1 项目初始化</h3><p>这个阶段先让 AI 进行了项目的构建和初始化，包括了 CMake 项目搭建，这部分完成的不错</p>
+<blockquote>
+<p>Me: 我们按照这个计划开始准备开发工作吧</p>
+<p>AI：我会帮您开始项目的初始化工作。根据开发计划，我们首先需要创建基础的项目结构，包括设置CMake配置、编译环境和单元测试框架，然后定义基础类型如坐标系统和运动参数。完成初始化后，我们将按照计划开始核心控制模块的开发。</p>
+<p>让我们先查看当前项目目录的结构，以确定需要创建哪些基础目录和文件。</p>
+<p>XXCNC</p>
+<p>根据项目计划，我们需要创建一个CMake项目结构。首先创建CMakeLists.txt作为主配置文件，设置项目基本信息和编译选项。</p>
+<p>CMakeLists.txt</p>
+<p>接下来创建src目录下的CMakeLists.txt文件，配置源代码的编译规则和依赖关系。</p>
+<p>src\CMakeLists.txt</p>
+<p>现在我们需要创建tests目录下的CMakeLists.txt文件，配置单元测试框架和测试用例的编译规则。</p>
+<p>tests\CMakeLists.txt</p>
+<p>现在我们需要创建基础的目录结构，包括src和tests目录下的各个模块子目录，以及一个.gitignore文件来排除不需要的文件。</p>
+<p>让我们创建基础的目录结构，包括src和tests目录下的各个模块子目录。这些目录将用于存放源代码和测试文件。</p>
+<p>src\core\README.md</p>
+<p>接下来我们需要创建基础类型定义文件，包括坐标系统、运动参数、错误代码和系统状态定义。我们先创建一个基础类型的头文件。</p>
+<p>src\include\xxcnc\types.h</p>
+<p>已完成项目的初始化工作，主要包括：</p>
+<ol>
+<li><p>创建了基础的项目结构：</p>
+<ul>
+<li>配置了主CMakeLists.txt文件，设置了项目基本信息和编译选项</li>
+<li>创建了src和tests目录的CMakeLists.txt，配置了源代码编译和测试框架</li>
+<li>建立了核心模块的目录结构和说明文档</li>
+</ul>
+</li>
+<li><p>定义了基础类型系统：</p>
+<ul>
+<li>在types.h中定义了基本数值类型</li>
+<li>实现了坐标系统（Point结构）</li>
+<li>定义了运动参数（MotionParameters结构）</li>
+<li>创建了错误码系统（ErrorCode枚举）</li>
+<li>定义了系统状态（SystemState枚举）</li>
+</ul>
+</li>
+<li><p>设置了开发环境：</p>
+<ul>
+<li>配置了C++17标准</li>
+<li>设置了严格的编译警告</li>
+<li>集成了GTest测试框架</li>
+<li>配置了安装和导出规则<br>项目初始化工作已经完成，现在可以开始进行核心模块的开发工作。</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>我会帮您配置和编译这个XXCNC项目。根据项目结构，我看到已经有基础的CMakeLists.txt文件和源代码目录，我将创建build目录，配置CMake项目并进行编译。编译过程将包括所有核心模块和测试用例。</p>
+<p>首先创建build目录并进入该目录，然后使用CMake配置项目。</p>
+<p>XXCNC 终端</p>
+<p>mkdir build</p>
+<p>现在我们使用CMake来配置项目，生成构建文件。</p>
+<p>XXCNC 终端</p>
+<p>cmake -B build -S .</p>
+<p>我看到CMake配置失败了，这是因为缺少必要的源文件。让我先检查一下CMakeLists.txt文件的内容，以便了解项目的配置要求。</p>
+<p>src\CMakeLists.txt</p>
+<p>tests\CMakeLists.txt</p>
+<p>CMakeLists.txt</p>
+<p>根据CMake配置文件的要求，我们需要创建核心控制模块的基础文件。让我们先创建CoreController的实现文件。</p>
+<p>src\core\CoreController.cpp</p>
+<p>现在我们需要创建CoreController的头文件，定义基本的类接口和系统状态枚举。</p>
+<p>src\include\xxcnc\core\CoreController.h</p>
+<p>我们需要创建一个基本的测试文件来验证CoreController的功能，这样才能通过CMake的配置。</p>
+<p>tests\core\CoreControllerTest.cpp</p>
+<p>现在我们已经创建了必要的源文件，让我们重新运行CMake配置命令来生成构建文件。</p>
+<p>XXCNC 终端</p>
+<p>cmake -B build -S .</p>
+<p>我们需要修改CMakeLists.txt文件，暂时只包含已经创建的源文件，移除尚未创建的文件。</p>
+<p>src\CMakeLists.txt</p>
+<p>我们还需要修改测试的CMakeLists.txt文件，只包含已经创建的测试文件。</p>
+<p>tests\CMakeLists.txt</p>
+<p>现在我们已经修改了CMake配置文件，让我们重新运行CMake配置命令，然后使用Visual Studio的构建工具进行编译。</p>
+<p>XXCNC 终端</p>
+<p>cmake -B build -S .</p>
+<p>CMake配置文件中存在语法错误，需要修复src&#x2F;CMakeLists.txt文件中的格式问题。</p>
+<p>src\CMakeLists.txt</p>
+<p>现在我们已经修复了CMake配置文件中的语法错误，让我们重新运行CMake配置命令，然后使用Visual Studio的构建工具进行编译。</p>
+<p>XXCNC 终端</p>
+<p>cmake -B build -S .</p>
+<p>需要继续修复src&#x2F;CMakeLists.txt文件中的语法错误，删除所有未使用的源文件引用。</p>
+<p>src\CMakeLists.txt</p>
+<p>现在我们已经完全修复了CMake配置文件，让我们重新运行CMake配置命令，然后使用Visual Studio的构建工具进行编译。</p>
+<p>XXCNC 终端</p>
+<p>cmake -B build -S .</p>
+<p>需要修复tests&#x2F;CMakeLists.txt文件中的语法错误，删除所有未使用的测试文件引用。</p>
+<p>tests\CMakeLists.txt</p>
+<p>现在我们已经修复了所有CMake配置文件的问题，让我们重新运行CMake配置命令，然后使用Visual Studio的构建工具进行编译。</p>
+<p>XXCNC 终端</p>
+<p>cmake -B build -S .</p>
+<p>CMake配置已经成功完成，现在让我们使用Visual Studio的MSBuild工具来编译项目。</p>
+<p>XXCNC 终端</p>
+<p>cmake –build build –config Release</p>
+<p>编译失败的主要原因是文件编码问题，需要将源文件保存为UTF-8格式。我们需要修改CoreController.h文件的编码格式。</p>
+<p>src\include\xxcnc\core\CoreController.h</p>
+<p>需要修改CoreController.cpp文件的编码格式，将中文注释改为英文，以解决编码问题。</p>
+<p>src\core\CoreController.cpp</p>
+<p>现在我们已经修复了源文件的编码问题，让我们重新尝试编译项目。</p>
+<p>XXCNC 终端</p>
+<p>cmake –build build –config Release</p>
+<p>成功完成了XXCNC项目的编译工作。主要完成了以下任务：</p>
+<ol>
+<li><p>创建并配置了基础的项目结构：</p>
+<ul>
+<li>创建了核心控制模块的源文件和头文件</li>
+<li>实现了基本的CoreController类</li>
+<li>添加了系统状态管理的基础功能</li>
+</ul>
+</li>
+<li><p>配置了CMake构建系统：</p>
+<ul>
+<li>修复了CMakeLists.txt文件中的语法问题</li>
+<li>正确配置了库目标和测试目标</li>
+<li>设置了适当的包含目录和编译选项</li>
+</ul>
+</li>
+<li><p>解决了编码问题：</p>
+<ul>
+<li>将源文件转换为UTF-8编码</li>
+<li>修改了中文注释为英文注释</li>
+</ul>
+</li>
+<li><p>成功编译了项目：</p>
+<ul>
+<li>生成了xxcnc静态库</li>
+<li>编译了单元测试可执行文件<br>项目现在已经具备了基本的开发框架，可以继续进行功能开发。</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h3 id="3-2-添加三方库、单元测试"><a href="#3-2-添加三方库、单元测试" class="headerlink" title="3.2 添加三方库、单元测试"></a>3.2 添加三方库、单元测试</h3><p><strong>但是接下来他就碰到了第一座大山，不知道怎么使用 vcpkg，在尝试了七八次后无果，人工介入帮其进行安装</strong></p>
+<h3 id="3-3-基础运动模型"><a href="#3-3-基础运动模型" class="headerlink" title="3.3 基础运动模型"></a>3.3 基础运动模型</h3><p>这部分开发很快，但是内容不多，只是一些简单的定义、状态切换以及日志和异常处理等</p>
+<blockquote>
+<p>已成功完成了核心控制模块的功能扩展：</p>
+<ol>
+<li><p>在CoreController中新增了两个重要功能：</p>
+<ul>
+<li>紧急停止（Emergency Stop）功能：可以在任何状态下触发，将系统置于紧急停止状态</li>
+<li>回零（Homing）功能：在空闲状态下执行回零操作，完成后返回空闲状态</li>
+</ul>
+</li>
+<li><p>更新了状态管理系统：</p>
+<ul>
+<li>在SystemState枚举中增加了HOMING和EMERGENCY_STOP状态</li>
+<li>确保了状态转换的正确性和安全性</li>
+</ul>
+</li>
+<li><p>完善了错误处理机制：</p>
+<ul>
+<li>为所有新增功能添加了异常捕获和处理</li>
+<li>通过日志系统记录详细的错误信息</li>
+</ul>
+</li>
+<li><p>添加了完整的单元测试：</p>
+<ul>
+<li>验证紧急停止在不同状态下的行为</li>
+<li>测试回零操作在不同状态下的表现</li>
+<li>确保状态转换的正确性</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>已完成运动控制模块中Axis类的基础功能实现：</p>
+<ul>
+<li><p>创建了Axis.h头文件，定义了以下关键组件：</p>
+<ul>
+<li>AxisState枚举类型，描述轴的运动状态</li>
+<li>AxisParameters结构体，包含运动参数配置</li>
+<li>Axis类的完整接口定义</li>
+</ul>
+</li>
+<li><p>实现了Axis.cpp，完成了以下功能：</p>
+<ul>
+<li>基础运动控制（使能、禁用、停止）</li>
+<li>位置控制系统（moveTo方法）</li>
+<li>速度控制系统（moveVelocity方法）</li>
+<li>回零功能（home方法）</li>
+<li>实时状态更新（update方法）</li>
+</ul>
+</li>
+<li><p>实现了关键的安全特性：</p>
+<ul>
+<li>软限位检查</li>
+<li>速度和加速度限制</li>
+<li>紧急停止功能</li>
+<li>状态监控和错误处理</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="3-4-插补器开发"><a href="#3-4-插补器开发" class="headerlink" title="3.4 插补器开发"></a>3.4 插补器开发</h3><p>开发了一个插补器，经过了大约 20 轮左右的对话，包括且不限于以下问题：</p>
+<ul>
+<li>语法错误，编译通不过</li>
+<li>编码错误</li>
+<li>未定义的类、成员变量等</li>
+</ul>
+<p>然后开始单元测试，一些简单的 case 立刻就过了，卡在一些功能问题，经过了超过 30 轮对话，包括：</p>
+<ul>
+<li>插补器的退出条件错误，导致一直无法退出</li>
+<li>性能条件写太随意，导致算法一直无法满足一直修改 （最终也没解决）</li>
+</ul>
+<blockquote>
+<p>已完成插补引擎模块的基础算法实现，包括以下功能：</p>
+<ul>
+<li>创建了 InterpolationEngine 类，实现了基础的插补算法框架</li>
+<li>实现了直线插补算法，支持三轴联动</li>
+<li>实现了圆弧插补算法，支持顺时针和逆时针圆弧</li>
+<li>实现了梯形速度规划，包含加速、匀速和减速三个阶段</li>
+<li>实现了基于三点平滑的路径优化算法</li>
+</ul>
+<p>已完成插补引擎模块的单元测试补充工作，主要完成了以下内容：</p>
+<ul>
+<li>创建了 InterpolationEngineTest.cpp 测试文件</li>
+<li>实现了基础的测试框架，包括 SetUp 和 TearDown 方法</li>
+<li>添加了直线插补测试，验证基本功能和路径连续性</li>
+<li>添加了圆弧插补测试，验证圆弧路径的正确性和半径一致性</li>
+<li>实现了边界条件测试，包括零距离移动和极小距离移动的情况</li>
+<li>添加了性能测试，验证算法的实时性和分段合理性</li>
+<li>实现了错误处理测试，验证非法参数的异常处理<br>所有测试用例都遵循了项目的测试规范，覆盖了基本功能、边界条件、性能要求和错误处理等方面，确保了插补引擎模块的代码质量和功能正确性。</li>
+</ul>
+</blockquote>
+<h3 id="3-5-运动功能进一步开发"><a href="#3-5-运动功能进一步开发" class="headerlink" title="3.5 运动功能进一步开发"></a>3.5 运动功能进一步开发</h3><p>这里进一步完善功能，此时出现了一个问题：他新写的测试用例没有添加到项目里，经过多次的修改，仍然未解决。其他功能均可在差不多 2~4 轮对话，测试失败后完成修复。</p>
+<blockquote>
+<p>本次开发完成了运动控制模块的基础功能实现，主要包括：</p>
+<ul>
+<li>创建了 MotionController 类，实现了多轴协同运动控制系统</li>
+<li>实现了轴的基本控制功能，包括：<ul>
+<li>轴的使能&#x2F;禁用</li>
+<li>位置控制</li>
+<li>速度控制</li>
+<li>加速度控制</li>
+<li>软限位保护</li>
+<li>紧急停止功能</li>
+</ul>
+</li>
+<li>实现了直线插补运动功能，支持：<ul>
+<li>多轴协同运动</li>
+<li>速度规划</li>
+<li>加速度规划</li>
+<li>实时状态更新<br>代码采用了面向对象的设计方法，通过类的继承和组合实现了功能的模块化和可扩展性。同时，代码中加入了完善的错误处理和状态管理机制，确保了运动控制的安全性和可靠性。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="3-6-G代码解析"><a href="#3-6-G代码解析" class="headerlink" title="3.6 G代码解析"></a>3.6 G代码解析</h3><p>此处新增的功能未作验证，基本生成后就能通过编译</p>
+<blockquote>
+<p>已完成G代码执行系统的基础框架开发，主要包括：</p>
+<ol>
+<li><p>创建了GCodeExecutor类，实现了指令队列管理的核心功能：</p>
+<ul>
+<li>指令队列的添加和执行</li>
+<li>暂停、恢复和停止功能</li>
+<li>线程安全的队列操作</li>
+<li>异步执行支持</li>
+</ul>
+</li>
+<li><p>设计并实现了完整的G代码命令体系：</p>
+<ul>
+<li>定义了基础的GCodeCommand类</li>
+<li>实现了多种具体命令类型：<ul>
+<li>MotionCommand（运动指令）</li>
+<li>ToolCommand（刀具指令）</li>
+<li>CoordinateCommand（坐标系统指令）</li>
+<li>MacroCommand（宏指令）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>建立了命令参数体系：</p>
+<ul>
+<li>创建了基础的CommandParams结构</li>
+<li>实现了各类具体参数结构：<ul>
+<li>MotionParams（运动参数）</li>
+<li>ToolParams（刀具参数）</li>
+<li>CoordinateParams（坐标系统参数）</li>
+<li>MacroParams（宏指令参数）<br>这些实现为后续的功能扩展（如宏指令处理、坐标系转换和刀具补偿）奠定了良好的基础。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h3 id="3-7-添加-web-功能"><a href="#3-7-添加-web-功能" class="headerlink" title="3.7 添加 web 功能"></a>3.7 添加 web 功能</h3><p>这里主要的难点是：CMake 集成三方库，多次失败后，人工调整添加（他名字写错了），整体对话大约 20 轮</p>
+<blockquote>
+<p>已完成Web服务器模块的基础功能实现：</p>
+<ul>
+<li>创建了Web服务器模块的基础目录结构</li>
+<li>实现了WebServer类及其PIMPL实现类WebServerImpl</li>
+<li>添加了基础HTTP REST API接口：<ul>
+<li>&#x2F;api&#x2F;health：健康检查接口</li>
+<li>&#x2F;api&#x2F;status：系统状态查询接口</li>
+</ul>
+</li>
+<li>配置了CMake构建系统，包含必要的依赖项：<ul>
+<li>cpp-httplib：HTTP服务器库</li>
+<li>spdlog：日志记录</li>
+<li>nlohmann-json：JSON处理<br>该模块现在具备了基本的Web服务功能，可以启动HTTP服务器并响应基本的API请求。后续可以根据需要扩展更多API接口，添加WebSocket支持，以及实现更复杂的功能。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="3-8-前端页面开发-初版"><a href="#3-8-前端页面开发-初版" class="headerlink" title="3.8 前端页面开发-初版"></a>3.8 前端页面开发-初版</h3><p>这个是 AI 生成的第一版界面，只有按钮没有实际的动作</p>
+<p>经过 20 轮左右的沟通，发现 Trae 中的 Claude-3.5 无法满足工作了，所以切换到了 windsurf 继续工作</p>
+<p><img src="http://raw.githubusercontent.com/lusipad/imgur/main/img/image-20250302014405797.png" srcset="/img/loading.gif" lazyload alt="image-20250302014405797"></p>
+<p>让 windsurf 了解了项目的计划、当前的进度后，开始开发。</p>
+<p>windsurf 的 Flow 是支持自己执行命令、查找文件等动作的，我直接全开了允许，让其进行自动工作。</p>
+<blockquote>
+<p>让我先查看一下项目中的web相关文件。</p>
+<p>Searched for files ind:\Repos\XXCNC</p>
+<p>4 results</p>
+<p>让我检查一下web服务器相关的代码。</p>
+<p>Searched codebase</p>
+<p>255 results</p>
+<p>让我查看一下前端页面的代码。</p>
+<p>Analyzed</p>
+<p>index.html:(1-200)</p>
+<p>让我看看前端的JavaScript代码。</p>
+<p>Analyzed</p>
+<p>main.js:(1-200)</p>
+<p>我发现了几个问题：</p>
+<ol>
+<li>前端代码中有一些按钮的ID与HTML中的不匹配：<ul>
+<li>HTML中有 <code>start-btn</code>, <code>pause-btn</code>, <code>resume-btn</code>，但在JavaScript中使用的是 <code>btnPause</code>, <code>btnResume</code></li>
+<li>HTML中没有 <code>btnUpload</code>，但JavaScript中尝试添加事件监听器</li>
+<li>HTML中缺少 <code>speed</code> 元素，但JavaScript中尝试引用它</li>
+</ul>
+</li>
+<li>一些DOM元素的ID不匹配：<ul>
+<li>JavaScript中使用 <code>fileList</code>，但HTML中是 <code>file-list</code></li>
+<li>JavaScript中使用 <code>speed</code>，但HTML中没有对应元素</li>
+</ul>
+</li>
+<li>轨迹查看器的初始化代码有问题：<ul>
+<li><code>script.onload</code> 中的 <code>script</code> 变量未定义</li>
+<li>轨迹查看器的初始化应该在页面加载完成后进行</li>
+</ul>
+</li>
+</ol>
+<p>让我修复这些问题：</p>
+<p>Edited</p>
+<p>main.js</p>
+<p>+53-45 128</p>
+<p>Open diff</p>
+<p>让我看看轨迹查看器的代码：</p>
+<p>Analyzed</p>
+<p>trajectory-viewer.js:(1-200)</p>
+<p>我发现轨迹查看器也有一些问题：</p>
+<ol>
+<li>Three.js库的引入方式不合适，应该在HTML中通过CDN引入</li>
+<li>轨迹查看器的初始化代码有问题，不应该在script.onload中定义类</li>
+<li>视图控制按钮的事件监听器绑定到了不存在的元素上</li>
+</ol>
+<p>让我先修改HTML文件，添加Three.js库和视图控制按钮：</p>
+<p>Edited</p>
+<p>index.html</p>
+<p>+8-0 145</p>
+<p>Open diff</p>
+<p>现在让我修改轨迹查看器的代码：</p>
+<p>Edited</p>
+<p>trajectory-viewer.js</p>
+<p>+139-118 31</p>
+<p>Open diff</p>
+<p>我已经修复了前端代码中的主要问题：</p>
+<ol>
+<li>修复了HTML和JavaScript代码中的DOM元素ID不匹配问题</li>
+<li>改进了轨迹查看器的初始化和事件绑定</li>
+<li>添加了视图控制按钮</li>
+<li>优化了代码结构和错误处理</li>
+</ol>
+<p>主要改进包括：</p>
+<ol>
+<li>在HTML中：<ul>
+<li>通过CDN引入Three.js和OrbitControls库</li>
+<li>添加了轨迹查看器的视图控制按钮</li>
+<li>修正了一些元素的ID</li>
+</ul>
+</li>
+<li>在main.js中：<ul>
+<li>修正了DOM元素的选择器</li>
+<li>将所有事件监听器移到页面加载完成后再绑定</li>
+<li>改进了状态更新和文件上传的逻辑</li>
+<li>优化了错误处理</li>
+</ul>
+</li>
+<li>在trajectory-viewer.js中：<ul>
+<li>移除了动态加载Three.js的代码</li>
+<li>改进了类的初始化方式，通过参数传入canvas ID</li>
+<li>添加了更多的错误检查</li>
+<li>使用ResizeObserver来处理视图大小变化</li>
+<li>改进了轨迹点的添加和清除逻辑</li>
+</ul>
+</li>
+</ol>
+<p>现在让我检查一下后端代码：</p>
+<p>Searched codebase</p>
+<p>70 results</p>
+<p>让我看看WebServer的实现：</p>
+<p>Searched codebase</p>
+<p>8 results</p>
+<p>让我看看WebServer的头文件：</p>
+<p>Searched for files ind:\Repos\XXCNC</p>
+<p>2 results</p>
+<p>让我看看WebServer的头文件内容：</p>
+<p>Analyzed</p>
+<p>WebServer.h:(1-200)</p>
+<p>让我看看WebServer的实现文件：</p>
+<p>Searched for files ind:\Repos\XXCNC</p>
+<p>1 result</p>
+<p>Analyzed</p>
+<p>WebServer.cpp:(1-200)</p>
+<p>通过查看代码，我发现了几个问题：</p>
+<ol>
+<li>WebServer的构造函数有两个版本，但在<code>main.cpp</code>中使用的是无参版本，这意味着没有提供WebAPI实现。</li>
+<li>WebServer的配置在启动时没有完全设置：<ul>
+<li>没有设置<code>enable_cors</code></li>
+<li>没有正确设置<code>static_dir</code>的完整路径</li>
+</ul>
+</li>
+<li>回调函数没有完全实现：<ul>
+<li>状态回调只返回了基本的位置信息，没有包含进给速度和其他状态</li>
+<li>命令回调缺少了一些重要命令的处理（如start、pause、resume等）</li>
+<li>文件上传回调没有处理轨迹信息的生成</li>
+</ul>
+</li>
+</ol>
+<p>让我修复这些问题。首先修改main.cpp：</p>
+<p>Edited</p>
+<p>main.cpp</p>
+<p>+75-38 55</p>
+<p>Open diff</p>
+<p>让我修改SystemStatus类，添加更多状态字段：</p>
+<p>Edited</p>
+<p>main.cpp</p>
+<p>+13-3 127</p>
+<p>Open diff</p>
+<p>现在我已经修复了主要的问题：</p>
+<ol>
+<li>前端修复：<ul>
+<li>修正了DOM元素ID的不匹配</li>
+<li>改进了事件监听器的绑定</li>
+<li>优化了轨迹查看器的初始化和渲染</li>
+<li>添加了视图控制按钮</li>
+</ul>
+</li>
+<li>后端修复：<ul>
+<li>完善了服务器配置，使用绝对路径和启用CORS</li>
+<li>添加了更多的系统状态信息</li>
+<li>实现了所有必要的命令处理（start、stop、pause、resume、home、setFeedRate）</li>
+<li>添加了文件上传后的轨迹生成</li>
+</ul>
+</li>
+<li>其他改进：<ul>
+<li>添加了更好的错误处理</li>
+<li>改进了状态更新的逻辑</li>
+<li>优化了代码结构</li>
+</ul>
+</li>
+</ol>
+<p>现在web界面的功能应该可以正常工作了。如果你遇到任何问题，请告诉我。</p>
+</blockquote>
+<p>消耗了大概 300 Flow 后，完成了文件上传、模拟轨迹绘制功能</p>
+<h3 id="3-9-界面调整"><a href="#3-9-界面调整" class="headerlink" title="3.9 界面调整"></a>3.9 界面调整</h3><p>由于第一版的界面太简陋，所以找了一个 CNC 界面让其进行模仿，这个是修改后的结果：</p>
+<p>引入了 Three 进行三维轨迹绘制，调整了界面中按钮、布局等内容（功能都是空的）</p>
+<p>实测可以生成输入的刀路的轨迹，这里是颇为惊喜的</p>
+<p>此处主要花了很多时间在反复的调试效果，大概消耗了 300 Flow</p>
+<p><img src="/%E4%BD%BF%E7%94%A8AI%E5%BC%80%E5%8F%91%E6%95%B0%E6%8E%A7%E7%B3%BB%E7%BB%9F.assets/image-20250302015222450.png" srcset="/img/loading.gif" lazyload alt="image-20250302015222450"></p>
+<h3 id="3-10-文件上传"><a href="#3-10-文件上传" class="headerlink" title="3.10 文件上传"></a>3.10 文件上传</h3><p>接下里就开始不给力了，一个文件上传功能，在主页中反复失败，不管怎么调整都没用；但是让他在一个单独页面做就没有问题。<strong>主页已经很大了，看来 AI 在处理大型的情况，能力下降了</strong></p>
+<p>最终 AI 通过重写主页来解决了这个问题。</p>
+<p>但是后面调整其他功能的时候，也出现了该功能失灵时不灵的情况！</p>
+<p>反复处理，消耗了大概 300 Flow</p>
+<h3 id="3-11-状态显示"><a href="#3-11-状态显示" class="headerlink" title="3.11 状态显示"></a>3.11 状态显示</h3><p>此时界面显示的状态都不是实时的，所以需要让其和 C++ 后端联系起来。</p>
+<p>此处大概消耗了 300 Flow，但是还是没完成（中间版本的时候可用，后续又被其改坏了）</p>
+<h3 id="3-12-真实轨迹绘制"><a href="#3-12-真实轨迹绘制" class="headerlink" title="3.12 真实轨迹绘制"></a>3.12 真实轨迹绘制</h3><p>之前项目中的轨迹是假的，是由 C++ 后端生成的假数据，此时计划接入到真实的解析、规划、插补来绘制轨迹。</p>
+<p>在经过 N 轮沟通，消耗了超过 500 Flow 后，仍然没有能够绘制出轨迹。由于 Pro 会员的已经用完了，暂时告一段落，先将进度记录下来。</p>
+<h2 id="4-小结"><a href="#4-小结" class="headerlink" title="4. 小结"></a>4. 小结</h2><p>虽然本次开发最终未能达到期望的效果，但是对于 AI 的能力边界有了一个初步的认知：模块级别。从验证的结果来看，大部分单模块的开发都可以做得比较好，而跨模块或者上下文变长，就很难处理，反复验证也是失败告终。所以我们在使用 AI 进行项目开发的时候，还是以逐步分解，将其限制到模块级更加合适。</p>
+<p>个人主观打分的话：</p>
+<ul>
+<li>需求分析能力 9</li>
+<li>项目规划能力 8</li>
+<li>工程能力 6<ul>
+<li>CMake 项目构建和使用 5</li>
+<li>web 项目 8</li>
+</ul>
+</li>
+<li>开发能力 8<ul>
+<li>C++ 模块开发 8</li>
+<li>C++ 单元测试 7</li>
+<li>小型 web 开发 10</li>
+<li>大型 web 开发 6</li>
+</ul>
+</li>
+<li>调试能力<ul>
+<li>Lint 处理 10</li>
+<li>编译错误处理 9</li>
+<li>功能调试 3</li>
+</ul>
+</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/AI-C-%E5%89%8D%E7%AB%AF-web/" class="print-no-link">#AI, C++, 前端, web</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>使用AI开发数控系统完整记录</div>
+      <div>http://lusipad.com/2025/03/02/使用AI开发数控系统/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>lusipad</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年3月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/03/01/trae-support-claude-3-7/" title="Trae 新版本来了，支持 claude-3.7">
+                        <span class="hidden-mobile">Trae 新版本来了，支持 claude-3.7</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      沪 ICP 备 2023021754 号
+    </a>
+  </span>
+  
+</div>
+
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
