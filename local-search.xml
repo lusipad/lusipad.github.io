@@ -14,7 +14,11 @@
     
     <tags>
       
-      <tag>AI, ktransform, deepseek</tag>
+      <tag>AI</tag>
+      
+      <tag>ktransformers</tag>
+      
+      <tag>deepseek</tag>
       
     </tags>
     
@@ -33,7 +37,13 @@
     
     <tags>
       
-      <tag>AI, C++, 前端, web</tag>
+      <tag>C++</tag>
+      
+      <tag>AI</tag>
+      
+      <tag>前端</tag>
+      
+      <tag>web</tag>
       
     </tags>
     
@@ -183,6 +193,19 @@
       <tag>PLC</tag>
       
     </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>测试下加密功能</title>
+    <link href="/2023/10/06/test-encrypt/"/>
+    <url>/2023/10/06/test-encrypt/</url>
+    
+    <content type="html"><![CDATA[<h2 id="测试下加密功能"><a href="#测试下加密功能" class="headerlink" title="测试下加密功能"></a>测试下加密功能</h2><p>测试了下 <strong>hexo-blog-encrypt</strong> 插件, 但是发现个问题, 就是输入回车没有反应</p><p>所以最终还是删了</p>]]></content>
+    
+    
     
   </entry>
   
