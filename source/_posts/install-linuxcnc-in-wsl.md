@@ -116,21 +116,17 @@ tags: [linuxcnc, wsl, 数控]
 
 ![linux_cnc](http://raw.githubusercontent.com/lusipad/imgur/main/img/image.png)
     
-    **对于 Ubuntu, 已经可以正常使用了.**
-    
-    **但是 Debian, 会出现界面花屏的情况.**
-    
-    ### **使用 XLanuch (仅针对 Debian)**
-    
-    1. 在 windows 下载和安装 [Release 21.1.10 · marchaesen/vcxsrv (github.com)](https://github.com/marchaesen/vcxsrv/releases/tag/21.1.10)
-    2. 开启 XLaunch
-        
-        ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/b212ce1b-f5dc-4c92-80fc-b84fe072e6ef/Untitled.png)
-        
-        ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/1b113fb2-2200-492c-ada3-c91e8fe050be/Untitled.png)
+
+**对于 Ubuntu, 已经可以正常使用了.**
+
+**但是 Debian, 会出现界面花屏的情况.**
+
+### **使用 XLanuch (仅针对 Debian)**
+
+1. 在 windows 下载和安装 [Release 21.1.10 · marchaesen/vcxsrv (github.com)](https://github.com/marchaesen/vcxsrv/releases/tag/21.1.10)
+2. 开启 XLaunch
 
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/ae771ec1-2ff9-49df-aa2a-d0e8e498ba26/dce25a00-a85f-4667-9593-7be8c7481722/Untitled.png)
 
 1. 在 debian 启动 linuxcnc
    
