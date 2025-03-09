@@ -52,3 +52,6 @@ echo "已生成 $OUTPUT_FILE"
 git add .
 git commit -m "doc: update"
 git push
+
+hexo g
+hexo d
