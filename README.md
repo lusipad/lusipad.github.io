@@ -3,6 +3,7 @@
 按月份分类的文档列表：
 
 ## 2025年03月
+- [2025慕尼黑上海光博会](source/_posts/2025慕尼黑光博会.md) - 2025-03-13
 - [openManus初体验](source/_posts/openManus初体验.md) - 2025-03-08
 - [KTransformers 2.3 版本发布](source/_posts/ktransform-2-3.md) - 2025-03-06
 - [使用AI开发数控系统记录](source/_posts/使用AI开发数控系统.md) - 2025-03-02
