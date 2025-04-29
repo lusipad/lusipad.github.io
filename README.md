@@ -2,6 +2,9 @@
 
 按月份分类的文档列表：
 
+## 2025年04月
+- [迟来的Manus初体验](source/_posts/迟来的Manus初体验.md) - 2025-04-13
+
 ## 2025年03月
 - [2025慕尼黑上海光博会](source/_posts/2025慕尼黑光博会.md) - 2025-03-13
 - [openManus初体验](source/_posts/openManus初体验.md) - 2025-03-08
