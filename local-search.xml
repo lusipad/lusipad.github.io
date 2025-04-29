@@ -4,6 +4,29 @@
   
   
   <entry>
+    <title>迟来的Manus初体验</title>
+    <link href="/2025/04/13/%E8%BF%9F%E6%9D%A5%E7%9A%84Manus%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
+    <url>/2025/04/13/%E8%BF%9F%E6%9D%A5%E7%9A%84Manus%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
+    
+    <content type="html"><![CDATA[<h1 id="迟来的-Manus-初体验"><a href="#迟来的-Manus-初体验" class="headerlink" title="迟来的 Manus 初体验"></a>迟来的 Manus 初体验</h1><p>之前 Manus 最火的日子已经过去了，在 AI 界又爆发了一阵 MCP 的大浪潮。</p><p>这个时候我才姗姗来迟得拿到了 Manus 的邀请码，&#x3D; &#x3D;：过气了啊过气了，来试下还不好使。</p><p>题目还是和之前测试 OpenManus 的几道题目。</p><p>目前只能使用【标准】版本，高消耗的是 Pro 专享了。账号上包括了早期用户 1000 + 受邀用户 500 &#x3D; 1500 积分。整个过程耗时比较长，所以也提供了网页通知的形式来告知结果。</p><h1 id="问题1：评估算法的设计"><a href="#问题1：评估算法的设计" class="headerlink" title="问题1：评估算法的设计"></a>问题1：评估算法的设计</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>怎么 设计一个算法，可以评估如何设置参数才能适配机床，因为机床 硬件 伺服 和加工刀路都对其存在影响</p><h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>消耗积分：400</p><p>耗时时间：22 分钟</p><p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250413181211414.png" alt="image-20250413181211414"></p><p>我已经完成了机床参数评估与优化算法的设计和实现工作。现在向您提交完整的解决方案文档和相关代码文件。</p><h3 id="解决方案概述"><a href="#解决方案概述" class="headerlink" title="解决方案概述"></a>解决方案概述</h3><p>针对”如何设计一个算法，可以评估如何设置参数才能适配机床”的问题，我设计了一个综合考虑硬件、伺服系统和加工刀路三个方面影响因素的参数评估与优化算法。该算法能够：</p><ol><li><strong>评估参数设置的合理性</strong>：通过量化评分方式，评估当前参数设置的合理性</li><li><strong>识别关键参数</strong>：通过敏感性分析，识别对加工质量影响最大的关键参数</li><li><strong>提供优化建议</strong>：生成参数优化建议，按优先级排序</li><li><strong>自动优化参数</strong>：通过分层优化策略和迭代优化过程，自动优化参数设置</li></ol><h3 id="主要成果"><a href="#主要成果" class="headerlink" title="主要成果"></a>主要成果</h3><ol><li><strong>影响因素研究</strong>：系统研究了机床硬件、伺服系统和加工刀路对参数设置的影响</li><li><strong>相互作用分析</strong>：分析了三个方面影响因素之间的复杂相互作用机制</li><li><strong>评估算法设计</strong>：设计了三层评估指标体系和参数评分函数</li><li><strong>优化方法论开发</strong>：开发了分层优化策略和迭代优化过程</li><li><strong>实现框架创建</strong>：创建了完整的算法实现框架，包括数据结构定义和功能模块实现</li><li><strong>算法验证</strong>：验证了算法的有效性，包括评估准确性、优化有效性和敏感性分析准确性</li></ol><h3 id="验证结果"><a href="#验证结果" class="headerlink" title="验证结果"></a>验证结果</h3><p>算法验证结果表明：</p><ul><li>敏感性分析算法表现优秀（100&#x2F;100分）</li><li>优化算法表现良好（74.08&#x2F;100分）</li><li>评估算法有待改进（40&#x2F;100分）</li><li>总体验证分数为65.63&#x2F;100分</li></ul><h3 id="改进建议"><a href="#改进建议" class="headerlink" title="改进建议"></a>改进建议</h3><p>基于验证结果，提出了以下改进建议：</p><ol><li>调整评分函数，确保评分在预期范围内</li><li>优化参数权重，使评分更符合实际情况</li><li>改进相互作用评估方法</li><li>采用更高效的搜索策略，如贝叶斯优化或遗传算法</li><li>引入机器学习方法，通过实际加工数据训练模型</li></ol><h3 id="提交文件"><a href="#提交文件" class="headerlink" title="提交文件"></a>提交文件</h3><ol><li><strong>solution_document.md</strong>：完整的解决方案文档</li><li><strong>machine_tool_algorithm.py</strong>：算法实现框架代码</li><li><strong>algorithm_validator.py</strong>：算法验证工具代码</li><li><strong>validation_report.md</strong>：算法验证报告</li><li><strong>hardware_factors.md</strong>、<strong>servo_factors.md</strong>、<strong>toolpath_factors.md</strong>：影响因素研究文档</li><li><strong>interaction_analysis.md</strong>、<strong>parameter_weights.md</strong>：相互作用分析文档</li><li><strong>algorithm_design.md</strong>：参数评估算法设计文档</li><li><strong>optimization_methodology.md</strong>：参数优化方法论文档</li></ol><p>这个解决方案为机床参数设置提供了一种系统化的方法，有助于提高加工精度和效率，减少对操作人员经验的依赖。虽然当前算法还有改进空间，但已经建立了一个完整的框架，可以通过后续工作不断优化和完善。</p><p>完整的过程和文档：<a href="https://manus.im/share/PXbItOCV5YAeX1KwVZFd7b?replay=1">https://manus.im/share/PXbItOCV5YAeX1KwVZFd7b?replay=1</a></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>总得来说，他就是将各种参数作为输入，然后拿结果作为一个衡量，做了一个评分系统，的确符合题意🤣。</p><p>看来进一步上一点强度。</p><h2 id="问题2：将你的创作转变为网站并永久部署"><a href="#问题2：将你的创作转变为网站并永久部署" class="headerlink" title="问题2：将你的创作转变为网站并永久部署"></a>问题2：将你的创作转变为网站并永久部署</h2><p>看看前端编程能力如何</p><h2 id="过程-1"><a href="#过程-1" class="headerlink" title="过程"></a>过程</h2><p>看结果非常棒，整个生成的结果比预期的好很多</p><p><img src="/%E8%BF%9F%E6%9D%A5%E7%9A%84Manus%E5%88%9D%E4%BD%93%E9%AA%8C.assets/image-20250413192619930.png" alt="image-20250413192619930"></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从使用上来说，Manus 做得非常出色，已经可以说是初具生产力了，新的 coze 的智能体的邀请码我也有，后面有时间也再体验下。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>Manus</tag>
+      
+      <tag>agent</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2025慕尼黑上海光博会</title>
     <link href="/2025/03/13/2025%E6%85%95%E5%B0%BC%E9%BB%91%E5%85%89%E5%8D%9A%E4%BC%9A/"/>
     <url>/2025/03/13/2025%E6%85%95%E5%B0%BC%E9%BB%91%E5%85%89%E5%8D%9A%E4%BC%9A/</url>
