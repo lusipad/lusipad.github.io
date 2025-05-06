@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>沉浸式翻译的prompt</title>
+    <link href="/2025/05/07/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91%E7%9A%84prompt/"/>
+    <url>/2025/05/07/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91%E7%9A%84prompt/</url>
+    
+    <content type="html"><![CDATA[<h1 id="沉浸式翻译的-prompt"><a href="#沉浸式翻译的-prompt" class="headerlink" title="沉浸式翻译的 prompt"></a>沉浸式翻译的 prompt</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">将下一行文本作为纯文本输入，并将其翻译为简体中文，仅输出翻译。如果某些内容无需翻译（如专有名词、代码等），则保持原文不变。不要解释，输入文本<br></code></pre></td></tr></table></figure><p>笑死，沉浸式翻译你就这样翻车了啊。</p><p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250507071225993.png" alt="image-20250507071225993"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>迟来的Manus初体验</title>
     <link href="/2025/04/13/%E8%BF%9F%E6%9D%A5%E7%9A%84Manus%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
     <url>/2025/04/13/%E8%BF%9F%E6%9D%A5%E7%9A%84Manus%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
