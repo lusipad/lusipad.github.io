@@ -2,6 +2,10 @@
 
 按月份分类的文档列表：
 
+## 2025年05月
+- [deepwiki初体验](source/_posts/deepwiki初体验.md) - 2025-05-13
+- [沉浸式翻译的prompt](source/_posts/沉浸式翻译的prompt.md) - 2025-05-07
+
 ## 2025年04月
 - [迟来的Manus初体验](source/_posts/迟来的Manus初体验.md) - 2025-04-13
 
