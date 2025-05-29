@@ -42,4 +42,10 @@ tags: [AI]
 
 
 
-整体来说，我觉得非常不错，关注下有没有开源替代的，准备部署一个。（之前看过 OpenDeepWiki 主要靠 Gemini Pro 的长上下文来整的，我其实还是想内网部署一个）
+~~整体来说，我觉得非常不错，关注下有没有开源替代的，准备部署一个。（之前看过 OpenDeepWiki 主要靠 Gemini Pro 的长上下文来整的，我其实还是想内网部署一个）~~
+
+[plcopen - lusipad 的文档仓库 | OpenDeekWiki | OpenDeekWiki](https://opendeep.wiki/lusipad/plcopen)
+
+![image-20250530054435152](deepwiki初体验.assets/image-20250530054435152.png)
+
+开源版本的效果也很不错。看来 Agent 领域没有护城河：）
