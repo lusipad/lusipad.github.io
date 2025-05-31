@@ -46,6 +46,6 @@ tags: [AI]
 
 [plcopen - lusipad 的文档仓库 | OpenDeekWiki | OpenDeekWiki](https://opendeep.wiki/lusipad/plcopen)
 
-![image-20250530054435152](deepwiki初体验.assets/image-20250530054435152.png)
+![image-20250530054435152](http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250530054435152.png)
 
 开源版本的效果也很不错。看来 Agent 领域没有护城河：）
