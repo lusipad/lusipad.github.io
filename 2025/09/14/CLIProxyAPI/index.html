@@ -28,14 +28,14 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914090815475.png">
 <meta property="og:image" content="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914091759920.png">
-<meta property="og:image" content="http://lusipad.com/CLIProxyAPI.assets/image-20250914091818154.png">
+<meta property="og:image" content="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914091818154.png">
 <meta property="og:image" content="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914091854646.png">
-<meta property="og:image" content="http://lusipad.com/CLIProxyAPI.assets/image-20250914092311996.png">
+<meta property="og:image" content="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914092311996.png">
 <meta property="og:image" content="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914093057760.png">
 <meta property="og:image" content="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914093145082.png">
 <meta property="og:image" content="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914091038840.png">
 <meta property="article:published_time" content="2025-09-14T00:54:04.000Z">
-<meta property="article:modified_time" content="2025-09-14T04:27:24.366Z">
+<meta property="article:modified_time" content="2025-09-14T04:44:27.806Z">
 <meta property="article:author" content="lusipad">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="claude">
@@ -315,11 +315,11 @@
 <p>先上结论：能用，但是 API 不够用</p>
 <p>配置方法不展开了，无法就是 API_Base 换成了 localhost:8173，修改了分析模型为 gpt-5，chat 模型为 gpt-5-mini，然后 docker 一开就开始嚯嚯嚯分析了。</p>
 <p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914091759920.png" srcset="/img/loading.gif" lazyload alt="image-20250914091759920"></p>
-<p><img src="/CLIProxyAPI.assets/image-20250914091818154.png" srcset="/img/loading.gif" lazyload alt="image-20250914091818154"></p>
+<p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914091818154.png" srcset="/img/loading.gif" lazyload alt="image-20250914091818154"></p>
 <p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914091854646.png" srcset="/img/loading.gif" lazyload alt="image-20250914091854646"></p>
 <p><strong>这里最大的问题出现了：扫描太快了！大概10分钟左右就触发了429限流了: (</strong></p>
 <p>虽然我已经用了两个号做负载均衡，但是无奈还是消耗太快。可能后续要换个 Pro 账号，或者修改下源码，做一个限速功能或者等待重试功能。</p>
-<p><img src="/CLIProxyAPI.assets/image-20250914092311996.png" srcset="/img/loading.gif" lazyload alt="image-20250914092311996"></p>
+<p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914092311996.png" srcset="/img/loading.gif" lazyload alt="image-20250914092311996"></p>
 <p>像我这个项目大概要 1000+ 次访问，但是由于速度太快了，很快就限速了，叠加上错误重试，就失败了。。</p>
 <p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914093057760.png" srcset="/img/loading.gif" lazyload alt="image-20250914093057760"></p>
 <p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250914093145082.png" srcset="/img/loading.gif" lazyload alt="image-20250914093145082"></p>
