@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>claude-4.1</title>
-    <link href="/2025/09/20/claude-new-model-sonnet-4.1/"/>
-    <url>/2025/09/20/claude-new-model-sonnet-4.1/</url>
+    <title>claude-sonnet-4.5-release</title>
+    <link href="/2025/09/30/claude-sonnet-4-5-release/"/>
+    <url>/2025/09/30/claude-sonnet-4-5-release/</url>
     
-    <content type="html"><![CDATA[<h1 id="Claude-4-1-即将来临？"><a href="#Claude-4-1-即将来临？" class="headerlink" title="Claude-4.1 即将来临？"></a>Claude-4.1 即将来临？</h1><p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/9d7538b9695f5210a6fee8148374e41.jpg" alt="9d7538b9695f5210a6fee8148374e41"></p><p>Claude 和 CodeX 最近真的是你方唱罢我登场，这边刚出 GPT-5-CODEX，另一边 Claude-4.5 就要准备上线了！</p><h2 id="新的模型"><a href="#新的模型" class="headerlink" title="新的模型"></a>新的模型</h2><p>自打 GPT-5 开始，但凡新模型上线，总是要去 Cursor 这边整个限时免费：）（OpenRouter：完了，我成替身了）。</p><p>今天又上线了一个新模型：<code>code-supernova</code></p><p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250920235925194.png" alt="image-20250920235925194"></p><p>看看这回复风格，一眼就知道是谁家亲儿子啊。</p><p><strong>新模型</strong></p><p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250921000155310.png" alt="image-20250921000155310"></p><p><strong>Sonnet-4</strong></p><p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250921000136091.png" alt="image-20250921000136091"></p><p><strong>GPT-5</strong></p><p>,<img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250921000214892.png" alt="image-20250921000214892"></p><p>不说一模一样，至少八成相像吧。</p><p>赶紧问问这是啥模型</p><p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/4f8c0882f5c363c581956fa51e82e10.png" alt="4f8c0882f5c363c581956fa51e82e10"></p><p>同样的话术问问 Sonnet4</p><p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/6589f45621a5de031f713654a4d8d8a.png" alt="6589f45621a5de031f713654a4d8d8a"></p><p>看来是个 Sonnet 的小升级，那么斗胆猜一下，是不是 Sonnet 4.1？</p><h2 id="找不同"><a href="#找不同" class="headerlink" title="找不同"></a>找不同</h2><h3 id="知识库"><a href="#知识库" class="headerlink" title="知识库"></a>知识库</h3><p>看来是一个 5 月后训练的模型（至少当时 GPT-5 还没发布~</p><p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250921002638844.png" alt="image-20250921002638844"></p><p><img src="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250921002707399.png" alt="image-20250921002707399"></p><h3 id="上下文长度"><a href="#上下文长度" class="headerlink" title="上下文长度"></a>上下文长度</h3><p>256K vs 200K</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>目前来看，新模型和 Sonnet 非常相像，大概率是个小版本升级了，盲猜一个 4.1？</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Claude-Sonnet-4-5-发布了"><a href="#Claude-Sonnet-4-5-发布了" class="headerlink" title="Claude-Sonnet-4.5 发布了"></a>Claude-Sonnet-4.5 发布了</h1><p>Claude Sonne5 4.5，终于发布了，可谓是千呼万唤始出来。</p><h2 id="能力"><a href="#能力" class="headerlink" title="能力"></a>能力</h2><p><img src="/claude-sonnet-4-5-release.assets/image-20250930060642592.png" alt="image-20250930060642592"></p><p><img src="https://www.anthropic.com/_next/image?url=https://www-cdn.anthropic.com/images/4zrzovbb/website/2825bb34cb9b9aa1ef347f816c590b5bbdae2b4d-2600x2288.png&w=3840&q=75" alt="Benchmark table comparing frontier models across popular public evals"></p><p><img src="https://www.anthropic.com/_next/image?url=https://www-cdn.anthropic.com/images/4zrzovbb/website/7175bc18c46562f1228280a7abda751219a2aae1-3840x2160.png&w=3840&q=75" alt="img"></p><p><img src="https://www.anthropic.com/_next/image?url=https://www-cdn.anthropic.com/images/4zrzovbb/website/fd313a5edb996d98b9fc73ee5b3e6a34fbbcbb83-3840x2160.png&w=3840&q=75" alt="img"></p><p><img src="https://www.anthropic.com/_next/image?url=https://www-cdn.anthropic.com/images/4zrzovbb/website/442f96fd96de39e3ff3a05b288e2647dd7ec2f58-3840x2160.png&w=3840&q=75" alt="img"></p><p><img src="https://www.anthropic.com/_next/image?url=https://www-cdn.anthropic.com/images/4zrzovbb/website/711e6e1178f0ed7ca9aa85a5e0e9940a807c436a-3840x2160.png&w=3840&q=75" alt="img"></p><h2 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h2><p>除了是我们最强大的模型，Claude Sonnet 4.5 也是我们迄今为止最符合预期的前沿模型。Claude 的改进能力和我们广泛的安全生产训练使我们能够显著改善模型的行为，减少了诸如谄媚、欺骗、权力寻求以及鼓励幻想性思维等令人担忧的行为。对于模型的自主性和计算机使用能力，我们在防御提示注入攻击方面也取得了显著进展，这是这些能力用户面临的最严重风险之一。</p><p>Claude Sonnet 4.5 将根据我们的 AI 安全级别 3（ASL-3）保护措施进行发布，这符合我们的框架，该框架将模型能力与适当的保护措施相匹配。这些保护措施包括旨在检测潜在危险输入和输出的过滤器，即分类器——特别是与化学、生物、放射性及核（CBRN）武器相关的输入和输出。</p><h2 id="代理-SDK"><a href="#代理-SDK" class="headerlink" title="代理 SDK"></a>代理 SDK</h2><p>我们已经花费了超过六个月的时间向 Claude Code 发布更新，因此我们深知构建和设计 AI 代理需要什么。我们已经解决了难题：代理如何在长时间运行的任务中管理内存，如何处理在自主性与用户控制之间取得平衡的权限系统，以及如何协调为共同目标工作的子代理。</p>]]></content>
     
     
     
@@ -16,7 +16,7 @@
       
       <tag>AI</tag>
       
-      <tag>claudecode</tag>
+      <tag>claude</tag>
       
     </tags>
     
