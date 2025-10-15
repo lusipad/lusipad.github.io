@@ -2,6 +2,16 @@
 
 按月份分类的文档列表：
 
+## 2025年10月
+- [Claude-Code-restrictions-in-2025](source/_posts/Claude-Code-restrictions-in-2025.md) - 2025-10-07
+
+## 2025年09月
+- [claude-weeklylimit-to-day](source/_posts/claude-weeklylimit-to-day.md) - 2025-09-30
+- [claude-sonnet-4.5-release](source/_posts/claude-sonnet-4-5-release.md) - 2025-09-30
+- [使用claudecode生成opendeepwiki](source/_posts/create_deep_wiki_with_claude_code.md) - 2025-09-20
+- [邪修用法：Codex/ClaudeCode转标准API](source/_posts/CLIProxyAPI.md) - 2025-09-14
+- [Claude Code + Azure DevOps MCP 完整使用指南](source/_posts/use-claude-code-review-azure-devops-pr.md) - 2025-09-02
+
 ## 2025年05月
 - [deepwiki初体验](source/_posts/deepwiki初体验.md) - 2025-05-13
 - [沉浸式翻译的prompt](source/_posts/沉浸式翻译的prompt.md) - 2025-05-07
