@@ -7,18 +7,24 @@ title: lusipad 的个人小站
 subtitle: 'lusipad blog'
 description: '一个记录自己学习和思考内容的小站'
 keywords:
+  - AI
+  - Claude
+  - 编程
+  - 技术博客
+  - 工业应用
+  - 数控系统
 author: lusipad
 language: zh-CN
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://lusipad.com
+url: https://lusipad.com
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -29,6 +35,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - robots.txt
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -106,3 +113,20 @@ deploy:
   repo: https://github.com/lusipad/lusipad.github.io
   # example, https://github.com/hexojs/hexojs.github.io
   branch: gh-pages
+
+# SEO - Sitemap
+sitemap:
+  path: sitemap.xml
+  rel: false
+  tags: true
+  categories: true
+
+# SEO - RSS Feed
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  content: true
+  content_limit: 140
+  content_limit_delim: ' '
