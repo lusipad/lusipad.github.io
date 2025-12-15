@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://lusipad.com/sitemap.xml
+
+# Disallow admin/system paths
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
