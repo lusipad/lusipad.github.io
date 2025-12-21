@@ -21,28 +21,27 @@
   <meta name="author" content="lusipad">
   <meta name="keywords" content="AI,Claude,编程,技术博客,工业应用,数控系统">
   
-    <meta name="description" content="OpenManus 初体验前几天 Manus 突然火了，国内自媒体各种夸夸夸，国外一点没水花。从我个人角度来看，这玩意儿和前几年的 autoGPT 没啥本质上的区别，无法就是大模型底座 + 工具链优化，这也是今年智能体的一个大方向。 之前的 DeepResearch 就给大家上了一课，就是推理 + 工具，会产生新的化学反应。因为从某种程度上来说，推理模型的最大优势，其实在于自动生成合适的 Pomp">
+    <meta name="description" content="体验 Manus 开源平替 OpenManus，使用 DeepSeek-V3 测试智能体在数控系统参数设计等复杂任务的表现">
 <meta property="og:type" content="article">
-<meta property="og:title" content="openManus初体验">
+<meta property="og:title" content="OpenManus 初体验">
 <meta property="og:url" content="https://lusipad.com/2025/03/08/openManus%E5%88%9D%E4%BD%93%E9%AA%8C/">
 <meta property="og:site_name" content="lusipad 的个人小站">
-<meta property="og:description" content="OpenManus 初体验前几天 Manus 突然火了，国内自媒体各种夸夸夸，国外一点没水花。从我个人角度来看，这玩意儿和前几年的 autoGPT 没啥本质上的区别，无法就是大模型底座 + 工具链优化，这也是今年智能体的一个大方向。 之前的 DeepResearch 就给大家上了一课，就是推理 + 工具，会产生新的化学反应。因为从某种程度上来说，推理模型的最大优势，其实在于自动生成合适的 Pomp">
+<meta property="og:description" content="体验 Manus 开源平替 OpenManus，使用 DeepSeek-V3 测试智能体在数控系统参数设计等复杂任务的表现">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250308100751354.png">
 <meta property="article:published_time" content="2025-03-08T01:45:14.000Z">
-<meta property="article:modified_time" content="2025-03-09T13:01:45.162Z">
+<meta property="article:modified_time" content="2025-12-19T21:54:48.858Z">
 <meta property="article:author" content="lusipad">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="manus">
 <meta property="article:tag" content="智能体">
-<meta property="article:tag" content="open_manus">
 <meta property="article:tag" content="openManus">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://raw.gitmirror.com/lusipad/imgur/main/img/image-20250308100751354.png">
   
   
   
-  <title>openManus初体验 - lusipad 的个人小站</title>
+  <title>OpenManus 初体验 - lusipad 的个人小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -94,6 +93,8 @@
 
   
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="lusipad 的个人小站" type="application/atom+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://lusipad.com/2025/03/08/openManus%E5%88%9D%E4%BD%93%E9%AA%8C/"},"headline":"OpenManus 初体验","description":"体验 Manus 开源平替 OpenManus，使用 DeepSeek-V3 测试智能体在数控系统参数设计等复杂任务的表现","inLanguage":"zh-CN","author":{"@type":"Person","name":"lusipad"},"publisher":{"@type":"Organization","name":"lusipad 的个人小站","logo":{"@type":"ImageObject","url":"https://lusipad.com/favicon/apple-touch-icon.png"}},"url":"https://lusipad.com/2025/03/08/openManus%E5%88%9D%E4%BD%93%E9%AA%8C/","datePublished":"2025-03-08T01:45:14.000Z","dateModified":"2025-12-19T21:54:48.858Z","keywords":"AI, manus, 智能体, openManus"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lusipad.com"},{"@type":"ListItem","position":2,"name":"OpenManus 初体验","item":"https://lusipad.com/2025/03/08/openManus%E5%88%9D%E4%BD%93%E9%AA%8C/"}]}</script>
 </head>
 
 
@@ -221,7 +222,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="openManus初体验"></span>
+            <span id="subtitle" data-typed-text="OpenManus 初体验"></span>
           
         </div>
 
@@ -292,7 +293,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">openManus初体验</h1>
+            <h1 id="seo-header">OpenManus 初体验</h1>
             
             
               <div class="markdown-body">
@@ -543,6 +544,27 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="category-chain-item">AI工具</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
@@ -552,8 +574,6 @@
         <a href="/tags/manus/" class="print-no-link">#manus</a>
       
         <a href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/" class="print-no-link">#智能体</a>
-      
-        <a href="/tags/open-manus/" class="print-no-link">#open_manus</a>
       
         <a href="/tags/openManus/" class="print-no-link">#openManus</a>
       
@@ -567,7 +587,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>openManus初体验</div>
+      <div>OpenManus 初体验</div>
       <div>https://lusipad.com/2025/03/08/openManus初体验/</div>
     </div>
     <div class="license-meta">
@@ -612,9 +632,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/13/2025%E6%85%95%E5%B0%BC%E9%BB%91%E5%85%89%E5%8D%9A%E4%BC%9A/" title="2025慕尼黑上海光博会">
+                      <a href="/2025/03/13/2025%E6%85%95%E5%B0%BC%E9%BB%91%E5%85%89%E5%8D%9A%E4%BC%9A/" title="2025 慕尼黑上海光博会参观记">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2025慕尼黑上海光博会</span>
+                        <span class="hidden-mobile">2025 慕尼黑上海光博会参观记</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

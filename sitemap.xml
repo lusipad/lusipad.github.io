@@ -2,126 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lusipad.com/2025/10/07/Claude-Code-restrictions-in-2025/</loc>
-    
-    <lastmod>2025-10-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/09/30/claude-weeklylimit-to-day/</loc>
-    
-    <lastmod>2025-09-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/09/30/claude-sonnet-4-5-release/</loc>
-    
-    <lastmod>2025-09-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/09/20/create_deep_wiki_with_claude_code/</loc>
-    
-    <lastmod>2025-09-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/09/14/CLIProxyAPI/</loc>
-    
-    <lastmod>2025-09-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/09/02/use-claude-code-review-azure-devops-pr/</loc>
-    
-    <lastmod>2025-09-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/05/13/deepwiki%E5%88%9D%E4%BD%93%E9%AA%8C/</loc>
-    
-    <lastmod>2025-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/05/07/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91%E7%9A%84prompt/</loc>
-    
-    <lastmod>2025-05-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/04/13/%E8%BF%9F%E6%9D%A5%E7%9A%84Manus%E5%88%9D%E4%BD%93%E9%AA%8C/</loc>
-    
-    <lastmod>2025-04-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/03/13/2025%E6%85%95%E5%B0%BC%E9%BB%91%E5%85%89%E5%8D%9A%E4%BC%9A/</loc>
-    
-    <lastmod>2025-03-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/03/08/openManus%E5%88%9D%E4%BD%93%E9%AA%8C/</loc>
-    
-    <lastmod>2025-03-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://lusipad.com/2023/01/01/hello-world/</loc>
     
-    <lastmod>2025-03-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2024/03/14/install-linuxcnc-in-wsl/</loc>
-    
-    <lastmod>2025-03-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/03/06/ktransform-2-3/</loc>
-    
-    <lastmod>2025-03-06</lastmod>
+    <lastmod>2025-12-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -130,43 +13,7 @@
   <url>
     <loc>https://lusipad.com/2023/10/06/test-encrypt/</loc>
     
-    <lastmod>2025-03-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/03/02/%E4%BD%BF%E7%94%A8AI%E5%BC%80%E5%8F%91%E6%95%B0%E6%8E%A7%E7%B3%BB%E7%BB%9F/</loc>
-    
-    <lastmod>2025-03-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2025/03/01/trae-support-claude-3-7/</loc>
-    
-    <lastmod>2025-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2023/10/06/2023-ciff-expo/</loc>
-    
-    <lastmod>2024-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2023/12/17/end-of-year-2023/</loc>
-    
-    <lastmod>2023-12-17</lastmod>
+    <lastmod>2025-12-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -175,7 +22,7 @@
   <url>
     <loc>https://lusipad.com/2023/11/28/CppRoadmap/</loc>
     
-    <lastmod>2023-11-28</lastmod>
+    <lastmod>2025-12-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -184,7 +31,160 @@
   <url>
     <loc>https://lusipad.com/2023/11/28/CppInterview/</loc>
     
-    <lastmod>2023-11-28</lastmod>
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2023/10/06/2023-ciff-expo/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2023/12/17/end-of-year-2023/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2024/03/14/install-linuxcnc-in-wsl/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/03/01/trae-support-claude-3-7/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/03/06/ktransform-2-3/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/03/02/%E4%BD%BF%E7%94%A8AI%E5%BC%80%E5%8F%91%E6%95%B0%E6%8E%A7%E7%B3%BB%E7%BB%9F/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/03/13/2025%E6%85%95%E5%B0%BC%E9%BB%91%E5%85%89%E5%8D%9A%E4%BC%9A/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/03/08/openManus%E5%88%9D%E4%BD%93%E9%AA%8C/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/04/13/%E8%BF%9F%E6%9D%A5%E7%9A%84Manus%E5%88%9D%E4%BD%93%E9%AA%8C/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/05/07/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%BF%BB%E8%AF%91%E7%9A%84prompt/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/05/13/deepwiki%E5%88%9D%E4%BD%93%E9%AA%8C/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/09/02/use-claude-code-review-azure-devops-pr/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/09/14/CLIProxyAPI/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/09/30/claude-weeklylimit-to-day/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/09/20/create_deep_wiki_with_claude_code/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/09/30/claude-sonnet-4-5-release/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2025/10/07/Claude-Code-restrictions-in-2025/</loc>
+    
+    <lastmod>2025-12-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -202,7 +202,7 @@
 
   <url>
     <loc>https://lusipad.com/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -210,196 +210,196 @@
   
   <url>
     <loc>https://lusipad.com/tags/%E6%95%B0%E6%8E%A7/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/%E5%B7%A5%E5%8D%9A%E4%BC%9A/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/CNC/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/PLC/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/AI/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/claude/</loc>
-    <lastmod>2025-12-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/tags/codex/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/anthropic/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/tags/codex/</loc>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/C/</loc>
-    <lastmod>2025-12-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/tags/%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/tags/%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/deepwiki/</loc>
-    <lastmod>2025-12-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/tags/claudecode/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/tags/claudecode/</loc>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/linuxcnc/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/wsl/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/ktransformers/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/deepseek/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/manus/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/%E6%99%BA%E8%83%BD%E4%BD%93/</loc>
-    <lastmod>2025-12-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/tags/open-manus/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/openManus/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/tags/trae/</loc>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/devops/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/review/</loc>
-    <lastmod>2025-12-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2025-12-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/tags/web/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/Manus/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lusipad.com/tags/agent/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/tags/web/</loc>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -408,7 +408,35 @@
   
   <url>
     <loc>https://lusipad.com/categories/%E6%95%B0%E6%8E%A7/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/categories/AI%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

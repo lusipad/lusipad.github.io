@@ -21,16 +21,16 @@
   <meta name="author" content="lusipad">
   <meta name="keywords" content="AI,Claude,编程,技术博客,工业应用,数控系统">
   
-    <meta name="description" content="WSL 编译 linuxcnc (Debian &#x2F; Ubuntu)验证下来 Debian 和 Ubuntu 都可以使用 (未开启实时补丁的情况下，会在非实时环境运行), 但是 GUI 部分，Ubuntu 和 WSL 的集成度更高。 如果只是简单的使用和调试，个人推荐使用 Ubuntu 操作步骤 开启 WSL  控制面板 - 程序和功能 - 启用或关闭 Windows 功能 - 适用于 L">
+    <meta name="description" content="在 Windows WSL2 环境下编译和运行 LinuxCNC 的完整教程，支持 Debian 和 Ubuntu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WSL 编译 linuxcnc (Debian &#x2F; Ubuntu)">
+<meta property="og:title" content="WSL 编译 LinuxCNC (Debian&#x2F;Ubuntu)">
 <meta property="og:url" content="https://lusipad.com/2024/03/14/install-linuxcnc-in-wsl/">
 <meta property="og:site_name" content="lusipad 的个人小站">
-<meta property="og:description" content="WSL 编译 linuxcnc (Debian &#x2F; Ubuntu)验证下来 Debian 和 Ubuntu 都可以使用 (未开启实时补丁的情况下，会在非实时环境运行), 但是 GUI 部分，Ubuntu 和 WSL 的集成度更高。 如果只是简单的使用和调试，个人推荐使用 Ubuntu 操作步骤 开启 WSL  控制面板 - 程序和功能 - 启用或关闭 Windows 功能 - 适用于 L">
+<meta property="og:description" content="在 Windows WSL2 环境下编译和运行 LinuxCNC 的完整教程，支持 Debian 和 Ubuntu">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://raw.githubusercontent.com/lusipad/imgur/main/img/image.png">
 <meta property="article:published_time" content="2024-03-14T13:36:23.000Z">
-<meta property="article:modified_time" content="2025-03-09T00:45:22.872Z">
+<meta property="article:modified_time" content="2025-12-19T21:55:21.335Z">
 <meta property="article:author" content="lusipad">
 <meta property="article:tag" content="数控">
 <meta property="article:tag" content="linuxcnc">
@@ -40,7 +40,7 @@
   
   
   
-  <title>WSL 编译 linuxcnc (Debian / Ubuntu) - lusipad 的个人小站</title>
+  <title>WSL 编译 LinuxCNC (Debian/Ubuntu) - lusipad 的个人小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -92,6 +92,8 @@
 
   
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="lusipad 的个人小站" type="application/atom+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://lusipad.com/2024/03/14/install-linuxcnc-in-wsl/"},"headline":"WSL 编译 LinuxCNC (Debian/Ubuntu)","description":"在 Windows WSL2 环境下编译和运行 LinuxCNC 的完整教程，支持 Debian 和 Ubuntu","inLanguage":"zh-CN","author":{"@type":"Person","name":"lusipad"},"publisher":{"@type":"Organization","name":"lusipad 的个人小站","logo":{"@type":"ImageObject","url":"https://lusipad.com/favicon/apple-touch-icon.png"}},"url":"https://lusipad.com/2024/03/14/install-linuxcnc-in-wsl/","datePublished":"2024-03-14T13:36:23.000Z","dateModified":"2025-12-19T21:55:21.335Z","keywords":"数控, linuxcnc, wsl"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lusipad.com"},{"@type":"ListItem","position":2,"name":"WSL 编译 LinuxCNC (Debian/Ubuntu)","item":"https://lusipad.com/2024/03/14/install-linuxcnc-in-wsl/"}]}</script>
 </head>
 
 
@@ -219,7 +221,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="WSL 编译 linuxcnc (Debian / Ubuntu)"></span>
+            <span id="subtitle" data-typed-text="WSL 编译 LinuxCNC (Debian/Ubuntu)"></span>
           
         </div>
 
@@ -290,7 +292,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">WSL 编译 linuxcnc (Debian / Ubuntu)</h1>
+            <h1 id="seo-header">WSL 编译 LinuxCNC (Debian/Ubuntu)</h1>
             
             
               <div class="markdown-body">
@@ -368,6 +370,27 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8E%A7/" class="category-chain-item">数控</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
@@ -388,7 +411,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>WSL 编译 linuxcnc (Debian / Ubuntu)</div>
+      <div>WSL 编译 LinuxCNC (Debian/Ubuntu)</div>
       <div>https://lusipad.com/2024/03/14/install-linuxcnc-in-wsl/</div>
     </div>
     <div class="license-meta">
@@ -433,9 +456,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/01/trae-support-claude-3-7/" title="Trae 新版本来了，支持 claude-3.7">
+                      <a href="/2025/03/01/trae-support-claude-3-7/" title="Trae 新版本支持 Claude 3.7">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Trae 新版本来了，支持 claude-3.7</span>
+                        <span class="hidden-mobile">Trae 新版本支持 Claude 3.7</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
