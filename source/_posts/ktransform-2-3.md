@@ -1,6 +1,8 @@
 ---
 title: KTransformers 2.3 版本发布
 date: 2025-03-06 23:31:10
+description: KTransformers 2.3 发布，新增 Unsloth 1.58/2.51bit 量化支持，单卡 19GB 显存即可运行 DeepSeek-R1
+categories: [AI工具]
 tags: [AI, ktransformers, deepseek]
 ---
 

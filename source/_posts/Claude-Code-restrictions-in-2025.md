@@ -1,6 +1,8 @@
 ---
-title: Claude-Code-restrictions-in-2025
+title: Claude Code 限制收紧的深层原因分析
 date: 2025-10-07 09:41:02
+description: 深入分析 2025 年 10 月 Anthropic Claude Code 使用限制收紧的技术、商业、监管等多重原因，以及对 AI 编码工具行业的影响
+categories: [AI工具]
 tags: [AI, claude, anthropic]
 ---
 

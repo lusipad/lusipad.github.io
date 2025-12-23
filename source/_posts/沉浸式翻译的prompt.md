@@ -1,7 +1,9 @@
 ---
-title: 沉浸式翻译的prompt
+title: 沉浸式翻译的 Prompt 泄露
 date: 2025-05-07 07:11:46
-tags: AI
+description: 发现沉浸式翻译浏览器插件使用的 AI 翻译 Prompt，分析其翻译策略
+categories: [AI工具]
+tags: [AI]
 ---
 
 # 沉浸式翻译的 prompt

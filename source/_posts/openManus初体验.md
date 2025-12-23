@@ -1,7 +1,9 @@
 ---
-title: openManus初体验
+title: OpenManus 初体验
 date: 2025-03-08 09:45:14
-tags: [AI, manus, 智能体, open_manus, openManus]
+description: 体验 Manus 开源平替 OpenManus，使用 DeepSeek-V3 测试智能体在数控系统参数设计等复杂任务的表现
+categories: [AI工具]
+tags: [AI, manus, 智能体, openManus]
 ---
 
 # OpenManus 初体验

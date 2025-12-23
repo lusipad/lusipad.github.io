@@ -1,7 +1,9 @@
 ---
-title: Trae 新版本来了，支持 claude-3.7
+title: Trae 新版本支持 Claude 3.7
 date: 2025-03-01 23:52:37
-tags: AI
+description: 字节出品的 AI 编程工具 Trae 更新，新增 Claude 3.7 模型支持
+categories: [AI工具]
+tags: [AI, trae]
 ---
 
 

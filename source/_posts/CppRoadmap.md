@@ -1,7 +1,9 @@
 ---
-title: CppRoadmap
+title: C++ 学习路线图
 date: 2023-11-28 20:50:49
-tags: [C++,学习]
+description: 基于 CppDeveloperRoadmap 项目整理的 C++ 学习路线，帮助开发者系统提升能力
+categories: [编程]
+tags: [C++, 学习]
 ---
 
 # C++ Roadmap

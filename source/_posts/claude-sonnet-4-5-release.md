@@ -1,6 +1,8 @@
 ---
-title: claude-sonnet-4.5-release
+title: Claude Sonnet 4.5 发布
 date: 2025-09-30 06:03:56
+description: Claude Sonnet 4.5 正式发布，介绍新模型的能力提升、安全性改进以及与其他前沿模型的对比
+categories: [AI工具]
 tags: [claude, AI]
 ---
 

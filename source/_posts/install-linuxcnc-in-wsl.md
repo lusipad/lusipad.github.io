@@ -1,6 +1,8 @@
 ---
-title: WSL 编译 linuxcnc (Debian / Ubuntu)
+title: WSL 编译 LinuxCNC (Debian/Ubuntu)
 date: 2024-03-14 21:36:23
+description: 在 Windows WSL2 环境下编译和运行 LinuxCNC 的完整教程，支持 Debian 和 Ubuntu
+categories: [数控]
 tags: [linuxcnc, wsl, 数控]
 ---
 

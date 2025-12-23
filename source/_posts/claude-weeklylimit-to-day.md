@@ -1,6 +1,8 @@
 ---
-title: claude-weeklylimit-to-day
+title: Claude Code 可用量缩水分析
 date: 2025-09-30 20:32:07
+description: Claude Code Max 20x 订阅可用量从 $270 骤降至 $170，分析 Anthropic 限制收紧的原因和影响
+categories: [AI工具]
 tags: [claude, AI]
 ---
 

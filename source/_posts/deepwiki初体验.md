@@ -1,7 +1,9 @@
 ---
-title: deepwiki初体验
+title: DeepWiki 初体验
 date: 2025-05-13 07:43:32
-tags: [AI]
+description: 体验 Cognition 推出的 DeepWiki 活文档服务，测试其对开源项目文档自动生成的效果
+categories: [AI工具]
+tags: [AI, deepwiki]
 ---
 
 # DeepWiki初体验

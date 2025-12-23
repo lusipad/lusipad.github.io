@@ -109,10 +109,10 @@ theme: fluid
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repo: https://github.com/lusipad/lusipad.github.io
-  # example, https://github.com/hexojs/hexojs.github.io
-  branch: gh-pages
+  - type: git
+    repo: https://github.com/lusipad/lusipad.github.io
+    branch: gh-pages
+  - type: baidu_url_submitter  # 百度主动推送
 
 # SEO - Sitemap
 sitemap:
@@ -130,3 +130,28 @@ feed:
   content: true
   content_limit: 140
   content_limit_delim: ' '
+
+# Performance - HTML/CSS/JS Minify
+neat_enable: true
+neat_html:
+  enable: true
+  exclude:
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+
+# Baidu SEO - URL Submit (主动推送)
+# 获取 token: https://ziyuan.baidu.com/linksubmit/index
+baidu_url_submit:
+  count: 10                        # 每次提交链接数量
+  host: lusipad.com                # 站点域名
+  token: YOUR_BAIDU_TOKEN          # 在百度站长平台获取
+  path: baidu_urls.txt             # 生成的 URL 文件

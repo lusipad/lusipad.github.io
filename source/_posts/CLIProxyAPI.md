@@ -1,7 +1,9 @@
 ---
-title: 邪修用法：Codex/ClaudeCode转标准API
+title: 邪修用法：Codex/Claude Code 转标准 API
 date: 2025-09-14 08:54:04
-tags: [AI,claude,codex]
+description: 使用 CLIProxyAPI 将 Codex 和 Claude Code 转换为 OpenAI 兼容 API，实现低成本使用 GPT/Claude 模型
+categories: [AI工具]
+tags: [AI, claude, codex]
 ---
 
 # 邪修用法：Codex/ClaudeCode转标准API

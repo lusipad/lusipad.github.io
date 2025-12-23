@@ -1,6 +1,8 @@
 ---
-title: 使用claudecode生成opendeepwiki
+title: 使用 Claude Code 生成 OpenDeepWiki
 date: 2025-09-20 06:41:12
+description: 使用 Claude Code 配合 CLIProxyAPI 生成 OpenDeepWiki 的完整教程，包括配置步骤和使用心得
+categories: [AI工具]
 tags: [AI, deepwiki, claudecode]
 ---
 

@@ -1,6 +1,8 @@
 ---
 title: Claude Code + Azure DevOps MCP 完整使用指南
 date: 2025-09-02 07:43:28
+description: 将 Claude Code 与 Azure DevOps 集成实现智能化代码评审，包含完整的安装配置和使用教程
+categories: [AI工具]
 tags: [AI, claudecode, devops, review]
 ---
 

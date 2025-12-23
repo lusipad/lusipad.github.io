@@ -1,6 +1,8 @@
 ---
-title: 使用AI开发数控系统记录
+title: 使用 AI 开发数控系统记录
 date: 2025-03-02 01:00:04
+description: 使用 Trae 和 Windsurf 等 AI 工具从零开发数控系统的完整记录，包含遇到的问题和解决方案
+categories: [数控]
 tags: [AI, C++, 前端, web]
 ---
 

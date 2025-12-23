@@ -1,8 +1,9 @@
 ---
-title: 2023 工博会
+title: 2023 工博会参观记
 date: 2023-10-06 15:41:26
+description: 参观 2023 中国国际工业博览会，关注 CNC 数控系统和 PLC 领域的最新发展
+categories: [数控]
 tags: [数控, 工博会, CNC, PLC]
-category: 数控
 ---
 
 

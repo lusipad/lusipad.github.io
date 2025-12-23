@@ -1,7 +1,9 @@
 ---
-title: 迟来的Manus初体验
+title: 迟来的 Manus 初体验
 date: 2025-04-13 18:04:45
-tags: [Manus,agent,AI]
+description: 使用 Manus AI 智能体测试数控系统参数评估算法设计等复杂任务的实际效果
+categories: [AI工具]
+tags: [Manus, agent, AI]
 ---
 
 # 迟来的 Manus 初体验

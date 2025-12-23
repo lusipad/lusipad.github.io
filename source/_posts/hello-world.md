@@ -1,6 +1,8 @@
 ---
 title: Hello World
-date: 2023-1-1
+date: 2023-01-01
+description: Markdown 语法测试文章，展示各种 Markdown 格式效果
+categories: [技术]
 ---
 # Markdown Syntax Test
 

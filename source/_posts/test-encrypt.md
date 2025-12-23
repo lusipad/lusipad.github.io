@@ -1,6 +1,8 @@
 ---
-title: 测试下加密功能
+title: 测试加密功能
 date: 2023-10-06 14:33:59
+description: 测试 hexo-blog-encrypt 加密插件的效果
+categories: [技术]
 password: test
 ---
 
