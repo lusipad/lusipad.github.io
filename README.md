@@ -2,6 +2,10 @@
 
 按月份分类的文档列表：
 
+## 2026年02月
+- [aicnc-website](source/_posts/aicnc-website.md) - 2026-02-22
+- [ai-cnc-programming-guide](source/_posts/ai-cnc-programming-guide.md) - 2026-02-22
+
 ## 2025年10月
 - [Claude Code 限制收紧的深层原因分析](source/_posts/Claude-Code-restrictions-in-2025.md) - 2025-10-07
 

@@ -401,6 +401,11 @@ scroll_down_arrow:
 scroll_top_arrow:
   enable: true
 
+# Canonical URL - 防止重复内容，提升 SEO
+# Canonical URL - Prevent duplicate content
+canonical:
+  enable: true
+
 # Open Graph metadata
 # See: https://hexo.io/docs/helpers.html#open-graph
 open_graph:
