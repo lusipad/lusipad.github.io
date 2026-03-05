@@ -6,7 +6,7 @@
   <link href="https://lusipad.com/atom.xml" rel="self"/>
   
   <link href="https://lusipad.com/"/>
-  <updated>2026-02-22T05:13:33.695Z</updated>
+  <updated>2026-03-05T21:49:20.762Z</updated>
   <id>https://lusipad.com/</id>
   
   <author>
@@ -15,6 +15,73 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深夜王炸！GPT-5.4 重磅发布</title>
+    <link href="https://lusipad.com/2026/03/06/gpt-5-4-release/"/>
+    <id>https://lusipad.com/2026/03/06/gpt-5-4-release/</id>
+    <published>2026-03-05T21:29:53.000Z</published>
+    <updated>2026-03-05T21:49:20.762Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="深夜王炸！GPT-5-4-重磅发布"><a href="#深夜王炸！GPT-5-4-重磅发布" class="headerlink" title="深夜王炸！GPT-5.4 重磅发布"></a>深夜王炸！GPT-5.4 重磅发布</h1><p>这几天 openai 因为国防部订单问题，深陷美帝人民讨伐中。2B 的业务被 Anthropic 抢了 70% 不说，2C 的 AppStore 排名也被反超。这下奥特曼是彻底坐不住了，先是开胃菜：GPT-5.3-Instance（更会说人话的模型），同时还在 X 上暗示说 “5.4 会比你们想象中快地到来”。</p><p>结果，没过两天，半夜就偷偷发布了 GPT-5.4 了。</p><p>在各大自媒体还没来得及发文前，我们赶紧先偷偷体验一波看看。</p><h2 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h2><p>一句话概括：<br>GPT‑5.4 的核心提升，不只是“更聪明了一点”，而是更像一个能真正完成专业工作的模型：更会思考、更会写代码、更会用工具、更能操作软件和网页，而且整体更省 token、来回沟通更少。</p><p><strong>按能力角度看</strong></p><ul><li>产品定位：5.4 把最近几代分散的优势合并到了一个主力模型里，尤其把 GPT‑5.3‑Codex 的前沿编码能力吸收到主线模型中，目标很明确：面向文档、表格、演示、软件系统这类真实专业工作。</li><li>知识工作：对长文档、多来源材料、互相矛盾的信息整合更强，尤其适合研究、报告、分析类任务。官方给出的例子里，它在复杂浏览&#x2F;检索类基准上明显领先 5.2，比如 BrowseComp 从 65.8% 提升到 82.7%。</li><li>交互体验：ChatGPT 里的 GPT‑5.4 Thinking 会先给出一个“前置计划 &#x2F; preamble”，你可以在它生成过程中直接纠偏，而不是等它答完再重来。这本质上降低了多轮返工成本。</li><li>长程推理：更能在长时间思考过程中保持前文一致性，适合那种 30–60 分钟级别、需要持续推演和校验的复杂任务。</li><li>编码能力：这次是很实打实的升级。官方数据里，SWE-bench Verified 从 67.2% 提升到 74.9%，SWE-Lancer Diamond 从 24.0% 提升到 42.0%，Codeforces 从 1260 到 1840。说明它不只是“会写片段代码”，而是更擅长跨文件修改、重构、理解仓库上下文。</li><li>工具使用 &#x2F; Agent 能力：这是 5.4 很大的看点。它支持更强的工具调用、tool search、并行子任务（#task），还<strong>支持最长 1M token 上下文</strong>，更像一个能规划、执行、再验证的工作代理。</li><li>电脑操作与视觉：5.4 是 OpenAI <strong>首个“通用型 + 原生 computer-use”主力模型</strong>，能看截图、操作网页和软件、发鼠标键盘指令。OSWorld-Verified 从 47.3% 提升到 75.0%，官方还提到已超过该基准的人类成绩 72.4%。这意味着它在“看着界面做事”上有质变。</li><li>效率：虽然 API 单价比 5.2 高，但官方强调它是目前 token 效率最高的 reasoning model，在同一提示集上平均输出 token 比 5.2 少 10% 以上。换句话说，单 token 更贵，但很多任务总成本和延迟未必更差。</li><li>安全与可控性：5.4 按 High cyber capability 级别部署了相应防护。对开发者来说，除了更强，也更可控：可以通过 developer message 和自定义确认策略，约束 agent 的行为边界。</li></ul><p><strong>按用户角色看</strong></p><ul><li>普通重度用户：最直接的收益是“少来回”。它更会先规划、更能保持上下文、更适合长任务。</li><li>开发者：最值钱的是三件事叠加：更强编码、更强工具调用、更强 computer use。也就是从“代码助手”更接近“开发 agent”。</li><li>企业&#x2F;团队：更适合跨应用流程，比如读文档、查网页、改表格、写报告、验证结果这种串联任务，落地方向比单纯聊天模型更清晰。</li><li>产品经理&#x2F;分析师：复杂研究、竞品分析、长报告、资料归纳这类任务收益会比较明显，因为它更擅长长链路推理和多源整合。</li><li>自动化场景：如果你关心的是 agent&#x2F;工作流，5.4 的意义比“答题更强”大得多，因为它第一次把长上下文、工具生态、软件操作能力真正组合起来了。</li></ul><p><strong>如果只挑 3 个最关键提升</strong></p><ul><li>从“会回答”升级到“会完成工作流”</li><li>从“会写代码”升级到“会在真实软件环境里行动”</li><li>从“更强能力”升级到“更适合长期、复杂、专业任务”</li></ul><p><strong>我会怎么定义这次 5.4</strong><br>如果用一句更偏业务的话讲：5.4 的升级重点不是单项 benchmark 再涨一点，而是把模型从“强助手”往“可靠的专业工作代理”推进了一大步。</p><h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>在 <code>config.toml</code> 里手动开启</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">model</span> = <span class="hljs-string">&quot;gpt-5.4&quot;</span><br><span class="hljs-attr">model_context_window</span> = <span class="hljs-number">1000000</span><br><span class="hljs-attr">model_reasoning_effort</span> = <span class="hljs-string">&quot;xhigh&quot;</span><br></code></pre></td></tr></table></figure><p>接下来，你就可以在 cli &#x2F; codex app &#x2F; vscode 里使用了</p><p>按照长久以来的发布节奏，正式版集成估计要等下下下周了</p><h2 id="One-More-Thing"><a href="#One-More-Thing" class="headerlink" title="One More Thing"></a>One More Thing</h2><p>Codex App (Windows) 目前也已经全量开放了，直接 Windows 应用商店下载，配上新的 gpt-5.4，那真是风味更佳！</p><p>另外 Codex Cli 最新的 0.111.0 版本还上线了 Fast 模式，这是要把现在的几个痛点：【不说人话，慢，工具链落后】都完善起来，配上现在广大免费的普号和 低到几块钱的 Team… 难道 GPT 要崛起？</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[features]</span><br><span class="hljs-attr">fast_mode</span> = <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;深夜王炸！GPT-5-4-重磅发布&quot;&gt;&lt;a href=&quot;#深夜王炸！GPT-5-4-重磅发布&quot; class=&quot;headerlink&quot; title=&quot;深夜王炸！GPT-5.4 重磅发布&quot;&gt;&lt;/a&gt;深夜王炸！GPT-5.4 重磅发布&lt;/h1&gt;&lt;p&gt;这几天</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AI" scheme="https://lusipad.com/tags/AI/"/>
+    
+    <category term="codex" scheme="https://lusipad.com/tags/codex/"/>
+    
+    <category term="gpt" scheme="https://lusipad.com/tags/gpt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从 DeepSeek 到 OpenClaw：2025 AI 进化的第一性原理观察</title>
+    <link href="https://lusipad.com/2026/03/03/%E4%BB%8E-DeepSeek-%E5%88%B0-OpenClaw%EF%BC%9A2025-AI-%E8%BF%9B%E5%8C%96%E7%9A%84%E7%AC%AC%E4%B8%80%E6%80%A7%E5%8E%9F%E7%90%86%E8%A7%82%E5%AF%9F/"/>
+    <id>https://lusipad.com/2026/03/03/%E4%BB%8E-DeepSeek-%E5%88%B0-OpenClaw%EF%BC%9A2025-AI-%E8%BF%9B%E5%8C%96%E7%9A%84%E7%AC%AC%E4%B8%80%E6%80%A7%E5%8E%9F%E7%90%86%E8%A7%82%E5%AF%9F/</id>
+    <published>2026-03-03T04:00:00.000Z</published>
+    <updated>2026-03-03T15:01:09.902Z</updated>
+    
+    <content type="html"><![CDATA[<p>人脑有 850 亿神经元，但工作时只有 2-5% 同时激活，功耗 20 瓦。</p><p>GPT-4 有万亿级参数，推理时几乎全部激活，训练功耗以兆瓦计。</p><p>这个差距，就是 2025 年 AI 进化的原动力。</p><h2 id="一、DeepSeek：向大脑靠拢"><a href="#一、DeepSeek：向大脑靠拢" class="headerlink" title="一、DeepSeek：向大脑靠拢"></a>一、DeepSeek：向大脑靠拢</h2><p>DeepSeek R1 出来那天，我看到 600 万美元的训练成本，第一反应是数字少写了个零。</p><p>后来看 MLA（多头潜在注意力）的论文，才明白本质：<strong>这不是省钱，是在模仿大脑的稀疏激活</strong>。</p><ul><li>人脑：需要时只唤醒相关区域</li><li>MLA + MoE：推理时只激活部分专家和压缩后的注意力</li><li>结果：同样的智能，十分之一的成本</li></ul><p>（算法突破一旦被公开，护城河就失效了）</p><h2 id="二、2025-年的三条收敛线"><a href="#二、2025-年的三条收敛线" class="headerlink" title="二、2025 年的三条收敛线"></a>二、2025 年的三条收敛线</h2><h3 id="1-算法：稀疏化成为主流"><a href="#1-算法：稀疏化成为主流" class="headerlink" title="1. 算法：稀疏化成为主流"></a>1. 算法：稀疏化成为主流</h3><p>DeepSeek 证明 MoE 可以既稀疏又高效。随后 Phi、Gemma 等小型模型在特定任务追平大模型。</p><p>趋势清晰：从”一个模型做所有事”到”多个专家按需唤醒”。</p><p>（更像大脑了）</p><h3 id="2-产品：从说到做"><a href="#2-产品：从说到做" class="headerlink" title="2. 产品：从说到做"></a>2. 产品：从说到做</h3><ul><li>Claude 3.7：代码能力质变</li><li>Manus：首次完整任务闭环</li><li>OpenClaw：本地自主执行</li></ul><p>关键转折：AI 从”信息处理器”变成”行动执行者”。</p><p>智能的价值不在”知道”，在”做到”。</p><h3 id="3-基础设施：算力民主化"><a href="#3-基础设施：算力民主化" class="headerlink" title="3. 基础设施：算力民主化"></a>3. 基础设施：算力民主化</h3><p>Mac Mini M4 全球断货六周，不是在买电脑，是在买”个人 AI 服务器”。</p><p>当模型可以本地高效运行，智能从”云服务”变成”基础设施”。</p><p>（边界消失，成本归零）</p><h2 id="三、收敛的本质"><a href="#三、收敛的本质" class="headerlink" title="三、收敛的本质"></a>三、收敛的本质</h2><p>2025 年干了三件事：</p><table><thead><tr><th>维度</th><th>变化</th></tr></thead><tbody><tr><td>形态</td><td>中心化 → 分布式</td></tr><tr><td>激活</td><td>稠密 → 稀疏</td></tr><tr><td>能力</td><td>匹配 → 推理</td></tr><tr><td>角色</td><td>工具 → 代理</td></tr></tbody></table><p>共同指向：<strong>人工智能正在向生物智能的形态靠拢</strong>。</p><h2 id="四、未来预测"><a href="#四、未来预测" class="headerlink" title="四、未来预测"></a>四、未来预测</h2><p>基于上述原理，推演三个必然方向：</p><h3 id="1-持续学习（2026-2027）"><a href="#1-持续学习（2026-2027）" class="headerlink" title="1. 持续学习（2026-2027）"></a>1. 持续学习（2026-2027）</h3><p>当前模型是冻结的，无法像人脑一样在线学习。下一阶段的突破口：交互中实时更新权重。</p><h3 id="2-原生多模态（2026）"><a href="#2-原生多模态（2026）" class="headerlink" title="2. 原生多模态（2026）"></a>2. 原生多模态（2026）</h3><p>人脑没有”单模态”概念。2025 年的多模态还是文本中转，2026 年将出现真正的统一感知模型。</p><h3 id="3-智能环境化（2027-2028）"><a href="#3-智能环境化（2027-2028）" class="headerlink" title="3. 智能环境化（2027-2028）"></a>3. 智能环境化（2027-2028）</h3><p>OpenClaw 只是开始。终极形态：智能像电一样无处不在。</p><p>“AI 设备”这个概念会消失——就像今天不会说”芯片设备”一样。</p><hr><p>2025 年追 AI 追得挺累，回头看脉络倒很清晰：</p><p><strong>把成本打下来，把边界拆掉，让智能自己长出来。</strong></p><p>（Agent 领域没有护城河：）</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;人脑有 850 亿神经元，但工作时只有 2-5% 同时激活，功耗 20 瓦。&lt;/p&gt;
+&lt;p&gt;GPT-4 有万亿级参数，推理时几乎全部激活，训练功耗以兆瓦计。&lt;/p&gt;
+&lt;p&gt;这个差距，就是 2025 年 AI 进化的原动力。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="AI工具" scheme="https://lusipad.com/categories/AI%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="AI" scheme="https://lusipad.com/tags/AI/"/>
+    
+    <category term="思考" scheme="https://lusipad.com/tags/%E6%80%9D%E8%80%83/"/>
+    
+    <category term="DeepSeek" scheme="https://lusipad.com/tags/DeepSeek/"/>
+    
+    <category term="OpenClaw" scheme="https://lusipad.com/tags/OpenClaw/"/>
+    
+    <category term="2025" scheme="https://lusipad.com/tags/2025/"/>
+    
+  </entry>
   
   <entry>
     <title>ai-cnc-programming-guide</title>
@@ -456,52 +523,6 @@
     
     
     <category term="随笔" scheme="https://lusipad.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++ 面试的一些想法</title>
-    <link href="https://lusipad.com/2023/11/28/CppInterview/"/>
-    <id>https://lusipad.com/2023/11/28/CppInterview/</id>
-    <published>2023-11-28T13:48:24.000Z</published>
-    <updated>2025-12-19T21:55:49.092Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="C-的一些面试的想法"><a href="#C-的一些面试的想法" class="headerlink" title="C++ 的一些面试的想法"></a>C++ 的一些面试的想法</h1><p>因为本身面试 C++ 的开发也蛮多了, 所以很多时候, 我觉得人和人之间的差异还是非常大的.</p><p>比较典型的有几种:</p><ul><li>混日子, 用了 N 年的 C++, 深度也没有, 广度也没有, 就像了修楼修了十年还是但是只会搬个砖和个水泥, 其他啥都不知道也不去了解, 干了十年就和三年水平没啥区别</li><li>只限于用, 对常用的库, 一些语言的细节都比较了解了, 但是应用起来就像是乡下的土法堆房, 不搭地基, 不搞设计, 主打一个莽字, 盖个三楼可以盖个三十楼必塌</li><li>有思考, 有的人靠”顿悟”, 有的人靠触类旁通, 有的人靠系统学习, 但是到了这一步, 就会明白造房子是目的, 设计是搭框架打地基, 语言是实现的细节, 但是真正行动的时候, 要么想太多, 要么想太少, 往往会在缺乏设计和过度设计中反复横跳</li><li>知行合一, 思考, 技术, 眼界能匹配上</li></ul><p>我觉得大抵就以上几种会比较多一些, 大家也都是过来人, 如果不去主动思考, 随波逐流的话, 很多人就止步于 2&#x2F;3 了. 对我而言, 需要的队友:</p><ul><li>结果能力 (只有落地的才是有价值的, 不管经历再完美, 没有将个人能力体现, 也是白搭)</li><li>自我管理 (只有自驱的人才能真正的成长起来)</li><li>学习能力 (能够适应变化, 能够迁移自己的能力和优势)</li></ul>]]></content>
-    
-    
-    <summary type="html">总结多年 C++ 面试经验，分析不同层次开发者的特点和成长路径</summary>
-    
-    
-    
-    <category term="编程" scheme="https://lusipad.com/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="C++" scheme="https://lusipad.com/tags/C/"/>
-    
-    <category term="面试" scheme="https://lusipad.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++ 学习路线图</title>
-    <link href="https://lusipad.com/2023/11/28/CppRoadmap/"/>
-    <id>https://lusipad.com/2023/11/28/CppRoadmap/</id>
-    <published>2023-11-28T12:50:49.000Z</published>
-    <updated>2025-12-19T21:55:51.798Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="C-Roadmap"><a href="#C-Roadmap" class="headerlink" title="C++ Roadmap"></a>C++ Roadmap</h1><p>在今年 3 月份的时候, 为了 给组内做一个 C++ 的教学, 所以我翻了许多的资料, 后来觉得 <a href="https://github.com/salmer/CppDeveloperRoadmap">salmer&#x2F;CppDeveloperRoadmap</a> 这个开源项目深得我心, 所以将其翻译成了中文, 并且相关的 commit 都已经 merge 到该项目了. (消失了小半年了, 还欠着人家一个 CN 的思维导图没画, 我有罪 233333)</p><p>现在回过头来, 我觉得自己这些年也比较懈怠了, 所以想要在后续的时间内, 将这一些 Point 都真正的展开起来, 并且将其和自己的工作能够结合起来, 而避免只是停留在喊喊口号上, 真正能够做到知行合一.</p><p>加油!</p>]]></content>
-    
-    
-    <summary type="html">基于 CppDeveloperRoadmap 项目整理的 C++ 学习路线，帮助开发者系统提升能力</summary>
-    
-    
-    
-    <category term="编程" scheme="https://lusipad.com/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="C++" scheme="https://lusipad.com/tags/C/"/>
-    
-    <category term="学习" scheme="https://lusipad.com/tags/%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
