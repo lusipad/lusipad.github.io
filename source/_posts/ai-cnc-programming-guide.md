@@ -1,5 +1,5 @@
 ---
-title: ai-cnc-programming-guide
+title: AI 数控编程指南：当老师傅的手艺遇上大模型
 date: 2026-02-22 12:47:26
 tags: [ai, cnc]
 ---

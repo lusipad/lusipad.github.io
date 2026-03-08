@@ -1,5 +1,5 @@
 ---
-title: aicnc-website
+title: 从零搭建 AI x CNC 网站
 date: 2026-02-22 12:23:00
 tags: [ai, cnc]
 ---
