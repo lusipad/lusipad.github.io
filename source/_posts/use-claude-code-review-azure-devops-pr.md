@@ -30,6 +30,8 @@ tags: [AI, claudecode, devops, review]
 
 ## 🎯 概述
 
+> **提示**：如果你的 Claude Code 配额不够用，或者想在 Claude Code 里混搭 Gemini、Codex 等模型，可以先看 [CLIProxyAPI 教程](/2026/03/08/CLIProxyAPI-tutorial/)。
+
 Claude Code + Azure DevOps MCP 组合提供：
 
 - ✅ **全自动代码评审** - 从分析到评论一键完成

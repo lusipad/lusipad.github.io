@@ -12,6 +12,8 @@ tags: [AI, claude, codex]
 
 在验证了几个后，踩了不少坑后，最终用了 https://github.com/luispater/CLIProxyAPI/tree/main 项目。可以支持自定义 API，支持轮询，把我想做的都改完了。
 
+> **更新**：CLIProxyAPI 现在已经发展到 v6，支持 Qwen、Gemini、Claude、Codex 等多家提供商，还有 Docker 部署和管理面板。完整教程见[CLIProxyAPI 完整教程：一个代理统一所有 AI 编程工具](/2026/03/08/CLIProxyAPI-tutorial/)。
+
 
 
 ## 配置
