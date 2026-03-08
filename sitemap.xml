@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lusipad.com/2026/02/22/aicnc-website/</loc>
+    
+    <lastmod>2026-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lusipad.com/2026/02/22/ai-cnc-programming-guide/</loc>
+    
+    <lastmod>2026-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lusipad.com/2025/09/02/use-claude-code-review-azure-devops-pr/</loc>
     
     <lastmod>2026-03-08</lastmod>
@@ -59,24 +77,6 @@
     <loc>https://lusipad.com/2026/03/03/%E4%BB%8E-DeepSeek-%E5%88%B0-OpenClaw%EF%BC%9A2025-AI-%E8%BF%9B%E5%8C%96%E7%9A%84%E7%AC%AC%E4%B8%80%E6%80%A7%E5%8E%9F%E7%90%86%E8%A7%82%E5%AF%9F/</loc>
     
     <lastmod>2026-03-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2026/02/22/ai-cnc-programming-guide/</loc>
-    
-    <lastmod>2026-02-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lusipad.com/2026/02/22/aicnc-website/</loc>
-    
-    <lastmod>2026-02-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
